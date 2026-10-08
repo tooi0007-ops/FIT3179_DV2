@@ -1,0 +1,329 @@
+year,state,total_passengers,domestic_passengers,international_passengers,airport_count,coverage_note
+1985,Australian Capital Territory,986482,986482,0,1,Only airports with verified GA terminal matches are included.
+1985,New South Wales,10318564,7531308,2787256,19,Only airports with verified GA terminal matches are included.
+1985,Northern Territory,1041299,994460,46839,4,Only airports with verified GA terminal matches are included.
+1985,Queensland,6852372,6288846,563526,18,Only airports with verified GA terminal matches are included.
+1985,South Australia,2266611,2158577,108034,6,Only airports with verified GA terminal matches are included.
+1985,Tasmania,1543669,1528363,15306,5,Only airports with verified GA terminal matches are included.
+1985,Victoria,6393134,5218694,1174440,3,Only airports with verified GA terminal matches are included.
+1985,Western Australia,2703372,2198400,504972,12,Only airports with verified GA terminal matches are included.
+1986,Australian Capital Territory,1027954,1027954,0,1,Only airports with verified GA terminal matches are included.
+1986,New South Wales,11055249,7949565,3105684,20,Only airports with verified GA terminal matches are included.
+1986,Northern Territory,1194041,1145330,48711,4,Only airports with verified GA terminal matches are included.
+1986,Queensland,7503776,6834055,669721,18,Only airports with verified GA terminal matches are included.
+1986,South Australia,2325160,2188589,136571,6,Only airports with verified GA terminal matches are included.
+1986,Tasmania,1506484,1492340,14144,5,Only airports with verified GA terminal matches are included.
+1986,Victoria,6688516,5415437,1273079,3,Only airports with verified GA terminal matches are included.
+1986,Western Australia,2864326,2293799,570527,12,Only airports with verified GA terminal matches are included.
+1987,Australian Capital Territory,1083112,1083112,0,1,Only airports with verified GA terminal matches are included.
+1987,New South Wales,11985225,8394869,3590356,20,Only airports with verified GA terminal matches are included.
+1987,Northern Territory,1355059,1293073,61986,4,Only airports with verified GA terminal matches are included.
+1987,Queensland,8158719,7326748,831971,18,Only airports with verified GA terminal matches are included.
+1987,South Australia,2342479,2202787,139692,6,Only airports with verified GA terminal matches are included.
+1987,Tasmania,1545669,1528247,17422,5,Only airports with verified GA terminal matches are included.
+1987,Victoria,7187636,5768945,1418691,4,Only airports with verified GA terminal matches are included.
+1987,Western Australia,3048683,2394369,654314,12,Only airports with verified GA terminal matches are included.
+1988,Australian Capital Territory,1127565,1127565,0,1,Only airports with verified GA terminal matches are included.
+1988,New South Wales,13359941,9228575,4131366,20,Only airports with verified GA terminal matches are included.
+1988,Northern Territory,1424448,1345123,79325,4,Only airports with verified GA terminal matches are included.
+1988,Queensland,9507825,8367261,1140564,15,Only airports with verified GA terminal matches are included.
+1988,South Australia,2507707,2366823,140884,6,Only airports with verified GA terminal matches are included.
+1988,Tasmania,1505816,1490453,15363,5,Only airports with verified GA terminal matches are included.
+1988,Victoria,7795496,6256226,1539270,4,Only airports with verified GA terminal matches are included.
+1988,Western Australia,3183171,2463161,720010,12,Only airports with verified GA terminal matches are included.
+1989,Australian Capital Territory,779536,779536,0,1,Only airports with verified GA terminal matches are included.
+1989,New South Wales,10923207,6872095,4051112,20,Only airports with verified GA terminal matches are included.
+1989,Northern Territory,1027639,934870,92769,4,Only airports with verified GA terminal matches are included.
+1989,Queensland,6982398,5803891,1178507,15,Only airports with verified GA terminal matches are included.
+1989,South Australia,2096754,1949576,147178,6,Only airports with verified GA terminal matches are included.
+1989,Tasmania,1114398,1098663,15735,5,Only airports with verified GA terminal matches are included.
+1989,Victoria,6619965,4990683,1629282,4,Only airports with verified GA terminal matches are included.
+1989,Western Australia,2735713,1919193,816520,12,Only airports with verified GA terminal matches are included.
+1990,Australian Capital Territory,1020620,1020620,0,1,Only airports with verified GA terminal matches are included.
+1990,New South Wales,12614224,8327914,4286310,19,Only airports with verified GA terminal matches are included.
+1990,Northern Territory,1319444,1225155,94289,4,Only airports with verified GA terminal matches are included.
+1990,Queensland,8323859,6963681,1360178,15,Only airports with verified GA terminal matches are included.
+1990,South Australia,2479984,2298587,181397,6,Only airports with verified GA terminal matches are included.
+1990,Tasmania,1241097,1224002,17095,5,Only airports with verified GA terminal matches are included.
+1990,Victoria,7970132,6252941,1717191,4,Only airports with verified GA terminal matches are included.
+1990,Western Australia,3174840,2309075,865765,12,Only airports with verified GA terminal matches are included.
+1991,Australian Capital Territory,1261479,1261479,0,1,Only airports with verified GA terminal matches are included.
+1991,New South Wales,14971146,10729679,4241467,20,Only airports with verified GA terminal matches are included.
+1991,Northern Territory,1460480,1371255,89225,4,Only airports with verified GA terminal matches are included.
+1991,Queensland,10763619,9178595,1585024,18,Only airports with verified GA terminal matches are included.
+1991,South Australia,3044025,2851941,192084,6,Only airports with verified GA terminal matches are included.
+1991,Tasmania,1351517,1339752,11765,5,Only airports with verified GA terminal matches are included.
+1991,Victoria,9731808,8027942,1703866,4,Only airports with verified GA terminal matches are included.
+1991,Western Australia,3685208,2856062,829146,12,Only airports with verified GA terminal matches are included.
+1992,Australian Capital Territory,1367154,1367154,0,1,Only airports with verified GA terminal matches are included.
+1992,New South Wales,15903957,11380438,4523519,20,Only airports with verified GA terminal matches are included.
+1992,Northern Territory,1583032,1492224,90808,4,Only airports with verified GA terminal matches are included.
+1992,Queensland,11657608,9817551,1840057,18,Only airports with verified GA terminal matches are included.
+1992,South Australia,3157679,2953216,204463,6,Only airports with verified GA terminal matches are included.
+1992,Tasmania,1358095,1349436,8659,5,Only airports with verified GA terminal matches are included.
+1992,Victoria,10001358,8263402,1737956,4,Only airports with verified GA terminal matches are included.
+1992,Western Australia,3766896,2864430,902466,12,Only airports with verified GA terminal matches are included.
+1993,Australian Capital Territory,1431091,1431091,0,1,Only airports with verified GA terminal matches are included.
+1993,New South Wales,16902328,12108208,4794120,20,Only airports with verified GA terminal matches are included.
+1993,Northern Territory,1809971,1706909,103062,4,Only airports with verified GA terminal matches are included.
+1993,Queensland,12797919,10599165,2198754,18,Only airports with verified GA terminal matches are included.
+1993,South Australia,3372235,3155816,216419,6,Only airports with verified GA terminal matches are included.
+1993,Tasmania,1454676,1445809,8867,5,Only airports with verified GA terminal matches are included.
+1993,Victoria,10593048,8745171,1847877,4,Only airports with verified GA terminal matches are included.
+1993,Western Australia,4136031,3126845,1009186,14,Only airports with verified GA terminal matches are included.
+1994,Australian Capital Territory,1591868,1591868,0,1,Only airports with verified GA terminal matches are included.
+1994,New South Wales,18836792,13462392,5374400,20,Only airports with verified GA terminal matches are included.
+1994,Northern Territory,2067092,1935111,131981,4,Only airports with verified GA terminal matches are included.
+1994,Queensland,14413754,12044391,2369363,18,Only airports with verified GA terminal matches are included.
+1994,South Australia,3655941,3441585,214356,6,Only airports with verified GA terminal matches are included.
+1994,Tasmania,1567916,1559940,7976,5,Only airports with verified GA terminal matches are included.
+1994,Victoria,11599956,9728448,1871508,4,Only airports with verified GA terminal matches are included.
+1994,Western Australia,4752622,3608606,1144016,14,Only airports with verified GA terminal matches are included.
+1995,Australian Capital Territory,1739064,1739064,0,1,Only airports with verified GA terminal matches are included.
+1995,New South Wales,20228505,14374378,5854127,20,Only airports with verified GA terminal matches are included.
+1995,Northern Territory,2209655,2070018,139637,4,Only airports with verified GA terminal matches are included.
+1995,Queensland,15612871,12989147,2623724,18,Only airports with verified GA terminal matches are included.
+1995,South Australia,3901617,3693996,207621,6,Only airports with verified GA terminal matches are included.
+1995,Tasmania,1683585,1676223,7362,5,Only airports with verified GA terminal matches are included.
+1995,Victoria,12602365,10591211,2011154,4,Only airports with verified GA terminal matches are included.
+1995,Western Australia,5120760,3901177,1219583,14,Only airports with verified GA terminal matches are included.
+1996,Australian Capital Territory,1735758,1735758,0,1,Only airports with verified GA terminal matches are included.
+1996,New South Wales,21586596,15094055,6492541,20,Only airports with verified GA terminal matches are included.
+1996,Northern Territory,2308790,2160902,147888,4,Only airports with verified GA terminal matches are included.
+1996,Queensland,16534475,13622506,2911969,18,Only airports with verified GA terminal matches are included.
+1996,South Australia,4054808,3848945,205863,6,Only airports with verified GA terminal matches are included.
+1996,Tasmania,1718614,1713511,5103,5,Only airports with verified GA terminal matches are included.
+1996,Victoria,13410896,11217587,2193309,4,Only airports with verified GA terminal matches are included.
+1996,Western Australia,5461533,4151019,1310514,14,Only airports with verified GA terminal matches are included.
+1997,Australian Capital Territory,1788030,1788030,0,1,Only airports with verified GA terminal matches are included.
+1997,New South Wales,22177387,15320515,6856872,20,Only airports with verified GA terminal matches are included.
+1997,Northern Territory,2334713,2163394,171319,4,Only airports with verified GA terminal matches are included.
+1997,Queensland,16645134,13591062,3054072,18,Only airports with verified GA terminal matches are included.
+1997,South Australia,4145822,3936932,208890,6,Only airports with verified GA terminal matches are included.
+1997,Tasmania,1669577,1665888,3689,5,Only airports with verified GA terminal matches are included.
+1997,Victoria,13738745,11365610,2373135,4,Only airports with verified GA terminal matches are included.
+1997,Western Australia,5635015,4228137,1406878,15,Only airports with verified GA terminal matches are included.
+1998,Australian Capital Territory,1805091,1805091,0,1,Only airports with verified GA terminal matches are included.
+1998,New South Wales,22517973,15568718,6949255,20,Only airports with verified GA terminal matches are included.
+1998,Northern Territory,2374029,2196256,177773,4,Only airports with verified GA terminal matches are included.
+1998,Queensland,16480921,13526688,2954233,18,Only airports with verified GA terminal matches are included.
+1998,South Australia,4332234,4109199,223035,6,Only airports with verified GA terminal matches are included.
+1998,Tasmania,1686458,1683768,2690,5,Only airports with verified GA terminal matches are included.
+1998,Victoria,14064982,11575850,2489132,4,Only airports with verified GA terminal matches are included.
+1998,Western Australia,5753666,4312479,1441187,15,Only airports with verified GA terminal matches are included.
+1999,Australian Capital Territory,1899694,1899694,0,1,Only airports with verified GA terminal matches are included.
+1999,New South Wales,23616714,16213488,7403226,20,Only airports with verified GA terminal matches are included.
+1999,Northern Territory,2427407,2271349,156058,4,Only airports with verified GA terminal matches are included.
+1999,Queensland,17198089,14144498,3053591,18,Only airports with verified GA terminal matches are included.
+1999,South Australia,4423008,4181994,241014,6,Only airports with verified GA terminal matches are included.
+1999,Tasmania,1702303,1702303,0,5,Only airports with verified GA terminal matches are included.
+1999,Victoria,14694630,12039823,2654807,4,Only airports with verified GA terminal matches are included.
+1999,Western Australia,5732611,4254744,1477867,15,Only airports with verified GA terminal matches are included.
+2000,Australian Capital Territory,2039304,2039304,0,1,Only airports with verified GA terminal matches are included.
+2000,New South Wales,25934235,17682939,8251296,20,Only airports with verified GA terminal matches are included.
+2000,Northern Territory,2467013,2297517,169496,4,Only airports with verified GA terminal matches are included.
+2000,Queensland,18382700,15213051,3169649,18,Only airports with verified GA terminal matches are included.
+2000,South Australia,4546418,4276319,270099,6,Only airports with verified GA terminal matches are included.
+2000,Tasmania,1721449,1721449,0,5,Only airports with verified GA terminal matches are included.
+2000,Victoria,16106823,13063194,3043629,4,Only airports with verified GA terminal matches are included.
+2000,Western Australia,6042774,4459269,1583505,15,Only airports with verified GA terminal matches are included.
+2001,Australian Capital Territory,1972202,1972202,0,1,Only airports with verified GA terminal matches are included.
+2001,New South Wales,26103878,17857484,8246394,20,Only airports with verified GA terminal matches are included.
+2001,Northern Territory,2173153,2021530,151623,4,Only airports with verified GA terminal matches are included.
+2001,Queensland,19244956,15990390,3254566,18,Only airports with verified GA terminal matches are included.
+2001,South Australia,4711510,4469666,241844,6,Only airports with verified GA terminal matches are included.
+2001,Tasmania,1727171,1727171,0,5,Only airports with verified GA terminal matches are included.
+2001,Victoria,16690514,13374942,3315572,4,Only airports with verified GA terminal matches are included.
+2001,Western Australia,5816810,4227094,1589716,15,Only airports with verified GA terminal matches are included.
+2002,Australian Capital Territory,1884766,1884766,0,1,Only airports with verified GA terminal matches are included.
+2002,New South Wales,24422698,16390525,8032173,20,Only airports with verified GA terminal matches are included.
+2002,Northern Territory,2021978,1918767,103211,4,Only airports with verified GA terminal matches are included.
+2002,Queensland,18805649,15433184,3372465,18,Only airports with verified GA terminal matches are included.
+2002,South Australia,4485947,4261596,224351,6,Only airports with verified GA terminal matches are included.
+2002,Tasmania,1719453,1719453,0,5,Only airports with verified GA terminal matches are included.
+2002,Victoria,16303108,12989357,3313751,4,Only airports with verified GA terminal matches are included.
+2002,Western Australia,5854968,4218546,1636422,14,Only airports with verified GA terminal matches are included.
+2003,Australian Capital Territory,2074167,2074167,0,1,Only airports with verified GA terminal matches are included.
+2003,New South Wales,25850409,17905316,7945093,20,Only airports with verified GA terminal matches are included.
+2003,Northern Territory,2016351,1938661,77690,4,Only airports with verified GA terminal matches are included.
+2003,Queensland,20739808,17304865,3434943,18,Only airports with verified GA terminal matches are included.
+2003,South Australia,4877753,4670904,206849,6,Only airports with verified GA terminal matches are included.
+2003,Tasmania,1928014,1928014,0,5,Only airports with verified GA terminal matches are included.
+2003,Victoria,17340609,14141075,3199534,4,Only airports with verified GA terminal matches are included.
+2003,Western Australia,6425943,4839321,1586622,15,Only airports with verified GA terminal matches are included.
+2004,Australian Capital Territory,2436459,2434463,1996,1,Only airports with verified GA terminal matches are included.
+2004,New South Wales,29048669,20077631,8971038,20,Only airports with verified GA terminal matches are included.
+2004,Northern Territory,2212071,2113697,98374,4,Only airports with verified GA terminal matches are included.
+2004,Queensland,24557992,20308257,4249735,18,Only airports with verified GA terminal matches are included.
+2004,South Australia,5463056,5176973,286083,6,Only airports with verified GA terminal matches are included.
+2004,Tasmania,2375579,2375579,0,5,Only airports with verified GA terminal matches are included.
+2004,Victoria,19905138,15968703,3936435,4,Only airports with verified GA terminal matches are included.
+2004,Western Australia,7347056,5519667,1827389,15,Only airports with verified GA terminal matches are included.
+2005,Australian Capital Territory,2524753,2524753,0,1,Only airports with verified GA terminal matches are included.
+2005,New South Wales,30844865,21309203,9535662,19,Only airports with verified GA terminal matches are included.
+2005,Northern Territory,2292988,2188606,104382,4,Only airports with verified GA terminal matches are included.
+2005,Queensland,27149602,22477205,4672397,18,Only airports with verified GA terminal matches are included.
+2005,South Australia,5962481,5628183,334298,6,Only airports with verified GA terminal matches are included.
+2005,Tasmania,2709957,2709957,0,5,Only airports with verified GA terminal matches are included.
+2005,Victoria,20895163,16670528,4224635,4,Only airports with verified GA terminal matches are included.
+2005,Western Australia,8018034,6011009,2007025,14,Only airports with verified GA terminal matches are included.
+2006,Australian Capital Territory,2612679,2612679,0,1,Only airports with verified GA terminal matches are included.
+2006,New South Wales,32698286,22813150,9885136,19,Only airports with verified GA terminal matches are included.
+2006,Northern Territory,2433567,2306739,126828,4,Only airports with verified GA terminal matches are included.
+2006,Queensland,28969027,24220563,4748464,18,Only airports with verified GA terminal matches are included.
+2006,South Australia,6389331,5988842,400489,6,Only airports with verified GA terminal matches are included.
+2006,Tasmania,2791331,2791331,0,5,Only airports with verified GA terminal matches are included.
+2006,Victoria,21745678,17454388,4291290,4,Only airports with verified GA terminal matches are included.
+2006,Western Australia,8907065,6872188,2034877,14,Only airports with verified GA terminal matches are included.
+2007,Australian Capital Territory,2734875,2734875,0,1,Only airports with verified GA terminal matches are included.
+2007,New South Wales,34804458,24408941,10395517,19,Only airports with verified GA terminal matches are included.
+2007,Northern Territory,2591175,2439856,151319,4,Only airports with verified GA terminal matches are included.
+2007,Queensland,30852806,26018244,4834562,18,Only airports with verified GA terminal matches are included.
+2007,South Australia,6784324,6329175,455149,6,Only airports with verified GA terminal matches are included.
+2007,Tasmania,2915219,2915219,0,5,Only airports with verified GA terminal matches are included.
+2007,Victoria,22941654,18376570,4565084,4,Only airports with verified GA terminal matches are included.
+2007,Western Australia,10124996,7750948,2374048,14,Only airports with verified GA terminal matches are included.
+2008,Australian Capital Territory,2983488,2983488,0,1,Only airports with verified GA terminal matches are included.
+2008,New South Wales,36127991,25560680,10567311,20,Only airports with verified GA terminal matches are included.
+2008,Northern Territory,2716296,2528459,187837,4,Only airports with verified GA terminal matches are included.
+2008,Queensland,32517358,27546963,4970395,18,Only airports with verified GA terminal matches are included.
+2008,South Australia,7171237,6691558,479679,6,Only airports with verified GA terminal matches are included.
+2008,Tasmania,3193240,3193240,0,5,Only airports with verified GA terminal matches are included.
+2008,Victoria,24768342,20035798,4732544,4,Only airports with verified GA terminal matches are included.
+2008,Western Australia,11154967,8620703,2534264,14,Only airports with verified GA terminal matches are included.
+2009,Australian Capital Territory,3148420,3148420,0,1,Only airports with verified GA terminal matches are included.
+2009,New South Wales,36213365,25567001,10646364,19,Only airports with verified GA terminal matches are included.
+2009,Northern Territory,2605441,2409699,195742,4,Only airports with verified GA terminal matches are included.
+2009,Queensland,32699318,27541012,5158306,18,Only airports with verified GA terminal matches are included.
+2009,South Australia,7229057,6727658,501399,6,Only airports with verified GA terminal matches are included.
+2009,Tasmania,3242775,3242775,0,5,Only airports with verified GA terminal matches are included.
+2009,Victoria,25110855,19980503,5130352,4,Only airports with verified GA terminal matches are included.
+2009,Western Australia,11643694,8868957,2774737,14,Only airports with verified GA terminal matches are included.
+2010,Australian Capital Territory,3304010,3304010,0,1,Only airports with verified GA terminal matches are included.
+2010,New South Wales,38969740,27504194,11465546,20,Only airports with verified GA terminal matches are included.
+2010,Northern Territory,2712684,2495679,217005,4,Only airports with verified GA terminal matches are included.
+2010,Queensland,34759015,29192902,5566113,18,Only airports with verified GA terminal matches are included.
+2010,South Australia,7721838,7189446,532392,6,Only airports with verified GA terminal matches are included.
+2010,Tasmania,3284038,3284038,0,5,Only airports with verified GA terminal matches are included.
+2010,Victoria,27634155,21761644,5872511,4,Only airports with verified GA terminal matches are included.
+2010,Western Australia,12833771,9697023,3136748,14,Only airports with verified GA terminal matches are included.
+2011,Australian Capital Territory,3208225,3208225,0,1,Only airports with verified GA terminal matches are included.
+2011,New South Wales,39013521,27254826,11758695,20,Only airports with verified GA terminal matches are included.
+2011,Northern Territory,2911594,2584659,326935,4,Only airports with verified GA terminal matches are included.
+2011,Queensland,35599794,29925400,5674394,18,Only airports with verified GA terminal matches are included.
+2011,South Australia,7446553,6863480,583073,6,Only airports with verified GA terminal matches are included.
+2011,Tasmania,3207184,3207184,0,5,Only airports with verified GA terminal matches are included.
+2011,Victoria,27896168,21435210,6460958,4,Only airports with verified GA terminal matches are included.
+2011,Western Australia,14091856,10740902,3350954,15,Only airports with verified GA terminal matches are included.
+2012,Australian Capital Territory,3065893,3065893,0,1,Only airports with verified GA terminal matches are included.
+2012,New South Wales,40399732,28020450,12379282,20,Only airports with verified GA terminal matches are included.
+2012,Northern Territory,2941546,2612832,328714,4,Only airports with verified GA terminal matches are included.
+2012,Queensland,37251646,31438737,5812909,18,Only airports with verified GA terminal matches are included.
+2012,South Australia,7485904,6835827,650077,6,Only airports with verified GA terminal matches are included.
+2012,Tasmania,3328808,3328808,0,5,Only airports with verified GA terminal matches are included.
+2012,Victoria,29156295,22337053,6819242,4,Only airports with verified GA terminal matches are included.
+2012,Western Australia,15794427,12175659,3618768,15,Only airports with verified GA terminal matches are included.
+2013,Australian Capital Territory,2956448,2956448,0,1,Only airports with verified GA terminal matches are included.
+2013,New South Wales,41611663,28666474,12945189,20,Only airports with verified GA terminal matches are included.
+2013,Northern Territory,3021395,2688178,333217,4,Only airports with verified GA terminal matches are included.
+2013,Queensland,38048532,32013990,6034542,18,Only airports with verified GA terminal matches are included.
+2013,South Australia,7771007,6971422,799585,6,Only airports with verified GA terminal matches are included.
+2013,Tasmania,3578669,3578669,0,5,Only airports with verified GA terminal matches are included.
+2013,Victoria,30465400,23153257,7312143,4,Only airports with verified GA terminal matches are included.
+2013,Western Australia,15962452,12042612,3919840,15,Only airports with verified GA terminal matches are included.
+2014,Australian Capital Territory,2811822,2811822,0,1,Only airports with verified GA terminal matches are included.
+2014,New South Wales,42165249,28838079,13327170,19,Only airports with verified GA terminal matches are included.
+2014,Northern Territory,3094222,2775552,318670,4,Only airports with verified GA terminal matches are included.
+2014,Queensland,38460011,32142901,6317110,18,Only airports with verified GA terminal matches are included.
+2014,South Australia,8086233,7118968,967265,6,Only airports with verified GA terminal matches are included.
+2014,Tasmania,3649197,3649197,0,5,Only airports with verified GA terminal matches are included.
+2014,Victoria,31625401,23602935,8022466,4,Only airports with verified GA terminal matches are included.
+2014,Western Australia,15816604,11636197,4180407,15,Only airports with verified GA terminal matches are included.
+2015,Australian Capital Territory,2805306,2805306,0,1,Only airports with verified GA terminal matches are included.
+2015,New South Wales,43237910,29314841,13923069,19,Only airports with verified GA terminal matches are included.
+2015,Northern Territory,3030125,2767338,262787,4,Only airports with verified GA terminal matches are included.
+2015,Queensland,38659812,31907869,6751943,18,Only airports with verified GA terminal matches are included.
+2015,South Australia,8058806,7187418,871388,6,Only airports with verified GA terminal matches are included.
+2015,Tasmania,3765835,3765835,0,5,Only airports with verified GA terminal matches are included.
+2015,Victoria,33027236,24167920,8859316,4,Only airports with verified GA terminal matches are included.
+2015,Western Australia,15148365,10950219,4198146,15,Only airports with verified GA terminal matches are included.
+2016,Australian Capital Territory,2909564,2885793,23771,1,Only airports with verified GA terminal matches are included.
+2016,New South Wales,45649794,30527922,15121872,19,Only airports with verified GA terminal matches are included.
+2016,Northern Territory,3128165,2856096,272069,4,Only airports with verified GA terminal matches are included.
+2016,Queensland,39799417,32554837,7244580,18,Only airports with verified GA terminal matches are included.
+2016,South Australia,8298736,7374557,924179,6,Only airports with verified GA terminal matches are included.
+2016,Tasmania,3954396,3954396,0,5,Only airports with verified GA terminal matches are included.
+2016,Victoria,34624993,24982407,9642586,4,Only airports with verified GA terminal matches are included.
+2016,Western Australia,14862448,10474752,4387696,14,Only airports with verified GA terminal matches are included.
+2017,Australian Capital Territory,3105775,3021340,84435,1,Only airports with verified GA terminal matches are included.
+2017,New South Wales,47156145,31113159,16042986,20,Only airports with verified GA terminal matches are included.
+2017,Northern Territory,3147966,2873109,274857,4,Only airports with verified GA terminal matches are included.
+2017,Queensland,40471071,32937205,7533866,18,Only airports with verified GA terminal matches are included.
+2017,South Australia,8491651,7528676,962975,6,Only airports with verified GA terminal matches are included.
+2017,Tasmania,4103123,4103123,0,5,Only airports with verified GA terminal matches are included.
+2017,Victoria,35830779,25506997,10323782,4,Only airports with verified GA terminal matches are included.
+2017,Western Australia,14661248,10268442,4392806,14,Only airports with verified GA terminal matches are included.
+2018,Australian Capital Territory,3248065,3153143,94922,1,Only airports with verified GA terminal matches are included.
+2018,New South Wales,48218732,31453507,16765225,19,Only airports with verified GA terminal matches are included.
+2018,Northern Territory,3099174,2870583,228591,4,Only airports with verified GA terminal matches are included.
+2018,Queensland,41164774,33334301,7830473,18,Only airports with verified GA terminal matches are included.
+2018,South Australia,8742747,7716786,1025961,6,Only airports with verified GA terminal matches are included.
+2018,Tasmania,4320785,4320785,0,5,Only airports with verified GA terminal matches are included.
+2018,Victoria,37207317,25983433,11223884,4,Only airports with verified GA terminal matches are included.
+2018,Western Australia,14910036,10535591,4374445,14,Only airports with verified GA terminal matches are included.
+2019,Australian Capital Territory,3238112,3153043,85069,1,Only airports with verified GA terminal matches are included.
+2019,New South Wales,48203386,31304766,16898620,20,Only airports with verified GA terminal matches are included.
+2019,Northern Territory,3085720,2829690,256030,4,Only airports with verified GA terminal matches are included.
+2019,Queensland,41656020,33624553,8031467,18,Only airports with verified GA terminal matches are included.
+2019,South Australia,8922609,7794017,1128592,6,Only airports with verified GA terminal matches are included.
+2019,Tasmania,4443783,4443783,0,5,Only airports with verified GA terminal matches are included.
+2019,Victoria,37446701,26128057,11318644,5,Only airports with verified GA terminal matches are included.
+2019,Western Australia,15028538,10656467,4372071,14,Only airports with verified GA terminal matches are included.
+2020,Australian Capital Territory,908990,895979,13011,1,Only airports with verified GA terminal matches are included.
+2020,New South Wales,12627349,8839420,3787929,20,Only airports with verified GA terminal matches are included.
+2020,Northern Territory,1035873,988449,47424,4,Only airports with verified GA terminal matches are included.
+2020,Queensland,13971361,12256105,1715256,18,Only airports with verified GA terminal matches are included.
+2020,South Australia,2758120,2517161,240959,6,Only airports with verified GA terminal matches are included.
+2020,Tasmania,1421757,1421757,0,5,Only airports with verified GA terminal matches are included.
+2020,Victoria,8984998,6550547,2434451,5,Only airports with verified GA terminal matches are included.
+2020,Western Australia,5330509,4349878,980631,14,Only airports with verified GA terminal matches are included.
+2021,Australian Capital Territory,1023276,1023139,137,1,Only airports with verified GA terminal matches are included.
+2021,New South Wales,9599278,8869458,729820,20,Only airports with verified GA terminal matches are included.
+2021,Northern Territory,1448986,1446236,2750,4,Only airports with verified GA terminal matches are included.
+2021,Queensland,16363292,16068047,295245,18,Only airports with verified GA terminal matches are included.
+2021,South Australia,3320322,3284634,35688,6,Only airports with verified GA terminal matches are included.
+2021,Tasmania,1987025,1982545,4480,5,Only airports with verified GA terminal matches are included.
+2021,Victoria,7263193,6866603,396590,5,Only airports with verified GA terminal matches are included.
+2021,Western Australia,6298461,6207810,90651,14,Only airports with verified GA terminal matches are included.
+2022,Australian Capital Territory,2437607,2437607,0,1,Only airports with verified GA terminal matches are included.
+2022,New South Wales,32277147,24092885,8184262,20,Only airports with verified GA terminal matches are included.
+2022,Northern Territory,2285844,2158075,127769,4,Only airports with verified GA terminal matches are included.
+2022,Queensland,32658294,29594601,3063693,18,Only airports with verified GA terminal matches are included.
+2022,South Australia,6750959,6340982,409977,6,Only airports with verified GA terminal matches are included.
+2022,Tasmania,3682905,3668378,14527,5,Only airports with verified GA terminal matches are included.
+2022,Victoria,25946831,20539304,5407527,5,Only airports with verified GA terminal matches are included.
+2022,Western Australia,11101753,9230750,1871003,15,Only airports with verified GA terminal matches are included.
+2023,Australian Capital Territory,2769430,2757350,12080,1,Only airports with verified GA terminal matches are included.
+2023,New South Wales,42314171,27672427,14641744,20,Only airports with verified GA terminal matches are included.
+2023,Northern Territory,2453258,2285534,167724,4,Only airports with verified GA terminal matches are included.
+2023,Queensland,39068872,32913204,6155668,18,Only airports with verified GA terminal matches are included.
+2023,South Australia,8337385,7456271,881114,6,Only airports with verified GA terminal matches are included.
+2023,Tasmania,4224017,4192102,31915,5,Only airports with verified GA terminal matches are included.
+2023,Victoria,33517608,23515649,10001959,5,Only airports with verified GA terminal matches are included.
+2023,Western Australia,15115406,11229570,3885836,15,Only airports with verified GA terminal matches are included.
+2024,Australian Capital Territory,2833119,2795829,37290,1,Only airports with verified GA terminal matches are included.
+2024,New South Wales,45030046,28624280,16405766,20,Only airports with verified GA terminal matches are included.
+2024,Northern Territory,2576811,2365571,211240,4,Only airports with verified GA terminal matches are included.
+2024,Queensland,41230573,33813850,7416723,18,Only airports with verified GA terminal matches are included.
+2024,South Australia,8685408,7720965,964443,6,Only airports with verified GA terminal matches are included.
+2024,Tasmania,4412784,4392492,20292,5,Only airports with verified GA terminal matches are included.
+2024,Victoria,35772756,24276720,11496036,5,Only airports with verified GA terminal matches are included.
+2024,Western Australia,16738475,11932440,4806035,15,Only airports with verified GA terminal matches are included.
+2025,Australian Capital Territory,2793622,2762774,30848,1,Only airports with verified GA terminal matches are included.
+2025,New South Wales,46108744,28838281,17270463,20,Only airports with verified GA terminal matches are included.
+2025,Northern Territory,2718142,2436625,281517,4,Only airports with verified GA terminal matches are included.
+2025,Queensland,42651388,34242847,8408541,18,Only airports with verified GA terminal matches are included.
+2025,South Australia,8975141,7819692,1155449,6,Only airports with verified GA terminal matches are included.
+2025,Tasmania,4618772,4599192,19580,5,Only airports with verified GA terminal matches are included.
+2025,Victoria,36930157,24656828,12273329,5,Only airports with verified GA terminal matches are included.
+2025,Western Australia,17957756,12556180,5401576,15,Only airports with verified GA terminal matches are included.

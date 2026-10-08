@@ -1,0 +1,11 @@
+{
+  "airport_activity_rows": 3872,
+  "airport_crosswalk": {
+    "matched": 74,
+    "unmatched": 26
+  },
+  "route_rows": 10507,
+  "route_rows_with_both_endpoints": 10349,
+  "route_rows_with_missing_or_suppressed_passengers": 1871,
+  "state_boundary_features": 8
+}

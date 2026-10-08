@@ -1,0 +1,636 @@
+/* =========================================================
+   COLOUR SYSTEM
+========================================================= */
+
+:root {
+  --ink: #17202f;
+  --muted: #526071;
+  --paper: #f6f3ec;
+  --panel: #ffffff;
+  --line: #d9d3c6;
+
+  --accent: #0d7c86;
+  --accent-dark: #07545b;
+  --warm: #df7f40;
+
+  --negative: #b94d57;
+  --positive: #1c7281;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+body {
+  margin: 0;
+
+  background: var(--paper);
+  color: var(--ink);
+
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+.server-warning {
+  margin: 0;
+  padding: 0.8rem 1.25rem;
+
+  background: #fff0cf;
+  color: #5c3d06;
+
+  border-bottom: 1px solid #e6c47d;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   PAGE WIDTH
+========================================================= */
+
+/* Header stays centred and controlled */
+.site-header {
+  width: min(1400px, calc(100% - 5rem));
+  margin: 0 auto;
+}
+
+/* Main content is wider for visualisations */
+main {
+  width: min(1450px, calc(100% - 5rem));
+  margin: 0 auto;
+}
+
+/* Footer follows main content width */
+footer {
+  width: min(1450px, calc(100% - 5rem));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+  /* Extra breathing room above title */
+  padding: 6rem 0 3rem;
+
+  border-bottom: 1px solid var(--line);
+
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+
+  color: var(--accent-dark);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+
+/* Main title */
+h1 {
+  width: 100%;
+  max-width: none;
+
+  margin: 0 auto 1rem;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.5rem, 6.5vw, 7rem);
+  font-weight: 500;
+
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+
+/* Subtitle */
+.lede {
+  max-width: 950px;
+
+  margin: 0 auto 2rem;
+
+  color: var(--muted);
+
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 1.5rem;
+}
+
+
+/* Button */
+nav a {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 20px;
+
+  background: var(--panel);
+  color: var(--ink);
+
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+
+/* Hover */
+nav a:hover {
+  background: var(--warm);
+  border-color: var(--warm);
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 16px rgba(23, 32, 47, 0.10);
+}
+
+
+/* Click */
+nav a:active {
+  transform: translateY(0);
+
+  box-shadow: none;
+}
+
+
+/* Keyboard accessibility */
+nav a:focus-visible {
+  outline: 3px solid rgba(13, 124, 134, 0.25);
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   STORY SECTIONS
+========================================================= */
+
+.story-section {
+  /* Large gaps make each chapter read as one clear step in the story. */
+  padding: 7rem 0;
+
+  border-bottom: 1px solid var(--line);
+
+  scroll-margin-top: 2rem;
+}
+
+
+/* Section heading/text area */
+.section-copy {
+  max-width: 900px;
+
+  margin-bottom: 4rem;
+}
+
+
+.section-number {
+  margin: 0 0 0.75rem;
+
+  color: var(--accent-dark);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+
+/* Section heading */
+h2 {
+  max-width: 900px;
+
+  margin-bottom: 0.8rem;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 4vw, 3.7rem);
+  font-weight: 500;
+
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+
+.section-copy p:last-child {
+  max-width: 800px;
+
+  margin-bottom: 0;
+
+  color: var(--muted);
+
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   VISUALISATION LAYOUT
+========================================================= */
+
+.visual-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: 4.5rem;
+  row-gap: 5.5rem;
+  align-items: start;
+}
+
+
+.visual-panel {
+  min-width: 0;
+}
+
+/* A quiet divider groups a chart's title, note and graphic without boxing it in. */
+.visual-panel h3::before {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  margin-bottom: 1rem;
+  background: var(--accent);
+}
+
+.full-panel {
+  grid-column: 1 / -1;
+}
+
+
+.visual-panel h3 {
+  margin-bottom: 0.3rem;
+
+  color: var(--ink);
+
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+
+.chart-note {
+  max-width: 700px;
+
+  margin-bottom: 1.4rem;
+
+  color: var(--muted);
+
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+/* A restrained control makes the national demand chart explorable. */
+.chart-control {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 0.6rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.chart-control select {
+  appearance: auto;
+  border: 1px solid #aeb8b4;
+  border-radius: 4px;
+  background: #fffdf8;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  padding: 0.45rem 0.6rem;
+}
+
+.interactive-note {
+  margin-bottom: 0.25rem;
+}
+
+.chart-insight {
+  max-width: 700px;
+  margin: 0.5rem 0 0;
+  padding-left: 0.85rem;
+  border-left: 3px solid var(--accent);
+  color: var(--ink);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+
+/* The proportional-symbol map is the main geographic overview. */
+.map-hero {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.map-hero .visual {
+  min-height: 500px;
+}
+
+.map-secondary-grid {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  column-gap: 3rem;
+  margin-top: 6rem;
+}
+
+/* Separate the airport comparisons into three easy-to-scan groups. */
+#airport-change .visual-grid + .visual-grid,
+#airport-change .visual-grid + .visual-panel {
+  margin-top: 6rem;
+}
+
+#routes .visual-grid {
+  margin-top: 1rem;
+}
+
+
+/* =========================================================
+   VEGA / VEGA-LITE
+========================================================= */
+
+.visual {
+  width: 100%;
+
+  min-height: 390px;
+
+  padding-top: 0.5rem;
+
+  overflow: visible;
+}
+
+
+.full-width {
+  width: 100%;
+
+  min-height: 500px;
+}
+
+/* A little space around a single full-width chart stops it feeling crowded. */
+#national-line {
+  padding-top: 1rem;
+}
+
+
+/* Allow Vega to occupy available space */
+.vega-embed {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+.vega-embed > div {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+.vega-embed svg {
+  display: block;
+
+  max-width: 100%;
+}
+
+
+/* Smooth interaction with visualisations */
+.vega-embed canvas,
+.vega-embed svg {
+  transition: opacity 0.2s ease;
+}
+
+
+/* =========================================================
+   SOURCES
+========================================================= */
+
+.sources {
+  color: var(--muted);
+
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+
+.sources p {
+  max-width: 900px;
+}
+
+.sources .byline {
+  margin: 2rem 0 0.4rem;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.source-links a {
+  color: var(--accent-dark);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  padding: 2.5rem 0 4.5rem;
+
+  color: var(--muted);
+
+  font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .site-header,
+  main,
+  footer {
+    width: calc(100% - 3rem);
+  }
+
+  .site-header {
+    padding-top: 5rem;
+  }
+
+  h1 {
+    font-size: clamp(3.5rem, 9vw, 6rem);
+  }
+
+  .visual-grid {
+    column-gap: 2.5rem;
+    row-gap: 4rem;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .site-header,
+  main,
+  footer {
+    width: calc(100% - 1.5rem);
+  }
+
+
+  /* Header */
+
+  .site-header {
+    padding: 3.5rem 0 2rem;
+  }
+
+
+  h1 {
+    font-size: clamp(3rem, 14vw, 5rem);
+    line-height: 0.98;
+  }
+
+
+  .lede {
+    max-width: 600px;
+
+    font-size: 1rem;
+  }
+
+
+  /* Navigation */
+
+  nav {
+    gap: 8px;
+  }
+
+
+  nav a {
+    padding: 9px 14px;
+
+    font-size: 0.88rem;
+  }
+
+
+  /* Sections */
+
+  .story-section {
+    padding: 4.5rem 0;
+  }
+
+
+  .section-copy {
+    margin-bottom: 2rem;
+  }
+
+
+  h2 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+
+  /* Charts become single column */
+
+  .visual-grid {
+    grid-template-columns: 1fr;
+
+    gap: 4rem;
+  }
+
+
+  .map-secondary-grid {
+    grid-template-columns: 1fr;
+    margin-top: 4.5rem;
+  }
+
+
+  .visual,
+  .full-width {
+    min-height: 340px;
+  }
+
+  .chart-control {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  nav a,
+  .vega-embed canvas,
+  .vega-embed svg {
+    transition: none;
+  }
+
+}

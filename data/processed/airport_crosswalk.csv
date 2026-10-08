@@ -1,0 +1,101 @@
+airport_name,airport_code,ga_terminal_name,state,longitude,latitude,terminal_count,match_status
+ADELAIDE,ADL,Adelaide,South Australia,138.537544,-34.938622,1,normalised_exact
+ALBANY,ALH,Albany,Western Australia,117.803521,-34.944963,1,normalised_exact
+ALBURY,ABX,Albury,New South Wales,146.954549,-36.069329,1,normalised_exact
+ALICE SPRINGS,ASP,Alice Springs,Northern Territory,133.903062,-23.801906,1,normalised_exact
+ARMIDALE,ARM,Armidale,New South Wales,151.614987,-30.53216,1,normalised_exact
+AURUKUN,,,,,,,unmatched
+AYERS ROCK,AYQ,Ayers Rock,Northern Territory,130.976729,-25.190777,1,normalised_exact
+BALLINA,BNK,Ballina,New South Wales,153.556273,-28.837454,1,normalised_exact
+BAMAGA,,,,,,,unmatched
+BATHURST ISLAND,BHS,Bathurst,New South Wales,149.655038,-33.413787,1,verified_alias
+BENDIGO,BXG,Bendigo,Victoria,144.326261,-36.736971,1,normalised_exact
+BRISBANE,BNE,Brisbane,Queensland,153.115012,-27.394336,2,normalised_exact
+BROKEN HILL,BHQ,Broken Hill,New South Wales,141.470277,-31.998859,1,normalised_exact
+BROOME,BME,Broome International,Western Australia,122.23393,-17.952596,1,normalised_exact
+BUNDABERG,BDB,Bundaberg,Queensland,152.321293,-24.898821,1,normalised_exact
+BURNIE,BWT,Burnie,Tasmania,145.725642,-40.993506,1,normalised_exact
+BUSSELTON,BQB,Busselton,Western Australia,115.398937,-33.685898,1,normalised_exact
+CAIRNS,CNS,Cairns International,Queensland,145.754583,-16.874833,2,normalised_exact
+CANBERRA,CNB,Canberra,Australian Capital Territory,149.191085,-35.307482,1,normalised_exact
+CARNARVON,,,,,,,unmatched
+CEDUNA,CED,Ceduna,South Australia,133.701765,-32.123945,1,normalised_exact
+CHARLEVILLE,CTL,Charleville,Queensland,146.258833,-26.413261,1,normalised_exact
+CHRISTMAS ISLAND,XCH,Christmas Island,Western Australia,105.688702,-10.451034,1,normalised_exact
+CLONCURRY,,,,,,,unmatched
+COBAR,CAZ,Cobar,New South Wales,145.79756,-31.537547,1,normalised_exact
+COCOS ISLAND,CCK,Cocos (Keeling) Island,Western Australia,96.829199,-12.187989,1,normalised_exact
+COFFS HARBOUR,CFS,Coffs Harbour,New South Wales,153.115683,-30.322966,1,normalised_exact
+COOKTOWN,,,,,,,unmatched
+DARWIN,DRW,Darwin International,Northern Territory,130.877402,-12.408088,1,normalised_exact
+DEVONPORT,DPO,Devonport,Tasmania,146.427648,-41.171854,1,normalised_exact
+DOOMADGEE,,,,,,,unmatched
+DUBBO,DBO,Dubbo,New South Wales,148.569971,-32.218733,1,normalised_exact
+EDWARD RIVER,,,,,,,unmatched
+ELCHO ISLAND,,,,,,,unmatched
+EMERALD,EMD,Emerald,Queensland,148.174571,-23.568855,1,normalised_exact
+ESPERANCE,EPR,Esperance,Western Australia,121.830437,-33.682722,1,normalised_exact
+ESSENDON FIELDS,MEB,Melbourne-Essendon,Victoria,144.897341,-37.727408,1,verified_alias
+FLINDERS ISLAND,,,,,,,unmatched
+GERALDTON,GET,Geraldton,Western Australia,114.702432,-28.796043,1,normalised_exact
+GLADSTONE,GLT,Gladstone,Queensland,151.223797,-23.871397,1,normalised_exact
+GOLD COAST,OOL,Gold Coast,Queensland,153.512467,-28.166038,1,normalised_exact
+GOVE,GOV,Gove,Northern Territory,136.822422,-12.269843,1,normalised_exact
+GRIFFITH,GFF,Griffith,New South Wales,146.06246,-34.25527,1,normalised_exact
+GROOTE EYLANDT,,,,,,,unmatched
+HAMILTON ISLAND,HTI,Hamilton Island,Queensland,148.948958,-20.3518,1,normalised_exact
+HERVEY BAY,HVB,Hervey Bay,Queensland,152.885275,-25.320059,1,normalised_exact
+HOBART,HBA,Hobart - Terminal 2,Tasmania,147.505126,-42.836777,2,normalised_exact
+KALGOORLIE,KGI,Kalgoorlie-Boulder,Western Australia,121.45802,-30.78547,1,verified_alias
+KARRATHA,KTA,Karratha,Western Australia,116.770071,-20.708567,1,normalised_exact
+KING ISLAND,KNS,King Island,Tasmania,143.881891,-39.879636,1,normalised_exact
+KINGSCOTE,KGC,Kingscote,South Australia,137.523358,-35.709453,1,normalised_exact
+KOWANYAMA,,,,,,,unmatched
+KUNUNURRA,KNX,Kununurra,Western Australia,128.71272,-15.783824,1,normalised_exact
+LAUNCESTON,LST,Launceston,Tasmania,147.205617,-41.543393,1,normalised_exact
+LEARMONTH,LEA,Learmonth,Western Australia,114.094002,-22.23973,1,normalised_exact
+LOCKHART RIVER,,,,,,,unmatched
+LONGREACH,LRE,Longreach,Queensland,144.271581,-23.43928,1,normalised_exact
+LORD HOWE ISLAND,LDH,Lord Howe Island,New South Wales,159.078161,-31.540669,1,normalised_exact
+MACKAY,MKY,Mackay,Queensland,149.181837,-21.176178,1,normalised_exact
+MANINGRIDA,,,,,,,unmatched
+MCARTHUR RIVER,,,,,,,unmatched
+MELBOURNE,MEL,Melbourne - Terminals 1 2 and 3,Victoria,144.849892,-37.670539,2,normalised_exact
+MERIMBULA,MIM,Merimbula,New South Wales,149.902139,-36.909626,1,normalised_exact
+MILDURA,MQL,Mildura,Victoria,142.084637,-34.230654,1,normalised_exact
+MILES,,,,,,,unmatched
+MILINGIMBI,,,,,,,unmatched
+MOORABBIN,MBW,Melbourne-Moorabbin,Victoria,145.095218,-37.976188,1,verified_alias
+MORANBAH,,,,,,,unmatched
+MOREE,MRZ,Moree,New South Wales,149.850005,-29.496367,1,normalised_exact
+MORNINGTON ISLAND,,,,,,,unmatched
+MORUYA,MYA,Moruya,New South Wales,150.147014,-35.902526,1,normalised_exact
+MOUNT GAMBIER,MGB,Mount Gambier,South Australia,140.7828,-37.744301,1,normalised_exact
+MOUNT ISA,ISA,Mount Isa,Queensland,139.491456,-20.667787,1,normalised_exact
+NARRABRI,NAA,Narrabri,New South Wales,149.82877,-30.318748,1,normalised_exact
+NEWCASTLE,NTL,Williamtown,New South Wales,151.83996,-32.804009,1,verified_alias
+NEWMAN,ZNE,Newman,Western Australia,119.801737,-23.416512,1,normalised_exact
+NORFOLK ISLAND,NLK,Norfolk Island,New South Wales,167.943487,-29.035207,1,normalised_exact
+OLYMPIC DAM,,,,,,,unmatched
+ONSLOW,,,,,,,unmatched
+ORANGE,,,,,,,unmatched
+PALM ISLAND,,,,,,,unmatched
+PARABURDOO,PBO,Paraburdoo,Western Australia,117.747908,-23.173702,1,normalised_exact
+PARKES,,,,,,,unmatched
+PERTH,PER,Perth - Terminal 1,Western Australia,115.967458,-31.937159,2,normalised_exact
+PORT HEDLAND,PHE,Port Hedland,Western Australia,118.631651,-20.378134,1,normalised_exact
+PORT LINCOLN,PLO,Port Lincoln,South Australia,135.874556,-34.603336,1,normalised_exact
+PORT MACQUARIE,PQQ,Port Macquarie,New South Wales,152.867267,-31.431309,1,normalised_exact
+PROSERPINE,PPP,Proserpine,Queensland,148.551861,-20.48919,1,normalised_exact
+ROCKHAMPTON,ROK,Rockhampton,Queensland,150.478213,-23.378049,1,normalised_exact
+ROMA,RMA,Roma,Queensland,148.779027,-26.543796,1,normalised_exact
+SUNSHINE COAST,MCY,Sunshine Coast,Queensland,153.088812,-26.605268,1,normalised_exact
+SYDNEY,SYD,Sydney (Kingsford Smith) - Terminal 1,New South Wales,151.174714,-33.93431,3,normalised_exact
+TAMWORTH,TMW,Tamworth,New South Wales,150.848465,-31.084299,1,normalised_exact
+THURSDAY ISLAND,,,,,,,unmatched
+TOOWOOMBA WELLCAMP,,,,,,,unmatched
+TOWNSVILLE,TSV,Townsville,Queensland,146.770627,-19.256245,1,normalised_exact
+WAGGA WAGGA,WGA,Wagga Wagga,New South Wales,147.461988,-35.159135,1,normalised_exact
+WEIPA,WEI,Weipa,Queensland,141.924093,-12.6807,1,normalised_exact
+WHYALLA,WYA,Whyalla,South Australia,137.521832,-33.052365,1,normalised_exact
+WOLLONGONG,,,,,,,unmatched

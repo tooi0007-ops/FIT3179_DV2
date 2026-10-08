@@ -1,0 +1,652 @@
+route,month,pre_covid_average,recovery_average,recovery_percent,passengers_2025
+Albury - Sydney,1,15581.0,10745.0,-31.04,155808
+Albury - Sydney,2,15561.8,11790.33,-24.24,155808
+Albury - Sydney,3,19461.6,14507.0,-25.46,155808
+Albury - Sydney,4,18687.2,12903.67,-30.95,155808
+Albury - Sydney,5,19107.2,13789.67,-27.83,155808
+Albury - Sydney,6,17944.6,13215.0,-26.36,155808
+Albury - Sydney,7,20119.0,14241.0,-29.22,155808
+Albury - Sydney,8,20560.4,14644.0,-28.78,155808
+Albury - Sydney,9,19694.0,13658.0,-30.65,155808
+Albury - Sydney,10,20336.6,14183.67,-30.26,155808
+Albury - Sydney,11,19520.2,14381.33,-26.33,155808
+Albury - Sydney,12,17950.6,12882.67,-28.23,155808
+Adelaide - Alice Springs,4,11148.0,9664.0,-13.31,103510
+Adelaide - Alice Springs,5,10102.8,9505.67,-5.91,103510
+Adelaide - Alice Springs,6,10750.0,10204.33,-5.08,103510
+Adelaide - Alice Springs,7,12712.8,11074.0,-12.89,103510
+Adelaide - Alice Springs,8,11251.4,9832.33,-12.61,103510
+Adelaide - Alice Springs,9,11329.6,9677.0,-14.59,103510
+Adelaide - Alice Springs,10,12113.4,9341.67,-22.88,103510
+Adelaide - Alice Springs,12,9681.4,7763.67,-19.81,103510
+Adelaide - Brisbane,1,70020.2,68839.33,-1.69,874879
+Adelaide - Brisbane,2,57814.0,61931.33,7.12,874879
+Adelaide - Brisbane,3,69409.8,69790.33,0.55,874879
+Adelaide - Brisbane,4,70842.4,71289.67,0.63,874879
+Adelaide - Brisbane,5,65771.2,67805.0,3.09,874879
+Adelaide - Brisbane,6,61346.8,65411.33,6.63,874879
+Adelaide - Brisbane,7,75667.2,74017.67,-2.18,874879
+Adelaide - Brisbane,8,68564.6,70814.0,3.28,874879
+Adelaide - Brisbane,9,70744.0,69954.67,-1.12,874879
+Adelaide - Brisbane,10,79903.4,78410.33,-1.87,874879
+Adelaide - Brisbane,11,73279.8,79087.33,7.93,874879
+Adelaide - Brisbane,12,75558.6,79112.0,4.7,874879
+Adelaide - Canberra,1,11402.0,11258.67,-1.26,196554
+Adelaide - Canberra,2,13806.4,14808.67,7.26,196554
+Adelaide - Canberra,3,16954.2,17180.33,1.33,196554
+Adelaide - Canberra,4,15311.6,15841.0,3.46,196554
+Adelaide - Canberra,5,15027.0,16371.33,8.95,196554
+Adelaide - Canberra,6,14361.8,15623.67,8.79,196554
+Adelaide - Canberra,7,14940.6,15547.0,4.06,196554
+Adelaide - Canberra,8,15804.8,16109.0,1.92,196554
+Adelaide - Canberra,9,16419.8,16947.0,3.21,196554
+Adelaide - Canberra,10,16961.8,18192.67,7.26,196554
+Adelaide - Canberra,11,17175.2,18737.33,9.1,196554
+Adelaide - Canberra,12,15084.4,15419.33,2.22,196554
+Adelaide - Melbourne,1,192484.2,185619.0,-3.57,2395818
+Adelaide - Melbourne,2,187056.2,180150.0,-3.69,2395818
+Adelaide - Melbourne,3,214487.4,206962.33,-3.51,2395818
+Adelaide - Melbourne,4,208941.2,201449.67,-3.59,2395818
+Adelaide - Melbourne,5,197009.0,192096.67,-2.49,2395818
+Adelaide - Melbourne,6,187059.4,177736.33,-4.98,2395818
+Adelaide - Melbourne,7,215039.0,193655.0,-9.94,2395818
+Adelaide - Melbourne,8,199457.2,192904.0,-3.29,2395818
+Adelaide - Melbourne,9,199793.4,189865.0,-4.97,2395818
+Adelaide - Melbourne,10,219015.6,209113.33,-4.52,2395818
+Adelaide - Melbourne,11,212185.4,208744.0,-1.62,2395818
+Adelaide - Melbourne,12,206976.8,198671.67,-4.01,2395818
+Adelaide - Gold Coast,1,20677.6,26334.67,27.36,277840
+Adelaide - Gold Coast,2,15204.6,18971.0,24.77,277840
+Adelaide - Gold Coast,3,17980.4,20946.67,16.5,277840
+Adelaide - Gold Coast,4,18365.4,22739.0,23.81,277840
+Adelaide - Gold Coast,5,16930.8,20940.0,23.68,277840
+Adelaide - Gold Coast,6,15153.4,19840.67,30.93,277840
+Adelaide - Gold Coast,7,19583.2,23990.67,22.51,277840
+Adelaide - Gold Coast,8,18240.8,22282.67,22.16,277840
+Adelaide - Gold Coast,9,18828.4,23083.0,22.6,277840
+Adelaide - Gold Coast,10,20566.8,24870.67,20.93,277840
+Adelaide - Gold Coast,12,19372.6,26252.67,35.51,277840
+Adelaide - Perth,1,53717.4,58729.0,9.33,722476
+Adelaide - Perth,2,46942.0,51552.33,9.82,722476
+Adelaide - Perth,3,52983.6,57639.33,8.79,722476
+Adelaide - Perth,4,53596.4,61531.67,14.81,722476
+Adelaide - Perth,5,50525.8,54236.67,7.34,722476
+Adelaide - Perth,6,45840.6,49265.33,7.47,722476
+Adelaide - Perth,7,53508.0,55913.67,4.5,722476
+Adelaide - Perth,8,49899.4,55266.0,10.75,722476
+Adelaide - Perth,9,51135.2,57694.67,12.83,722476
+Adelaide - Perth,10,57243.4,63925.67,11.67,722476
+Adelaide - Perth,11,54384.4,62294.67,14.55,722476
+Adelaide - Perth,12,57060.0,63410.0,11.13,722476
+Adelaide - Port Lincoln,1,14654.2,14056.67,-4.08,167463
+Adelaide - Port Lincoln,2,14132.0,14098.33,-0.24,167463
+Adelaide - Port Lincoln,3,16269.0,15720.33,-3.37,167463
+Adelaide - Port Lincoln,4,14842.6,14473.0,-2.49,167463
+Adelaide - Port Lincoln,5,14221.8,14207.33,-0.1,167463
+Adelaide - Port Lincoln,6,13575.6,13351.0,-1.65,167463
+Adelaide - Port Lincoln,7,13724.0,13244.67,-3.49,167463
+Adelaide - Port Lincoln,8,13958.2,13500.67,-3.28,167463
+Adelaide - Port Lincoln,9,14129.8,13954.0,-1.24,167463
+Adelaide - Port Lincoln,10,15345.8,14939.0,-2.65,167463
+Adelaide - Port Lincoln,12,15426.8,14226.67,-7.78,167463
+Adelaide - Sydney,1,160194.8,148049.67,-7.58,1904858
+Adelaide - Sydney,2,143451.6,135635.33,-5.45,1904858
+Adelaide - Sydney,3,167906.8,159632.0,-4.93,1904858
+Adelaide - Sydney,4,162168.6,161158.67,-0.62,1904858
+Adelaide - Sydney,5,148267.6,144899.67,-2.27,1904858
+Adelaide - Sydney,6,136767.0,134455.0,-1.69,1904858
+Adelaide - Sydney,7,157824.6,153540.33,-2.71,1904858
+Adelaide - Sydney,8,147191.0,144657.67,-1.72,1904858
+Adelaide - Sydney,9,152298.0,153302.0,0.66,1904858
+Adelaide - Sydney,10,170983.6,175534.33,2.66,1904858
+Adelaide - Sydney,11,164837.0,166399.0,0.95,1904858
+Adelaide - Sydney,12,165531.8,166698.0,0.7,1904858
+Brisbane - Bundaberg,2,11720.4,10351.33,-11.68,139694
+Brisbane - Bundaberg,3,13787.2,11240.33,-18.47,139694
+Brisbane - Bundaberg,4,13551.8,10706.67,-20.99,139694
+Brisbane - Bundaberg,5,13901.0,11996.0,-13.7,139694
+Brisbane - Bundaberg,6,13569.0,11655.67,-14.1,139694
+Brisbane - Bundaberg,7,14302.8,12028.67,-15.9,139694
+Brisbane - Bundaberg,8,14267.2,12241.67,-14.2,139694
+Brisbane - Bundaberg,9,14201.6,12174.33,-14.27,139694
+Brisbane - Bundaberg,10,14744.2,12659.33,-14.14,139694
+Brisbane - Bundaberg,12,14011.6,10778.33,-23.08,139694
+Broome - Perth,1,20608.6,22631.67,9.82,374285
+Broome - Perth,2,16696.4,18110.33,8.47,374285
+Broome - Perth,3,21878.2,24528.33,12.11,374285
+Broome - Perth,4,25913.8,29346.67,13.25,374285
+Broome - Perth,5,27184.6,33665.0,23.84,374285
+Broome - Perth,6,29182.2,35293.33,20.94,374285
+Broome - Perth,7,33729.8,39081.33,15.87,374285
+Broome - Perth,8,32309.2,38357.67,18.72,374285
+Broome - Perth,9,30759.4,36335.33,18.13,374285
+Broome - Perth,10,30559.8,35198.67,15.18,374285
+Broome - Perth,11,24099.6,27020.0,12.12,374285
+Broome - Perth,12,22892.2,24787.33,8.28,374285
+Brisbane - Canberra,1,44266.4,44731.0,1.05,651938
+Brisbane - Canberra,2,40261.4,45431.33,12.84,651938
+Brisbane - Canberra,3,48690.8,50107.0,2.91,651938
+Brisbane - Canberra,4,49466.6,50736.33,2.57,651938
+Brisbane - Canberra,5,48571.0,52166.33,7.4,651938
+Brisbane - Canberra,6,48878.4,52650.33,7.72,651938
+Brisbane - Canberra,7,56682.4,58660.0,3.49,651938
+Brisbane - Canberra,8,54790.0,58619.0,6.99,651938
+Brisbane - Canberra,9,55126.8,56700.33,2.85,651938
+Brisbane - Canberra,10,55644.6,58086.33,4.39,651938
+Brisbane - Canberra,11,51948.4,58473.33,12.56,651938
+Brisbane - Canberra,12,52086.6,53846.0,3.38,651938
+Brisbane - Cairns,1,106686.8,96187.33,-9.84,1313044
+Brisbane - Cairns,2,98697.2,85791.67,-13.08,1313044
+Brisbane - Cairns,3,104668.8,92324.0,-11.79,1313044
+Brisbane - Cairns,4,107862.2,104633.67,-2.99,1313044
+Brisbane - Cairns,5,104224.0,111416.67,6.9,1313044
+Brisbane - Cairns,6,106729.6,115037.0,7.78,1313044
+Brisbane - Cairns,7,124145.0,120560.0,-2.89,1313044
+Brisbane - Cairns,8,117869.2,117465.33,-0.34,1313044
+Brisbane - Cairns,9,111901.2,115586.33,3.29,1313044
+Brisbane - Cairns,10,118349.0,117083.33,-1.07,1313044
+Brisbane - Cairns,11,112479.2,108410.0,-3.62,1313044
+Brisbane - Cairns,12,115204.2,102943.33,-10.64,1313044
+Brisbane - Darwin,1,30269.4,24431.0,-19.29,359809
+Brisbane - Darwin,2,22914.4,19400.33,-15.34,359809
+Brisbane - Darwin,3,27506.0,22824.0,-17.02,359809
+Brisbane - Darwin,4,31624.8,25787.67,-18.46,359809
+Brisbane - Darwin,5,32005.2,29487.0,-7.87,359809
+Brisbane - Darwin,6,36349.6,34565.67,-4.91,359809
+Brisbane - Darwin,7,41986.0,37892.33,-9.75,359809
+Brisbane - Darwin,8,38264.0,34064.33,-10.98,359809
+Brisbane - Darwin,9,35021.2,30685.0,-12.38,359809
+Brisbane - Darwin,10,33175.4,28747.67,-13.35,359809
+Brisbane - Darwin,11,28023.2,22524.0,-19.62,359809
+Brisbane - Darwin,12,31131.0,25767.0,-17.23,359809
+Brisbane - Emerald,1,14869.0,13706.67,-7.82,189843
+Brisbane - Emerald,2,14561.6,14472.0,-0.62,189843
+Brisbane - Emerald,3,17358.2,15526.0,-10.56,189843
+Brisbane - Emerald,4,16299.6,14950.0,-8.28,189843
+Brisbane - Emerald,5,17299.6,16089.0,-7.0,189843
+Brisbane - Emerald,6,17189.4,15830.33,-7.91,189843
+Brisbane - Emerald,7,18134.0,16419.33,-9.46,189843
+Brisbane - Emerald,8,17727.8,16514.67,-6.84,189843
+Brisbane - Emerald,9,17030.6,16154.0,-5.15,189843
+Brisbane - Emerald,10,17948.4,16919.0,-5.74,189843
+Brisbane - Emerald,11,17188.4,16044.0,-6.66,189843
+Brisbane - Emerald,12,15504.0,14431.67,-6.92,189843
+Brisbane - Gladstone,1,24223.0,15657.33,-35.36,218139
+Brisbane - Gladstone,2,22961.8,16599.33,-27.71,218139
+Brisbane - Gladstone,3,26822.2,18028.67,-32.78,218139
+Brisbane - Gladstone,4,26941.8,17304.67,-35.77,218139
+Brisbane - Gladstone,5,25524.8,19042.67,-25.4,218139
+Brisbane - Gladstone,6,24972.0,18432.0,-26.19,218139
+Brisbane - Gladstone,7,26623.8,18972.0,-28.74,218139
+Brisbane - Gladstone,8,25919.0,19198.0,-25.93,218139
+Brisbane - Gladstone,9,25155.8,19056.33,-24.25,218139
+Brisbane - Gladstone,10,25950.6,20156.67,-22.33,218139
+Brisbane - Gladstone,11,25031.0,19392.0,-22.53,218139
+Brisbane - Gladstone,12,23599.4,17013.0,-27.91,218139
+Brisbane - Hobart,1,21324.4,32018.67,50.15,321711
+Brisbane - Hobart,2,17087.6,23674.33,38.55,321711
+Brisbane - Hobart,3,18303.4,25838.0,41.17,321711
+Brisbane - Hobart,4,18256.8,26073.67,42.82,321711
+Brisbane - Hobart,5,14535.0,21336.33,46.79,321711
+Brisbane - Hobart,6,14919.6,23532.33,57.73,321711
+Brisbane - Hobart,7,17815.6,24090.0,35.22,321711
+Brisbane - Hobart,8,16316.4,22180.67,35.94,321711
+Brisbane - Hobart,9,17789.4,23632.67,32.85,321711
+Brisbane - Hobart,10,19619.8,25778.67,31.39,321711
+Brisbane - Hobart,11,18977.8,25361.33,33.64,321711
+Brisbane - Hobart,12,22465.2,34012.67,51.4,321711
+Brisbane - Hamilton Island,1,10928.4,13447.33,23.05,168731
+Brisbane - Hamilton Island,2,11092.6,10616.67,-4.29,168731
+Brisbane - Hamilton Island,3,10837.6,12318.67,13.67,168731
+Brisbane - Hamilton Island,4,9972.6,13593.33,36.31,168731
+Brisbane - Hamilton Island,5,10225.6,12147.0,18.79,168731
+Brisbane - Hamilton Island,6,9728.8,12202.0,25.42,168731
+Brisbane - Hamilton Island,7,11130.4,13367.33,20.1,168731
+Brisbane - Hamilton Island,8,11429.2,12920.33,13.05,168731
+Brisbane - Hamilton Island,9,11992.6,15530.67,29.5,168731
+Brisbane - Hamilton Island,10,12142.8,16018.0,31.91,168731
+Brisbane - Hamilton Island,12,11978.0,17312.0,44.53,168731
+Brisbane - Mount Isa,1,9014.6,10326.67,14.55,150887
+Brisbane - Mount Isa,2,8899.0,10362.67,16.45,150887
+Brisbane - Mount Isa,3,10573.6,11686.67,10.53,150887
+Brisbane - Mount Isa,4,10320.6,11515.67,11.58,150887
+Brisbane - Mount Isa,5,11111.2,12763.33,14.87,150887
+Brisbane - Mount Isa,6,10900.8,12811.33,17.53,150887
+Brisbane - Mount Isa,7,11780.8,13161.33,11.72,150887
+Brisbane - Mount Isa,8,12230.0,14221.0,16.28,150887
+Brisbane - Mount Isa,9,11290.2,13415.33,18.82,150887
+Brisbane - Mount Isa,10,11571.6,13358.0,15.44,150887
+Brisbane - Mount Isa,11,11152.0,12720.33,14.06,150887
+Brisbane - Mount Isa,12,10136.4,11161.67,10.11,150887
+Brisbane - Melbourne,1,287385.8,275661.67,-4.08,3646094
+Brisbane - Melbourne,2,247017.0,247616.33,0.24,3646094
+Brisbane - Melbourne,3,291362.6,277809.0,-4.65,3646094
+Brisbane - Melbourne,4,286506.8,287818.0,0.46,3646094
+Brisbane - Melbourne,5,269922.8,276320.67,2.37,3646094
+Brisbane - Melbourne,6,274446.8,278047.0,1.31,3646094
+Brisbane - Melbourne,7,322672.4,307803.0,-4.61,3646094
+Brisbane - Melbourne,8,292525.4,294838.67,0.79,3646094
+Brisbane - Melbourne,9,305792.6,311094.0,1.73,3646094
+Brisbane - Melbourne,10,322055.6,319883.0,-0.67,3646094
+Brisbane - Melbourne,11,305102.8,305395.67,0.1,3646094
+Brisbane - Melbourne,12,308431.0,303447.67,-1.62,3646094
+Brisbane - Mackay,1,54419.0,55609.0,2.19,822805
+Brisbane - Mackay,2,50145.2,55737.33,11.15,822805
+Brisbane - Mackay,3,57841.8,61578.33,6.46,822805
+Brisbane - Mackay,4,58876.2,61424.33,4.33,822805
+Brisbane - Mackay,5,60345.0,65439.0,8.44,822805
+Brisbane - Mackay,6,58784.8,64237.67,9.28,822805
+Brisbane - Mackay,7,64396.4,67741.0,5.19,822805
+Brisbane - Mackay,8,62738.8,67386.67,7.41,822805
+Brisbane - Mackay,9,63931.4,69367.33,8.5,822805
+Brisbane - Mackay,10,64502.4,70732.67,9.66,822805
+Brisbane - Mackay,11,60304.6,66691.67,10.59,822805
+Brisbane - Mackay,12,61903.6,64876.67,4.8,822805
+Brisbane - Newcastle,1,45980.0,38172.67,-16.98,523935
+Brisbane - Newcastle,2,41506.8,37600.33,-9.41,523935
+Brisbane - Newcastle,3,47619.0,41748.0,-12.33,523935
+Brisbane - Newcastle,4,47229.2,42339.0,-10.35,523935
+Brisbane - Newcastle,5,46938.6,43687.67,-6.93,523935
+Brisbane - Newcastle,6,45247.6,41628.67,-8.0,523935
+Brisbane - Newcastle,7,50997.6,44690.67,-12.37,523935
+Brisbane - Newcastle,8,48631.6,43438.0,-10.68,523935
+Brisbane - Newcastle,9,49730.8,44001.67,-11.52,523935
+Brisbane - Newcastle,10,52654.0,47160.33,-10.43,523935
+Brisbane - Newcastle,11,51951.2,44767.0,-13.83,523935
+Brisbane - Newcastle,12,50677.8,42844.67,-15.46,523935
+Brisbane - Perth,1,86086.2,94878.67,10.21,1140132
+Brisbane - Perth,2,69461.8,77495.67,11.57,1140132
+Brisbane - Perth,3,80972.6,87682.33,8.29,1140132
+Brisbane - Perth,4,82150.4,90834.67,10.57,1140132
+Brisbane - Perth,5,76908.6,86376.67,12.31,1140132
+Brisbane - Perth,6,73651.0,80536.0,9.35,1140132
+Brisbane - Perth,7,85347.6,89708.33,5.11,1140132
+Brisbane - Perth,8,78133.4,85592.0,9.55,1140132
+Brisbane - Perth,9,83028.8,91409.0,10.09,1140132
+Brisbane - Perth,10,88848.0,99998.33,12.55,1140132
+Brisbane - Perth,11,82515.8,95474.33,15.7,1140132
+Brisbane - Perth,12,88589.4,100175.0,13.08,1140132
+Brisbane - Proserpine,1,22274.8,24815.33,11.41,294321
+Brisbane - Proserpine,2,18080.6,18499.67,2.32,294321
+Brisbane - Proserpine,3,18239.2,20447.67,12.11,294321
+Brisbane - Proserpine,4,20151.2,24299.67,20.59,294321
+Brisbane - Proserpine,5,17517.2,21476.67,22.6,294321
+Brisbane - Proserpine,6,17195.6,22161.67,28.88,294321
+Brisbane - Proserpine,7,22073.2,25283.0,14.54,294321
+Brisbane - Proserpine,8,21265.4,24008.0,12.9,294321
+Brisbane - Proserpine,9,22089.6,24764.33,12.11,294321
+Brisbane - Proserpine,10,23344.4,25536.33,9.39,294321
+Brisbane - Proserpine,12,23341.6,27212.67,16.58,294321
+Brisbane - Rockhampton,1,39452.8,38291.0,-2.94,604608
+Brisbane - Rockhampton,2,38318.6,40799.67,6.47,604608
+Brisbane - Rockhampton,3,46685.8,44638.0,-4.39,604608
+Brisbane - Rockhampton,4,41685.8,44580.33,6.94,604608
+Brisbane - Rockhampton,5,48331.2,50380.0,4.24,604608
+Brisbane - Rockhampton,6,46077.6,47801.67,3.74,604608
+Brisbane - Rockhampton,7,49559.8,50801.33,2.51,604608
+Brisbane - Rockhampton,8,47990.2,50493.67,5.22,604608
+Brisbane - Rockhampton,9,47613.6,50974.0,7.06,604608
+Brisbane - Rockhampton,10,48844.6,52570.67,7.63,604608
+Brisbane - Rockhampton,12,44911.4,45151.67,0.53,604608
+Brisbane - Sydney,1,361932.8,319413.67,-11.75,4382963
+Brisbane - Sydney,2,349316.6,326411.0,-6.56,4382963
+Brisbane - Sydney,3,396557.8,352645.33,-11.07,4382963
+Brisbane - Sydney,4,383872.0,348596.33,-9.19,4382963
+Brisbane - Sydney,5,382123.2,357591.33,-6.42,4382963
+Brisbane - Sydney,6,373398.2,348717.67,-6.61,4382963
+Brisbane - Sydney,7,423412.8,382090.67,-9.76,4382963
+Brisbane - Sydney,8,400050.4,369501.67,-7.64,4382963
+Brisbane - Sydney,9,399352.6,368994.0,-7.6,4382963
+Brisbane - Sydney,10,420505.4,400091.67,-4.85,4382963
+Brisbane - Sydney,11,407593.6,384834.0,-5.58,4382963
+Brisbane - Sydney,12,407252.0,371752.67,-8.72,4382963
+Brisbane - Townsville,1,71420.6,65367.33,-8.48,990802
+Brisbane - Townsville,2,64786.6,63289.33,-2.31,990802
+Brisbane - Townsville,3,80195.4,71774.0,-10.5,990802
+Brisbane - Townsville,4,79749.4,73838.67,-7.41,990802
+Brisbane - Townsville,5,84009.2,79819.0,-4.99,990802
+Brisbane - Townsville,6,84452.8,82275.0,-2.58,990802
+Brisbane - Townsville,7,93986.0,88928.33,-5.38,990802
+Brisbane - Townsville,8,86925.0,84588.67,-2.69,990802
+Brisbane - Townsville,9,87544.6,82468.0,-5.8,990802
+Brisbane - Townsville,10,86358.2,85396.0,-1.11,990802
+Brisbane - Townsville,11,79541.2,77746.67,-2.26,990802
+Brisbane - Townsville,12,84254.8,79304.33,-5.88,990802
+Canberra - Melbourne,1,72216.2,69934.67,-3.16,979092
+Canberra - Melbourne,2,86085.2,77646.67,-9.8,979092
+Canberra - Melbourne,3,101161.6,90288.67,-10.75,979092
+Canberra - Melbourne,4,90479.6,82631.33,-8.67,979092
+Canberra - Melbourne,5,94179.8,84162.67,-10.64,979092
+Canberra - Melbourne,6,88990.0,79744.67,-10.39,979092
+Canberra - Melbourne,7,91884.8,80703.33,-12.17,979092
+Canberra - Melbourne,8,92499.2,84387.33,-8.77,979092
+Canberra - Melbourne,9,93346.8,85898.0,-7.98,979092
+Canberra - Melbourne,10,99853.6,90707.67,-9.16,979092
+Canberra - Melbourne,12,88310.8,78190.0,-11.46,979092
+Canberra - Sydney,1,50083.8,34717.33,-30.68,610685
+Canberra - Sydney,2,74401.0,48925.33,-34.24,610685
+Canberra - Sydney,3,86044.2,56262.0,-34.61,610685
+Canberra - Sydney,4,74457.4,46057.67,-38.14,610685
+Canberra - Sydney,5,85680.2,54644.0,-36.22,610685
+Canberra - Sydney,6,82299.2,51712.0,-37.17,610685
+Canberra - Sydney,7,83701.2,52684.33,-37.06,610685
+Canberra - Sydney,8,85766.0,54543.67,-36.4,610685
+Canberra - Sydney,9,83072.6,53874.0,-35.15,610685
+Canberra - Sydney,10,85912.8,56159.0,-34.63,610685
+Canberra - Sydney,11,87865.6,60643.67,-30.98,610685
+Canberra - Sydney,12,68730.6,47372.67,-31.07,610685
+Coffs Harbour - Sydney,1,26931.6,15891.0,-40.99,200522
+Coffs Harbour - Sydney,2,25004.4,16285.0,-34.87,200522
+Coffs Harbour - Sydney,3,29568.6,18052.0,-38.95,200522
+Coffs Harbour - Sydney,4,27636.6,16649.0,-39.76,200522
+Coffs Harbour - Sydney,5,28330.4,18164.67,-35.88,200522
+Coffs Harbour - Sydney,6,26328.4,16942.67,-35.65,200522
+Coffs Harbour - Sydney,7,27759.6,17016.33,-38.7,200522
+Coffs Harbour - Sydney,8,26948.0,17337.67,-35.66,200522
+Coffs Harbour - Sydney,9,28697.4,17461.0,-39.15,200522
+Coffs Harbour - Sydney,10,31082.8,18337.33,-41.0,200522
+Coffs Harbour - Sydney,12,28510.6,17485.0,-38.67,200522
+Cairns - Melbourne,1,71014.8,69471.33,-2.17,878075
+Cairns - Melbourne,2,49513.8,44720.33,-9.68,878075
+Cairns - Melbourne,3,53121.2,55744.33,4.94,878075
+Cairns - Melbourne,4,65617.4,71488.33,8.95,878075
+Cairns - Melbourne,5,58558.4,58477.33,-0.14,878075
+Cairns - Melbourne,6,68717.0,69097.33,0.55,878075
+Cairns - Melbourne,7,87856.6,88314.0,0.52,878075
+Cairns - Melbourne,8,79759.6,81104.0,1.69,878075
+Cairns - Melbourne,9,79550.6,84082.0,5.7,878075
+Cairns - Melbourne,10,79275.2,83065.67,4.78,878075
+Cairns - Melbourne,11,66652.4,65681.67,-1.46,878075
+Cairns - Melbourne,12,69491.2,66696.67,-4.02,878075
+Cairns - Sydney,1,97462.6,78564.33,-19.39,927134
+Cairns - Sydney,2,80086.2,53801.33,-32.82,927134
+Cairns - Sydney,3,82245.2,66089.33,-19.64,927134
+Cairns - Sydney,4,90110.2,76609.33,-14.98,927134
+Cairns - Sydney,5,77015.4,66258.0,-13.97,927134
+Cairns - Sydney,6,82331.8,72707.33,-11.69,927134
+Cairns - Sydney,7,107952.4,93498.0,-13.39,927134
+Cairns - Sydney,8,99906.2,85805.0,-14.11,927134
+Cairns - Sydney,9,91562.4,81747.33,-10.72,927134
+Cairns - Sydney,10,102160.8,87152.0,-14.69,927134
+Cairns - Sydney,11,90210.4,71203.33,-21.07,927134
+Cairns - Sydney,12,96588.2,75195.67,-22.15,927134
+Dubbo - Sydney,1,12226.6,10980.0,-10.2,173275
+Dubbo - Sydney,2,14127.8,12894.0,-8.73,173275
+Dubbo - Sydney,3,16709.6,15402.67,-7.82,173275
+Dubbo - Sydney,4,14913.8,13509.0,-9.42,173275
+Dubbo - Sydney,5,16701.6,15670.0,-6.18,173275
+Dubbo - Sydney,6,15781.6,14754.0,-6.51,173275
+Dubbo - Sydney,7,15882.8,14820.33,-6.69,173275
+Dubbo - Sydney,8,16708.8,15844.33,-5.17,173275
+Dubbo - Sydney,9,16496.6,15413.67,-6.56,173275
+Dubbo - Sydney,10,16920.6,16234.33,-4.06,173275
+Dubbo - Sydney,11,16600.4,15916.0,-4.12,173275
+Dubbo - Sydney,12,14286.0,13207.33,-7.55,173275
+Darwin - Melbourne,1,22585.8,20621.33,-8.7,292654
+Darwin - Melbourne,2,17266.4,15009.33,-13.07,292654
+Darwin - Melbourne,3,21719.8,18017.67,-17.04,292654
+Darwin - Melbourne,4,25198.6,24296.67,-3.58,292654
+Darwin - Melbourne,5,25090.6,24567.33,-2.09,292654
+Darwin - Melbourne,6,28555.6,27927.67,-2.2,292654
+Darwin - Melbourne,7,32249.8,33593.33,4.17,292654
+Darwin - Melbourne,8,30188.0,29448.0,-2.45,292654
+Darwin - Melbourne,9,27426.6,27940.0,1.87,292654
+Darwin - Melbourne,10,26305.0,25813.33,-1.87,292654
+Darwin - Melbourne,11,21721.8,18908.67,-12.95,292654
+Darwin - Melbourne,12,22687.2,22282.33,-1.78,292654
+Darwin - Perth,1,14022.0,12709.33,-9.36,192008
+Darwin - Perth,2,11778.4,10672.67,-9.39,192008
+Darwin - Perth,3,13961.6,12936.0,-7.35,192008
+Darwin - Perth,4,15015.2,13991.67,-6.82,192008
+Darwin - Perth,5,15236.4,15229.0,-0.05,192008
+Darwin - Perth,6,17168.2,17338.33,0.99,192008
+Darwin - Perth,7,20368.6,19890.0,-2.35,192008
+Darwin - Perth,8,17594.0,18413.0,4.65,192008
+Darwin - Perth,9,16897.6,18084.67,7.03,192008
+Darwin - Perth,10,16633.4,15793.67,-5.05,192008
+Darwin - Perth,11,14029.2,13025.0,-7.16,192008
+Darwin - Perth,12,14470.6,13812.0,-4.55,192008
+Hobart - Melbourne,1,155475.8,136561.0,-12.17,1460515
+Hobart - Melbourne,2,134918.6,113583.67,-15.81,1460515
+Hobart - Melbourne,3,144818.0,121932.67,-15.8,1460515
+Hobart - Melbourne,4,134750.8,114889.33,-14.74,1460515
+Hobart - Melbourne,5,118724.8,104795.67,-11.73,1460515
+Hobart - Melbourne,6,116896.0,99699.33,-14.71,1460515
+Hobart - Melbourne,7,126802.0,109531.33,-13.62,1460515
+Hobart - Melbourne,8,117410.8,102504.33,-12.7,1460515
+Hobart - Melbourne,9,120801.8,104240.67,-13.71,1460515
+Hobart - Melbourne,10,136139.4,114979.33,-15.54,1460515
+Hobart - Melbourne,11,139313.0,118550.67,-14.9,1460515
+Hobart - Melbourne,12,154370.2,134860.0,-12.64,1460515
+Hobart - Sydney,1,69356.6,79794.33,15.05,835132
+Hobart - Sydney,2,52915.2,64251.33,21.42,835132
+Hobart - Sydney,3,57449.4,69168.33,20.4,835132
+Hobart - Sydney,4,54722.0,64983.33,18.75,835132
+Hobart - Sydney,5,43231.2,56010.33,29.56,835132
+Hobart - Sydney,6,44531.6,55641.0,24.95,835132
+Hobart - Sydney,7,50713.4,62661.0,23.56,835132
+Hobart - Sydney,8,42789.6,56778.67,32.69,835132
+Hobart - Sydney,9,49240.6,60681.0,23.23,835132
+Hobart - Sydney,10,58416.0,70608.67,20.87,835132
+Hobart - Sydney,11,58689.2,70164.0,19.55,835132
+Hobart - Sydney,12,68607.8,80858.33,17.86,835132
+Hamilton Island - Sydney,1,22880.6,23624.33,3.25,251646
+Hamilton Island - Sydney,2,17183.6,17934.0,4.37,251646
+Hamilton Island - Sydney,3,16755.2,20462.67,22.13,251646
+Hamilton Island - Sydney,4,16285.8,21672.0,33.07,251646
+Hamilton Island - Sydney,5,13690.6,15920.33,16.29,251646
+Hamilton Island - Sydney,6,12618.2,15797.33,25.19,251646
+Hamilton Island - Sydney,7,19109.6,22998.67,20.35,251646
+Hamilton Island - Sydney,8,18513.8,20618.67,11.37,251646
+Hamilton Island - Sydney,9,20122.0,23292.33,15.76,251646
+Hamilton Island - Sydney,10,22406.6,24170.0,7.87,251646
+Hamilton Island - Sydney,12,21912.8,21650.0,-1.2,251646
+Kalgoorlie - Perth,1,17404.4,25806.0,48.27,396651
+Kalgoorlie - Perth,2,18831.2,27539.33,46.24,396651
+Kalgoorlie - Perth,3,21279.4,30970.33,45.54,396651
+Kalgoorlie - Perth,4,19527.2,29318.67,50.14,396651
+Kalgoorlie - Perth,5,22270.2,32728.0,46.96,396651
+Kalgoorlie - Perth,6,20366.4,30150.67,48.04,396651
+Kalgoorlie - Perth,7,20958.4,31483.33,50.22,396651
+Kalgoorlie - Perth,8,23554.4,35120.0,49.1,396651
+Kalgoorlie - Perth,9,21375.2,32597.67,52.5,396651
+Kalgoorlie - Perth,10,22570.4,36051.67,59.73,396651
+Kalgoorlie - Perth,11,22386.2,33327.0,48.87,396651
+Kalgoorlie - Perth,12,19595.2,29201.67,49.02,396651
+Karratha - Perth,1,38314.4,43750.33,14.19,687533
+Karratha - Perth,2,37166.6,43643.33,17.43,687533
+Karratha - Perth,3,40824.2,49185.0,20.48,687533
+Karratha - Perth,4,40826.8,49514.67,21.28,687533
+Karratha - Perth,5,42734.0,52738.0,23.41,687533
+Karratha - Perth,6,40405.0,51948.67,28.57,687533
+Karratha - Perth,7,42798.8,56576.67,32.19,687533
+Karratha - Perth,8,41885.8,54321.67,29.69,687533
+Karratha - Perth,9,41210.2,53448.33,29.7,687533
+Karratha - Perth,10,42582.0,56687.33,33.13,687533
+Karratha - Perth,11,41437.8,54118.33,30.6,687533
+Karratha - Perth,12,36569.4,47345.0,29.47,687533
+Launceston - Melbourne,1,91916.0,84548.0,-8.02,898062
+Launceston - Melbourne,2,76766.2,69654.33,-9.26,898062
+Launceston - Melbourne,3,84563.4,77114.67,-8.81,898062
+Launceston - Melbourne,4,82178.0,73321.67,-10.78,898062
+Launceston - Melbourne,5,68149.6,66683.33,-2.15,898062
+Launceston - Melbourne,6,63293.2,60880.0,-3.81,898062
+Launceston - Melbourne,7,75764.8,67390.0,-11.05,898062
+Launceston - Melbourne,8,65692.0,67375.67,2.56,898062
+Launceston - Melbourne,9,68524.8,64324.0,-6.13,898062
+Launceston - Melbourne,10,77830.0,73273.0,-5.86,898062
+Launceston - Melbourne,12,91534.6,80819.33,-11.71,898062
+Launceston - Sydney,1,36705.8,36291.0,-1.13,354719
+Launceston - Sydney,2,25731.8,26357.0,2.43,354719
+Launceston - Sydney,3,27387.4,30896.67,12.81,354719
+Launceston - Sydney,4,24825.6,29652.0,19.44,354719
+Launceston - Sydney,5,17919.2,22070.67,23.17,354719
+Launceston - Sydney,6,17212.0,21537.0,25.13,354719
+Launceston - Sydney,7,21910.2,28572.0,30.41,354719
+Launceston - Sydney,8,17721.8,23482.67,32.51,354719
+Launceston - Sydney,9,19786.2,26565.0,34.26,354719
+Launceston - Sydney,10,22815.6,29640.33,29.91,354719
+Launceston - Sydney,11,24497.2,31067.0,26.82,354719
+Launceston - Sydney,12,32527.2,35636.33,9.56,354719
+Melbourne - Sunshine Coast,1,43055.2,73862.67,71.55,760995
+Melbourne - Sunshine Coast,2,28647.0,49518.67,72.86,760995
+Melbourne - Sunshine Coast,3,35019.6,57150.33,63.2,760995
+Melbourne - Sunshine Coast,4,42020.8,63230.0,50.47,760995
+Melbourne - Sunshine Coast,5,32035.6,53763.67,67.82,760995
+Melbourne - Sunshine Coast,6,34452.4,56514.33,64.04,760995
+Melbourne - Sunshine Coast,7,46263.6,65823.33,42.28,760995
+Melbourne - Sunshine Coast,8,43077.8,58563.67,35.95,760995
+Melbourne - Sunshine Coast,9,48080.0,64201.33,33.53,760995
+Melbourne - Sunshine Coast,10,47011.4,65867.33,40.11,760995
+Melbourne - Sunshine Coast,12,44550.0,74116.33,66.37,760995
+Sunshine Coast - Sydney,1,56533.8,72387.0,28.04,798793
+Sunshine Coast - Sydney,2,38276.6,55388.33,44.71,798793
+Sunshine Coast - Sydney,3,45200.6,61391.33,35.82,798793
+Sunshine Coast - Sydney,4,51031.8,63512.67,24.46,798793
+Sunshine Coast - Sydney,5,41405.4,57167.33,38.07,798793
+Sunshine Coast - Sydney,6,40121.6,56412.33,40.6,798793
+Sunshine Coast - Sydney,7,50319.4,68383.0,35.9,798793
+Sunshine Coast - Sydney,8,43194.6,62483.33,44.66,798793
+Sunshine Coast - Sydney,9,49714.6,66251.67,33.26,798793
+Sunshine Coast - Sydney,10,56178.6,71680.0,27.59,798793
+Sunshine Coast - Sydney,12,55992.6,73529.67,31.32,798793
+Melbourne - Mildura,1,14929.8,10941.0,-26.72,152365
+Melbourne - Mildura,2,15622.2,12521.67,-19.85,152365
+Melbourne - Mildura,3,19108.2,15032.67,-21.33,152365
+Melbourne - Mildura,4,17723.6,13222.0,-25.4,152365
+Melbourne - Mildura,5,18654.2,14287.67,-23.41,152365
+Melbourne - Mildura,6,17131.4,12796.0,-25.31,152365
+Melbourne - Mildura,7,18519.6,13653.33,-26.28,152365
+Melbourne - Mildura,8,18689.0,13527.67,-27.62,152365
+Melbourne - Mildura,9,18186.8,13153.33,-27.68,152365
+Melbourne - Mildura,10,19501.4,13876.0,-28.85,152365
+Melbourne - Mildura,11,18645.6,13894.67,-25.48,152365
+Melbourne - Mildura,12,17676.2,12668.0,-28.33,152365
+Melbourne - Newcastle,1,41814.0,36461.67,-12.8,470642
+Melbourne - Newcastle,2,33163.0,33643.33,1.45,470642
+Melbourne - Newcastle,3,38769.4,38765.0,-0.01,470642
+Melbourne - Newcastle,4,39877.6,38066.67,-4.54,470642
+Melbourne - Newcastle,5,37391.8,34934.33,-6.57,470642
+Melbourne - Newcastle,6,35906.4,34239.33,-4.64,470642
+Melbourne - Newcastle,7,40689.0,37878.33,-6.91,470642
+Melbourne - Newcastle,8,36772.8,36391.33,-1.04,470642
+Melbourne - Newcastle,9,39963.2,38682.33,-3.21,470642
+Melbourne - Newcastle,10,43850.8,41282.67,-5.86,470642
+Melbourne - Newcastle,12,40616.0,39038.67,-3.88,470642
+Gold Coast - Melbourne,1,193378.4,223968.33,15.82,2146910
+Gold Coast - Melbourne,2,134787.8,158047.67,17.26,2146910
+Gold Coast - Melbourne,3,154028.6,164793.0,6.99,2146910
+Gold Coast - Melbourne,4,163851.4,185787.0,13.39,2146910
+Gold Coast - Melbourne,5,139691.8,155752.0,11.5,2146910
+Gold Coast - Melbourne,6,146567.6,159214.67,8.63,2146910
+Gold Coast - Melbourne,7,180421.0,192973.0,6.96,2146910
+Gold Coast - Melbourne,8,165980.0,167470.33,0.9,2146910
+Gold Coast - Melbourne,9,178628.2,186609.0,4.47,2146910
+Gold Coast - Melbourne,10,187526.2,196064.0,4.55,2146910
+Gold Coast - Melbourne,12,182752.0,210979.0,15.45,2146910
+Melbourne - Perth,1,190999.6,179559.33,-5.99,2109230
+Melbourne - Perth,2,152638.8,147680.67,-3.25,2109230
+Melbourne - Perth,3,178521.4,169317.33,-5.16,2109230
+Melbourne - Perth,4,178554.0,171006.67,-4.23,2109230
+Melbourne - Perth,5,159738.6,155668.0,-2.55,2109230
+Melbourne - Perth,6,153534.6,145627.33,-5.15,2109230
+Melbourne - Perth,7,183978.2,172551.0,-6.21,2109230
+Melbourne - Perth,8,162714.4,156803.0,-3.63,2109230
+Melbourne - Perth,9,171073.2,164928.0,-3.59,2109230
+Melbourne - Perth,10,188077.0,184685.67,-1.8,2109230
+Melbourne - Perth,11,177986.2,181621.33,2.04,2109230
+Melbourne - Perth,12,195858.4,189090.0,-3.46,2109230
+Melbourne - Sydney,1,713494.0,631464.0,-11.5,8121167
+Melbourne - Sydney,2,728808.2,627616.67,-13.88,8121167
+Melbourne - Sydney,3,798384.6,707456.0,-11.39,8121167
+Melbourne - Sydney,4,729423.4,642164.0,-11.96,8121167
+Melbourne - Sydney,5,740174.2,650908.67,-12.06,8121167
+Melbourne - Sydney,6,700191.0,610582.67,-12.8,8121167
+Melbourne - Sydney,7,762443.0,656199.67,-13.93,8121167
+Melbourne - Sydney,8,751796.0,660680.33,-12.12,8121167
+Melbourne - Sydney,9,737001.2,654303.0,-11.22,8121167
+Melbourne - Sydney,10,799781.4,720127.67,-9.96,8121167
+Melbourne - Sydney,11,800749.2,701738.0,-12.36,8121167
+Melbourne - Sydney,12,745178.8,665115.0,-10.74,8121167
+Gold Coast - Sydney,1,262378.4,235465.67,-10.26,2527688
+Gold Coast - Sydney,2,204546.6,180869.67,-11.58,2527688
+Gold Coast - Sydney,3,221547.0,187192.0,-15.51,2527688
+Gold Coast - Sydney,4,229730.4,210921.0,-8.19,2527688
+Gold Coast - Sydney,5,202212.6,196239.0,-2.95,2527688
+Gold Coast - Sydney,6,194597.4,189799.67,-2.47,2527688
+Gold Coast - Sydney,7,231763.4,220625.33,-4.81,2527688
+Gold Coast - Sydney,8,211858.0,203815.67,-3.8,2527688
+Gold Coast - Sydney,9,225836.8,213813.33,-5.32,2527688
+Gold Coast - Sydney,10,245240.4,228879.67,-6.67,2527688
+Gold Coast - Sydney,11,228510.4,207417.0,-9.23,2527688
+Gold Coast - Sydney,12,245676.6,225743.0,-8.11,2527688
+Perth - Port Hedland,1,28421.4,37079.33,30.46,487193
+Perth - Port Hedland,2,27501.0,35259.0,28.21,487193
+Perth - Port Hedland,3,29969.8,39656.33,32.32,487193
+Perth - Port Hedland,4,30147.8,38840.67,28.83,487193
+Perth - Port Hedland,5,31403.4,42520.67,35.4,487193
+Perth - Port Hedland,6,29456.0,38907.33,32.09,487193
+Perth - Port Hedland,7,32343.0,43702.0,35.12,487193
+Perth - Port Hedland,8,31734.4,42175.0,32.9,487193
+Perth - Port Hedland,9,30499.2,40366.67,32.35,487193
+Perth - Port Hedland,10,32022.2,43960.67,37.28,487193
+Perth - Port Hedland,11,30749.8,41708.0,35.64,487193
+Perth - Port Hedland,12,27244.2,36444.67,33.77,487193
+Perth - Sydney,1,155782.2,144396.33,-7.31,1749314
+Perth - Sydney,2,129061.2,122299.67,-5.24,1749314
+Perth - Sydney,3,147792.0,138092.67,-6.56,1749314
+Perth - Sydney,4,147520.0,138507.33,-6.11,1749314
+Perth - Sydney,5,134961.6,128915.33,-4.48,1749314
+Perth - Sydney,6,127399.6,120295.67,-5.58,1749314
+Perth - Sydney,7,148747.0,138334.33,-7.0,1749314
+Perth - Sydney,8,135651.6,131320.67,-3.19,1749314
+Perth - Sydney,9,141904.4,141188.0,-0.5,1749314
+Perth - Sydney,10,153031.6,153643.0,0.4,1749314
+Perth - Sydney,11,146915.8,147554.33,0.43,1749314
+Perth - Sydney,12,159260.6,153951.33,-3.33,1749314
+Newman - Perth,1,23636.6,30536.67,29.19,443084
+Newman - Perth,2,24752.4,29764.67,20.25,443084
+Newman - Perth,3,26744.8,32995.67,23.37,443084
+Newman - Perth,4,25585.0,33951.0,32.7,443084
+Newman - Perth,5,27710.0,35236.33,27.16,443084
+Newman - Perth,6,26898.6,32582.67,21.13,443084
+Newman - Perth,7,27386.8,36054.0,31.65,443084
+Newman - Perth,8,27598.6,35647.67,29.16,443084
+Newman - Perth,9,26591.6,34649.67,30.3,443084
+Newman - Perth,10,27647.6,37199.33,34.55,443084
+Newman - Perth,11,27416.6,34990.33,27.62,443084
+Newman - Perth,12,23238.6,30053.0,29.32,443084
+Port Macquarie - Sydney,1,14810.8,11629.33,-21.48,166595
+Port Macquarie - Sydney,2,14023.0,12365.33,-11.82,166595
+Port Macquarie - Sydney,3,16482.0,14788.0,-10.28,166595
+Port Macquarie - Sydney,4,15561.6,13325.0,-14.37,166595
+Port Macquarie - Sydney,5,16485.8,14326.33,-13.1,166595
+Port Macquarie - Sydney,6,15109.0,13577.67,-10.14,166595
+Port Macquarie - Sydney,7,15571.4,13582.67,-12.77,166595
+Port Macquarie - Sydney,8,15643.6,14105.0,-9.84,166595
+Port Macquarie - Sydney,9,16017.2,13831.33,-13.65,166595
+Port Macquarie - Sydney,10,16912.8,14821.33,-12.37,166595
+Port Macquarie - Sydney,12,16768.8,14766.67,-11.94,166595
+Ballina - Sydney,1,40385.2,48281.67,19.55,466916
+Ballina - Sydney,2,29159.2,40814.67,39.97,466916
+Ballina - Sydney,3,33029.0,42511.0,28.71,466916
+Ballina - Sydney,4,35845.0,42752.0,19.27,466916
+Ballina - Sydney,5,28974.6,37709.0,30.15,466916
+Ballina - Sydney,6,27948.2,35430.0,26.77,466916
+Ballina - Sydney,7,34523.0,42298.33,22.52,466916
+Ballina - Sydney,8,30054.2,40060.33,33.29,466916
+Ballina - Sydney,9,34691.2,42371.67,22.14,466916
+Ballina - Sydney,10,37888.0,45920.33,21.2,466916
+Ballina - Sydney,11,31543.6,43504.0,37.92,466916
+Ballina - Sydney,12,39323.8,46595.33,18.49,466916
+Sydney - Wagga Wagga,1,11567.0,9612.0,-16.9,168224
+Sydney - Wagga Wagga,2,13562.0,11803.67,-12.97,168224
+Sydney - Wagga Wagga,3,16132.6,14250.0,-11.67,168224
+Sydney - Wagga Wagga,4,15060.0,13158.0,-12.63,168224
+Sydney - Wagga Wagga,5,16173.4,14441.33,-10.71,168224
+Sydney - Wagga Wagga,6,15227.2,13066.33,-14.19,168224
+Sydney - Wagga Wagga,7,15684.0,13689.33,-12.72,168224
+Sydney - Wagga Wagga,8,16269.2,14596.67,-10.28,168224
+Sydney - Wagga Wagga,9,16175.2,14339.0,-11.35,168224
+Sydney - Wagga Wagga,10,16767.6,15073.67,-10.1,168224
+Sydney - Wagga Wagga,12,14422.2,12468.0,-13.55,168224
