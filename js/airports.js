@@ -77,7 +77,7 @@ const airportButterflyChart = {
   encoding: {
     y: { field: "airport_name", type: "nominal", sort: { field: "rank", order: "ascending" }, title: null },
     x: { field: "signed_passengers", type: "quantitative", title: "Passenger movements", axis: { format: "~s" } },
-    color: { field: "travel_label", type: "nominal", title: null, scale: { domain: ["Domestic", "International"], range: ["#0d7c86", "#c85a5a"] } },
+    color: { field: "travel_label", type: "nominal", title: null, scale: { domain: ["Domestic", "International"], range: ["#0d7c86", "#E08B32"] } },
     tooltip: [{ field: "airport_name", title: "Airport" }, { field: "travel_label", title: "Type" }, { field: "passengers", title: "Passenger movements", format: "," }],
   }, config,
 };

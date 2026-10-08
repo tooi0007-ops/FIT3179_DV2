@@ -1,7 +1,7 @@
 const stateChoroplethMap = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
   width: "container",
-  height: 400,
+  height: 460,
   projection: { type: "equalEarth" },
   data: mapData,
   transform: [{
@@ -100,7 +100,7 @@ const proportionalSymbolMap = {
 const domesticRouteFlowMap = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
   width: "container",
-  height: 400,
+  height: 460,
   projection: { type: "equalEarth" },
   layer: [
     {
@@ -109,7 +109,7 @@ const domesticRouteFlowMap = {
     },
     {
       data: { url: `${dataPath}route_flow_points_top10_2025.csv` },
-      mark: { type: "line", color: "#df7f40", opacity: 0.55 },
+      mark: { type: "line", interpolate: "basis", color: "#df7f40", opacity: 0.55 },
       encoding: {
         longitude: { field: "longitude", type: "quantitative" },
         latitude: { field: "latitude", type: "quantitative" },
@@ -125,7 +125,7 @@ const domesticRouteFlowMap = {
     {
       data: { url: `${dataPath}route_flow_points_top10_2025.csv` },
       transform: [{ filter: "datum.route === 'Melbourne - Sydney'" }],
-      mark: { type: "line", color: "#a94f21", opacity: 1 },
+      mark: { type: "line", interpolate: "basis", color: "#a94f21", opacity: 1 },
       encoding: {
         longitude: { field: "longitude", type: "quantitative" },
         latitude: { field: "latitude", type: "quantitative" },
@@ -136,6 +136,7 @@ const domesticRouteFlowMap = {
     },
     {
       data: { url: `${dataPath}route_flow_points_top10_2025.csv` },
+      transform: [{ filter: "datum.point_order != 1" }],
       mark: { type: "circle", filled: true, color: "#f8f5ed", size: 95, stroke: "#07545b", strokeWidth: 1.8 },
       encoding: {
         longitude: { field: "longitude", type: "quantitative" },
@@ -144,6 +145,25 @@ const domesticRouteFlowMap = {
           { field: "route", type: "nominal", title: "Route serving this airport" },
           { field: "passengers_2025", type: "quantitative", title: "2025 passenger movements", format: "," },
         ],
+      },
+    },
+    {
+      data: {
+        values: [
+          { label: "Perth", longitude: 115.97, latitude: -30.55 },
+          { label: "Adelaide", longitude: 138.54, latitude: -33.95 },
+          { label: "Melbourne", longitude: 144.85, latitude: -36.85 },
+          { label: "Hobart", longitude: 147.51, latitude: -44.05 },
+          { label: "Sydney", longitude: 151.17, latitude: -32.95 },
+          { label: "Brisbane", longitude: 153.12, latitude: -26.60 },
+          { label: "Gold Coast", longitude: 153.51, latitude: -29.00 },
+        ],
+      },
+      mark: { type: "text", fontSize: 10.5, fontWeight: 700, color: "#344454" },
+      encoding: {
+        longitude: { field: "longitude", type: "quantitative" },
+        latitude: { field: "latitude", type: "quantitative" },
+        text: { field: "label", type: "nominal" },
       },
     },
   ],

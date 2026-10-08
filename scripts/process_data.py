@@ -455,9 +455,17 @@ def main() -> None:
 
     flow_points = []
     for route in route_summary:
-        for order, (longitude, latitude) in enumerate(
-            [(route["origin_longitude"], route["origin_latitude"]), (route["destination_longitude"], route["destination_latitude"])]
-        ):
+        origin = (route["origin_longitude"], route["origin_latitude"])
+        destination = (route["destination_longitude"], route["destination_latitude"])
+        # A midpoint makes the displayed link a curved, bidirectional corridor.
+        # The published route totals combine both directions, so this is visual
+        # separation only; it does not imply an origin or destination.
+        longitude_gap = abs(destination[0] - origin[0])
+        midpoint = (
+            (origin[0] + destination[0]) / 2,
+            (origin[1] + destination[1]) / 2 + max(1.1, longitude_gap * 0.09),
+        )
+        for order, (longitude, latitude) in enumerate([origin, midpoint, destination]):
             flow_points.append(
                 {
                     "route": route["route"],
