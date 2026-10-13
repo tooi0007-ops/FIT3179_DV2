@@ -35,6 +35,16 @@ const airportRankBumpChart = {
         ],
       },
     },
+    {
+      data: { url: `${dataPath}airport_bump_2015_2025.csv` },
+      transform: [{ filter: "datum.year === 2019 && datum.airport_name === 'SUNSHINE COAST'" }],
+      mark: { type: "text", align: "left", baseline: "bottom", dx: 8, dy: -5, fontSize: 12, fontWeight: 700, color: "#0d7c86" },
+      encoding: {
+        x: { field: "year", type: "ordinal" },
+        y: { field: "rank", type: "quantitative", scale: { domain: [16, 1] } },
+        text: { value: "Sunshine Coast" },
+      },
+    },
   ], config,
 };
 
@@ -42,23 +52,24 @@ const airportConnectedDotPlot = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
   width: "container", height: 365,
   data: { url: `${dataPath}airport_compare_top15_2019_2025.csv` },
-  title: "Large-airport passenger movements: 2019 and 2025",
+  transform: [{ calculate: "0", as: "baseline_percent" }],
+  title: "Percentage change in passenger movements, 2019–2025",
   layer: [
     { mark: { type: "rule", color: "#9ca7a4", strokeWidth: 2 }, encoding: {
-      y: { field: "airport_name", type: "nominal", sort: { field: "passengers_2025", order: "descending" }, title: null },
-      x: { field: "passengers_2019", type: "quantitative", title: "Passenger movements", axis: { format: "~s" } },
-      x2: { field: "passengers_2025" },
+      y: { field: "airport_name", type: "nominal", sort: { field: "change_percent", order: "descending" }, title: null },
+      x: { field: "baseline_percent", type: "quantitative", title: "Change from 2019 (%)", scale: { domain: [-20, 40] } },
+      x2: { field: "change_percent" },
       tooltip: [{ field: "airport_name", title: "Airport" }, { field: "passengers_2019", title: "2019", format: "," }, { field: "passengers_2025", title: "2025", format: "," }, { field: "change_percent", title: "Change (%)", format: ".1f" }],
     }},
     { mark: { type: "point", filled: true, size: 76, stroke: "#ffffff", strokeWidth: 1 }, encoding: {
-      y: { field: "airport_name", type: "nominal", sort: { field: "passengers_2025", order: "descending" }, title: null },
-      x: { field: "passengers_2019", type: "quantitative" },
-      color: { datum: "2019", type: "nominal", title: "Year", scale: { domain: ["2019", "2025"], range: ["#2563a6", "#e4572e"] }, legend: { orient: "top", direction: "horizontal" } },
+      y: { field: "airport_name", type: "nominal", sort: { field: "change_percent", order: "descending" }, title: null },
+      x: { field: "baseline_percent", type: "quantitative", scale: { domain: [-20, 40] } },
+      color: { datum: "2019 baseline", type: "nominal", title: "Reference", scale: { domain: ["2019 baseline", "2025 change"], range: ["#2563a6", "#e4572e"] }, legend: { orient: "top", direction: "horizontal" } },
     }},
     { mark: { type: "point", filled: true, size: 76, stroke: "#ffffff", strokeWidth: 1 }, encoding: {
-      y: { field: "airport_name", type: "nominal", sort: { field: "passengers_2025", order: "descending" }, title: null },
-      x: { field: "passengers_2025", type: "quantitative" },
-      color: { datum: "2025", type: "nominal", title: "Year", scale: { domain: ["2019", "2025"], range: ["#2563a6", "#e4572e"] }, legend: { orient: "top", direction: "horizontal" } },
+      y: { field: "airport_name", type: "nominal", sort: { field: "change_percent", order: "descending" }, title: null },
+      x: { field: "change_percent", type: "quantitative", scale: { domain: [-20, 40] } },
+      color: { datum: "2025 change", type: "nominal", title: "Reference", scale: { domain: ["2019 baseline", "2025 change"], range: ["#2563a6", "#e4572e"] }, legend: { orient: "top", direction: "horizontal" } },
     }},
   ], config,
 };
