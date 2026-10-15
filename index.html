@@ -4,61 +4,70 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="A data story about passenger movements, airport activity and domestic routes across Australia." />
-    <title>Australian Airport Activity</title>
-    <link rel="stylesheet" href="styles.css?v=20260924a" />
+    <title>Australia's Airports — Recovery, Scale and Change</title>
+    <link rel="stylesheet" href="styles.css?v=20261015c" />
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
   </head>
   <body>
     <header class="site-header">
-      <p class="eyebrow">FIT3179 Data Visualisation 2</p>
-      <h1>Australian Airport Activity</h1>
-      <p class="lede">Exploring how passenger movements, airport size, aircraft activity and domestic routes vary across Australia from 2019 to 2025.</p>
-      <nav aria-label="Page sections">
-        <a href="#airport-map">Airport map</a>
-        <a href="#national-trend">National trend</a>
-        <a href="#airport-change">Airport change</a>
-        <a href="#routes">Domestic routes</a>
-        <a href="#sources">Sources</a>
-      </nav>
+      <div class="header-inner">
+        <p class="eyebrow">Australia's aviation system · 1985–2025</p>
+        <h1>Australia's Airports</h1>
+        <p class="hero-line">The national total has recovered.<br><em>The geography has not.</em></p>
+        <p class="lede">Passenger movements returned to their 2019 level by 2025, but the recovery looks very different across airports, states and domestic routes.</p>
+        <nav aria-label="Page sections">
+          <a href="#airport-map">01 · Network</a>
+          <a href="#national-trend">02 · Recovery</a>
+          <a href="#airport-change">03 · Airports</a>
+          <a href="#routes">04 · Routes</a>
+          <a href="#sources">Sources</a>
+        </nav>
+
+        <div class="headline-stats" aria-label="Headline statistics for 2025">
+          <div class="headline-stat">
+            <strong>164.6M</strong>
+            <span>passenger movements</span>
+          </div>
+          <div class="headline-stat">
+            <strong>+0.2%</strong>
+            <span>above the 2019 total</span>
+          </div>
+          <div class="headline-stat">
+            <strong>42.6M</strong>
+            <span>through Sydney Airport</span>
+          </div>
+          <div class="headline-stat">
+            <strong>8.1M</strong>
+            <span>on Melbourne–Sydney</span>
+          </div>
+        </div>
+      </div>
     </header>
 
     <main>
       <section id="airport-map" class="story-section overview">
         <div class="section-copy">
-          <p class="section-number">01</p>
-          <h2>Passenger activity is concentrated in a small number of cities</h2>
-          <p>Compare airport scale, state-level change and the busiest domestic connections across Australia.</p>
+          <p class="section-number">01 · The network</p>
+          <h2>A few major cities carry most of Australia's air travel</h2>
+          <p>Airport scale is concentrated around the capital cities, while the strongest domestic connections form an east-coast spine.</p>
         </div>
 
         <article class="visual-panel full-panel map-hero">
             <h3>Where is airport activity concentrated?</h3>
             <p class="chart-note">Circle area shows total passenger movements in 2025. One circle represents one airport; this map focuses on mainland Australia and Tasmania.</p>
             <div id="proportional-symbol-map" class="visual" aria-label="Proportional symbol map of Australian airports"></div>
+            <p class="chart-insight"><strong>Scale is concentrated:</strong> Sydney, Melbourne and Brisbane together recorded 103.8 million passenger movements in 2025.</p>
         </article>
 
-        <div class="visual-grid map-secondary-grid">
-          <article class="visual-panel">
-            <h3>How did passenger movements change across states?</h3>
-            <p class="chart-note">Colour shows percentage change in passenger movements at airports with verified terminal locations, from 2019 to 2025. <strong>0% means the same passenger-movement level as 2019.</strong></p>
-            <div id="state-choropleth-map" class="visual" aria-label="Choropleth map of state passenger change"></div>
-          </article>
-
-          <article class="visual-panel">
-            <h3>Which domestic routes carried the most passengers?</h3>
-            <p class="chart-note">Curved-line width shows combined passenger movements on the ten busiest domestic city-pair routes in 2025; dots and labels mark airport endpoints.</p>
-            <div id="domestic-route-flow-map" class="visual" aria-label="Flow map of Australia’s busiest domestic city-pair routes"></div>
-            <p class="chart-note">Melbourne–Sydney was the largest corridor, with 8.1 million passenger movements. Lines have no direction because each source route combines both travel directions.</p>
-          </article>
-        </div>
       </section>
 
       <section id="national-trend" class="story-section">
         <div class="section-copy">
-          <p class="section-number">02</p>
-          <h2>Australian air travel grew over the long term, with a sharp disruption in 2020</h2>
-          <p>Track national passenger movements from 1985 to 2025 and place recent airport activity in its longer-term context.</p>
+          <p class="section-number">02 · The recovery</p>
+          <h2>Forty years of growth were interrupted almost overnight</h2>
+          <p>The national total recovered by 2025, but domestic and international travel followed different paths back.</p>
         </div>
         <div class="chart-control">
           <label for="demand-type">Show demand as</label>
@@ -70,36 +79,51 @@
         </div>
         <p id="demand-description" class="chart-note interactive-note" aria-live="polite">Showing total passenger movements. The annotations identify the 2020 disruption and the return to the 2019 level.</p>
         <div id="national-demand-line-chart" class="visual full-width" aria-label="Line chart of Australian airport passenger movements from 1985 to 2025"></div>
+        <p class="chart-insight"><strong>Back to the headline level:</strong> 2025 exceeded 2019 by only 0.2%, despite six years of population and economic growth.</p>
+        <p class="context-note">The sharp 1989 fall coincided with the Australian pilots' dispute, which heavily disrupted domestic aviation. <a href="https://www.bitre.gov.au/sites/default/files/documents/bitre-rr157-summary.pdf" target="_blank" rel="noopener noreferrer">BITRE context</a>.</p>
       </section>
 
       <section id="airport-change" class="story-section">
         <div class="section-copy">
-          <p class="section-number">03</p>
-          <h2>Airport activity differs by passenger volume, travel type and aircraft use</h2>
-          <p>Compare changes in airport size, domestic and international activity, ranking, and passenger movements per aircraft movement.</p>
+          <p class="section-number">03 · The airports</p>
+          <h2>National recovery did not reach every airport equally</h2>
+          <p>Some leisure-focused airports grew beyond 2019, while several capital-city airports remained smaller or changed their travel mix.</p>
         </div>
+        <article class="visual-panel full-panel state-recovery-panel">
+          <h3>Which states moved beyond their 2019 passenger levels?</h3>
+          <p class="chart-note">Red means passenger movements remained below 2019; blue means they moved above it. Totals include airports with verified terminal locations.</p>
+          <div id="state-choropleth-map" class="visual" aria-label="Choropleth map of state passenger change"></div>
+          <p class="chart-insight"><strong>Recovery was uneven:</strong> Western Australia grew 19.5%, while the ACT remained 13.7% below 2019.</p>
+        </article>
         <div class="visual-grid">
           <article class="visual-panel full-panel">
             <h3>Which large airports changed most between 2019 and 2025?</h3>
             <p class="chart-note">Each line runs from the 2019 baseline (0%) to the percentage change in total passenger movements in 2025 for one of the 15 largest airports.</p>
             <div id="airport-connected-dot-plot" class="visual" aria-label="Connected dot plot of airport percentage change from 2019 to 2025"></div>
             <p class="chart-insight"><strong>Largest contrast:</strong> Sunshine Coast grew 34.7% from 2019 to 2025, while Canberra fell 13.7%.</p>
+            <p class="context-note">Sunshine Coast's new 2,450-metre runway opened in June 2020, allowing larger aircraft and more direct routes—important context for its later growth. <a href="https://www.sunshinecoastairport.com.au/corporate/projects-and-planning/scaep/" target="_blank" rel="noopener noreferrer">Airport expansion source</a>.</p>
+          </article>
+          <article class="visual-panel full-panel">
+            <h3>How did the largest airports move through the rankings?</h3>
+            <p class="chart-note">Unlike the percentage-change chart above, this bump chart follows each airport's relative position from 2015 to 2025. Direct labels identify every line; Sunshine Coast is highlighted.</p>
+            <div id="airport-rank-bump-chart" class="visual" aria-label="Bump chart of airport passenger-movement ranks from 2015 to 2025"></div>
+            <p class="chart-insight"><strong>A gradual climb:</strong> Sunshine Coast moved from 14th in 2015 to 11th in 2025, while the five largest airports kept the same order.</p>
           </article>
           <article class="visual-panel full-panel">
             <h3>How does domestic and international activity differ by airport?</h3>
             <p class="chart-note">The left side is domestic and the right side is international passenger movements in 2025.</p>
             <div id="airport-butterfly-chart" class="visual" aria-label="Butterfly chart of domestic and international movements"></div>
             <p class="chart-insight"><strong>Domestic dependence:</strong> Hobart recorded 2.87 million domestic passenger movements but only 19,580 international movements in 2025 (99.3% domestic).</p>
+            <div class="secondary-chart-block">
+              <h4>How different is each airport's passenger mix?</h4>
+              <p class="chart-note">The chart above compares absolute scale; this 100% stacked bar compares proportions. Teal and orange identify the two travel types, while bar length shows their share.</p>
+              <div id="airport-travel-mix-chart" class="visual" aria-label="100 percent stacked bar chart of domestic and international passenger shares"></div>
+              <p class="chart-insight"><strong>Most international:</strong> international passengers made up 40.5% of Sydney's movements, compared with less than 1% at Hobart.</p>
+            </div>
           </article>
         </div>
         <div class="visual-grid">
-          <article class="visual-panel">
-            <h3>How did airport passenger ranks change over time?</h3>
-            <p class="chart-note">Rank 1 is largest. The same twelve airports are followed from 2019 to 2025.</p>
-            <div id="airport-rank-bump-chart" class="visual" aria-label="Bump chart of airport passenger ranks"></div>
-            <p class="chart-insight"><strong>Key change:</strong> Sunshine Coast fell to rank 16 in 2020, then returned to rank 11 by 2025.</p>
-          </article>
-          <article class="visual-panel">
+          <article class="visual-panel full-panel">
             <h3>Which airports had the most passengers per aircraft movement?</h3>
             <p class="chart-note">This ratio compares passenger movements with recorded aircraft movements at the 20 busiest airports in 2025. It is not an airline load factor.</p>
             <div id="airport-lollipop-chart" class="visual" aria-label="Lollipop chart of passenger movements per aircraft movement"></div>
@@ -109,15 +133,22 @@
           <h3>How is passenger activity distributed across states and airports?</h3>
           <p class="chart-note">Australia → state or territory → airport. Tile area shows 2025 passenger movements at airports with verified terminal locations.</p>
           <div id="airport-hierarchy-treemap" class="visual full-width" aria-label="Treemap of airport passenger movements by state and airport"></div>
+          <p class="chart-insight"><strong>A concentrated hierarchy:</strong> a small group of capital-city airports occupies most of the national passenger footprint.</p>
         </article>
       </section>
 
       <section id="routes" class="story-section">
         <div class="section-copy">
-          <p class="section-number">04</p>
-          <h2>Major domestic routes show different monthly and long-term patterns</h2>
-          <p>Compare recent monthly passenger movements on major routes with their average levels before 2020.</p>
+          <p class="section-number">04 · The routes</p>
+          <h2>Route recovery depends on where—and when—people fly</h2>
+          <p>Recent monthly averages reveal a split: some leisure corridors grew, while several major business routes still trail their pre-2020 levels.</p>
         </div>
+        <article class="visual-panel full-panel route-hero">
+          <h3>Which domestic routes carried the most passengers?</h3>
+          <p class="chart-note">Line width shows combined passenger movements on the ten busiest domestic city-pair routes in 2025. Hover over a route to isolate it; routes have no arrows because the totals combine both travel directions.</p>
+          <div id="domestic-route-flow-map" class="visual" aria-label="Interactive flow map of Australia’s busiest domestic city-pair routes"></div>
+          <p class="chart-insight"><strong>The central corridor:</strong> Melbourne–Sydney was the largest route, with 8.1 million passenger movements in 2025.</p>
+        </article>
         <div class="visual-grid">
           <article class="visual-panel full-panel">
             <h3>How have major domestic routes changed by month?</h3>
@@ -129,7 +160,7 @@
       </section>
 
       <section id="sources" class="story-section sources">
-        <p class="section-number">Data notes</p>
+        <p class="section-number">Sources and definitions</p>
         <p>Passenger figures are airport passenger movements, not unique travellers.<br> State totals include airports with verified terminal-location matches.<br> Route values unavailable for release are retained as missing.</p>
         <p class="byline">Ooi Tze Chuen<br>34477349<br>Studio 01</p>
         <p class="source-links">Sources: 
@@ -140,7 +171,7 @@
       </section>
     </main>
 
-    <footer>FIT3179 DV2 · Australian Airport Activity</footer>
+    <footer>FIT3179 DV2 · Beyond the Runway</footer>
     <script>
       if (window.location.protocol === "file:") {
         document.body.insertAdjacentHTML(
@@ -150,9 +181,9 @@
       }
     </script>
     <script src="js/config.js?v=20260923"></script>
-    <script src="js/overview.js?v=20261008a"></script>
-    <script src="js/maps.js?v=20261008a"></script>
-    <script src="js/airports.js?v=20260924a"></script>
-    <script src="js/routes.js?v=20260924a"></script>
+    <script src="js/overview.js?v=20261015b"></script>
+    <script src="js/maps.js?v=20261015b"></script>
+    <script src="js/airports.js?v=20261015d"></script>
+    <script src="js/routes.js?v=20261015b"></script>
   </body>
 </html>

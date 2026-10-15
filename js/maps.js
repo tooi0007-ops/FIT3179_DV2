@@ -2,7 +2,7 @@ const stateChoroplethMap = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
   width: "container",
   height: 460,
-  projection: { type: "equalEarth" },
+  projection: { type: "mercator" },
   data: mapData,
   transform: [{
     lookup: "properties.state",
@@ -18,8 +18,8 @@ const stateChoroplethMap = {
       field: "recovery_percent",
       type: "quantitative",
       title: "Change from 2019 (%)",
-      scale: {domain: [-20, 0, 20], range: ["#c85a5a", "#d6e0df", "#167988"], clamp: true},
-      legend: { orient: "bottom", direction: "horizontal", format: ".0f" },
+      scale: { domain: [-15, 0, 20], range: ["#c33f50", "#f2efe8", "#276f9e"], clamp: true },
+      legend: { orient: "bottom", direction: "horizontal", values: [-15, 0, 20], labelExpr: "datum.value > 0 ? '+' + datum.value + '%' : datum.value + '%'", title: "Change from 2019" },
     },
     tooltip: [
       { field: "properties.state", type: "nominal", title: "State" },
@@ -70,7 +70,7 @@ const proportionalSymbolMap = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
   width: "container",
   height: 480,
-  projection: { type: "equalEarth" },
+  projection: { type: "mercator" },
   layer: [
     {
       data: mapData,
@@ -78,13 +78,24 @@ const proportionalSymbolMap = {
     },
     {
       data: { url: `${dataPath}airport_2025.csv` },
+      params: [{
+        name: "stateFilter",
+        select: { type: "point", fields: ["state"] },
+        bind: {
+          input: "select",
+          name: "Highlight a state: ",
+          options: [null, "New South Wales", "Victoria", "Queensland", "Western Australia", "South Australia", "Tasmania", "Northern Territory", "Australian Capital Territory"],
+          labels: ["All states", "New South Wales", "Victoria", "Queensland", "Western Australia", "South Australia", "Tasmania", "Northern Territory", "ACT"],
+        },
+      }],
       transform: [{ filter: "datum.match_status !== 'unmatched' && datum.longitude >= 110 && datum.longitude <= 155 && datum.latitude >= -45 && datum.latitude <= -10" }],
-      mark: { type: "circle", opacity: 0.72, stroke: "#07545b", strokeWidth: 0.5 },
+      mark: { type: "circle", stroke: "#07545b", strokeWidth: 0.7 },
       encoding: {
         longitude: { field: "longitude", type: "quantitative" },
         latitude: { field: "latitude", type: "quantitative" },
         size: { field: "total_passengers", type: "quantitative", title: "Passenger movements", scale: { range: [12, 2600] }, legend: { format: "~s" } },
         color: { value: "#0d7c86" },
+        opacity: { condition: { param: "stateFilter", value: 0.78 }, value: 0.12 },
         tooltip: [
           { field: "airport_name", type: "nominal", title: "Airport" },
           { field: "state", type: "nominal", title: "State" },
@@ -100,8 +111,8 @@ const proportionalSymbolMap = {
 const domesticRouteFlowMap = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
   width: "container",
-  height: 460,
-  projection: { type: "equalEarth" },
+  height: 560,
+  projection: { type: "mercator" },
   layer: [
     {
       data: mapData,
@@ -109,29 +120,22 @@ const domesticRouteFlowMap = {
     },
     {
       data: { url: `${dataPath}route_flow_points_top10_2025.csv` },
-      mark: { type: "line", interpolate: "basis", color: "#df7f40", opacity: 0.55 },
+      params: [{
+        name: "routeHover",
+        select: { type: "point", fields: ["route"], on: "pointerover", clear: "pointerout" },
+      }],
+      mark: { type: "line", interpolate: "basis", color: "#d86f34" },
       encoding: {
         longitude: { field: "longitude", type: "quantitative" },
         latitude: { field: "latitude", type: "quantitative" },
         detail: { field: "route", type: "nominal" },
         order: { field: "point_order", type: "ordinal" },
         size: { field: "passengers_2025", type: "quantitative", legend: null, scale: { range: [1.5, 10] } },
+        opacity: { condition: { param: "routeHover", value: 0.95 }, value: 0.16 },
         tooltip: [
           { field: "route", type: "nominal", title: "City-pair route" },
           { field: "passengers_2025", type: "quantitative", title: "2025 passenger movements", format: "," },
         ],
-      },
-    },
-    {
-      data: { url: `${dataPath}route_flow_points_top10_2025.csv` },
-      transform: [{ filter: "datum.route === 'Melbourne - Sydney'" }],
-      mark: { type: "line", interpolate: "basis", color: "#a94f21", opacity: 1 },
-      encoding: {
-        longitude: { field: "longitude", type: "quantitative" },
-        latitude: { field: "latitude", type: "quantitative" },
-        detail: { field: "route", type: "nominal" },
-        order: { field: "point_order", type: "ordinal" },
-        size: { field: "passengers_2025", type: "quantitative", legend: null, scale: { range: [1.5, 10] } },
       },
     },
     {

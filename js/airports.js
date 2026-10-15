@@ -1,48 +1,32 @@
 const airportRankBumpChart = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-  width: "container", height: 365,
-  title: "Airport passenger-movement rank, 2019–2025",
+  width: "container", height: 455,
+  data: { url: `${dataPath}airport_bump_2015_2025.csv` },
+  title: "Passenger-movement rank among Australia's largest airports, 2015–2025",
   layer: [
     {
-      data: { url: `${dataPath}airport_bump_2015_2025.csv` },
-      transform: [{ filter: "datum.year >= 2019 && datum.airport_name !== 'SUNSHINE COAST'" }],
-      mark: { type: "line", color: "#8d98a5", opacity: 0.8, strokeWidth: 1.8, point: { filled: true, size: 28 } },
+      mark: { type: "line", opacity: 0.82, strokeWidth: 2, point: { filled: true, size: 34 } },
       encoding: {
-        x: { field: "year", type: "ordinal", title: "Year", axis: { labelAngle: 0 } },
-        y: { field: "rank", type: "quantitative", title: "National rank (1 = largest)", scale: { domain: [16, 1] }, axis: { tickCount: 8 } },
-        detail: { field: "airport_name" },
+        x: { field: "year", type: "quantitative", title: "Year", scale: { domain: [2015, 2026.8] }, axis: { values: [2015, 2017, 2019, 2021, 2023, 2025], format: "d" } },
+        y: { field: "rank", type: "quantitative", title: "National rank (1 = largest)", scale: { domain: [16.5, 0.5] }, axis: { values: [1, 3, 5, 7, 9, 11, 13, 15] } },
+        detail: { field: "airport_name", type: "nominal" },
+        color: { condition: { test: "datum.airport_name === 'SUNSHINE COAST'", value: "#0d7c86" }, value: "#8d98a5", legend: null },
         tooltip: [
           { field: "airport_name", type: "nominal", title: "Airport" },
-          { field: "year", type: "ordinal", title: "Year" },
+          { field: "year", type: "quantitative", title: "Year", format: "d" },
           { field: "rank", type: "quantitative", title: "Rank" },
           { field: "total_passengers", type: "quantitative", title: "Passenger movements", format: "," },
         ],
       },
     },
     {
-      data: { url: `${dataPath}airport_bump_2015_2025.csv` },
-      transform: [{ filter: "datum.year >= 2019 && datum.airport_name === 'SUNSHINE COAST'" }],
-      mark: { type: "line", color: "#0d7c86", strokeWidth: 3, point: { filled: true, size: 52 } },
+      transform: [{ filter: "datum.year === 2025" }],
+      mark: { type: "text", align: "left", baseline: "middle", dx: 8, fontSize: 10.5, fontWeight: 700 },
       encoding: {
-        x: { field: "year", type: "ordinal" },
-        y: { field: "rank", type: "quantitative", scale: { domain: [16, 1] } },
-        detail: { field: "airport_name" },
-        tooltip: [
-          { field: "airport_name", type: "nominal", title: "Airport" },
-          { field: "year", type: "ordinal", title: "Year" },
-          { field: "rank", type: "quantitative", title: "Rank" },
-          { field: "total_passengers", type: "quantitative", title: "Passenger movements", format: "," },
-        ],
-      },
-    },
-    {
-      data: { url: `${dataPath}airport_bump_2015_2025.csv` },
-      transform: [{ filter: "datum.year === 2019 && datum.airport_name === 'SUNSHINE COAST'" }],
-      mark: { type: "text", align: "left", baseline: "bottom", dx: 8, dy: -5, fontSize: 12, fontWeight: 700, color: "#0d7c86" },
-      encoding: {
-        x: { field: "year", type: "ordinal" },
-        y: { field: "rank", type: "quantitative", scale: { domain: [16, 1] } },
-        text: { value: "Sunshine Coast" },
+        x: { field: "year", type: "quantitative", scale: { domain: [2015, 2026.8] } },
+        y: { field: "rank", type: "quantitative", scale: { domain: [16.5, 0.5] } },
+        text: { field: "airport_name", type: "nominal" },
+        color: { condition: { test: "datum.airport_name === 'SUNSHINE COAST'", value: "#0d7c86" }, value: "#4e5968", legend: null },
       },
     },
   ], config,
@@ -87,9 +71,38 @@ const airportButterflyChart = {
   mark: { type: "bar" },
   encoding: {
     y: { field: "airport_name", type: "nominal", sort: { field: "rank", order: "ascending" }, title: null },
-    x: { field: "signed_passengers", type: "quantitative", title: "Passenger movements", axis: { format: "~s" } },
+    x: {
+      field: "signed_passengers",
+      type: "quantitative",
+      title: "Passenger movements (domestic ← | → international)",
+      axis: { labelExpr: "format(abs(datum.value), '~s')" },
+    },
     color: { field: "travel_label", type: "nominal", title: null, scale: { domain: ["Domestic", "International"], range: ["#0d7c86", "#E08B32"] } },
     tooltip: [{ field: "airport_name", title: "Airport" }, { field: "travel_label", title: "Type" }, { field: "passengers", title: "Passenger movements", format: "," }],
+  }, config,
+};
+
+const airportTravelMixChart = {
+  $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+  width: "container", height: 350,
+  data: { url: `${dataPath}airport_2025_top10.csv` },
+  transform: [
+    { calculate: "1 - datum.international_share", as: "domestic_share" },
+    { fold: ["domestic_share", "international_share"], as: ["share_type", "share"] },
+    { calculate: "datum.share_type === 'domestic_share' ? 'Domestic' : 'International'", as: "travel_label" },
+  ],
+  title: "Passenger mix at the ten largest airports, 2025",
+  mark: { type: "bar" },
+  encoding: {
+    y: { field: "airport_name", type: "nominal", sort: { field: "international_share", order: "descending" }, title: null },
+    x: { field: "share", type: "quantitative", stack: "zero", title: "Share of passenger movements", axis: { format: ".0%" }, scale: { domain: [0, 1] } },
+    color: { field: "travel_label", type: "nominal", title: null, scale: { domain: ["Domestic", "International"], range: ["#0d7c86", "#E08B32"] }, legend: { orient: "top", direction: "horizontal" } },
+    order: { field: "travel_label", sort: "ascending" },
+    tooltip: [
+      { field: "airport_name", type: "nominal", title: "Airport" },
+      { field: "travel_label", type: "nominal", title: "Type" },
+      { field: "share", type: "quantitative", title: "Share", format: ".1%" },
+    ],
   }, config,
 };
 
@@ -116,7 +129,8 @@ const airportHierarchyTreemap = {
   config: { text: { font: "Arial" } },
 };
 
-vegaEmbed("#airport-rank-bump-chart", airportRankBumpChart, embedOptions);
 vegaEmbed("#airport-connected-dot-plot", airportConnectedDotPlot, embedOptions);
+vegaEmbed("#airport-rank-bump-chart", airportRankBumpChart, embedOptions);
 vegaEmbed("#airport-butterfly-chart", airportButterflyChart, embedOptions);
+vegaEmbed("#airport-travel-mix-chart", airportTravelMixChart, embedOptions);
 vegaEmbed("#airport-hierarchy-treemap", airportHierarchyTreemap, embedOptions);

@@ -39,6 +39,21 @@ function nationalDemandLineChartSpec(demandType) {
   if (demandType === "total") {
     layers.push(
       {
+        data: { values: [{ total_passengers: 164316915 }] },
+        mark: { type: "rule", color: "#6d7b88", strokeDash: [6, 5], strokeWidth: 1.3 },
+        encoding: { y: { field: "total_passengers", type: "quantitative" } },
+      },
+      {
+        data: { values: [{ year: 1989, total_passengers: 33042473 }] },
+        mark: { type: "point", filled: true, color: "#df7f40", size: 110, stroke: "#ffffff", strokeWidth: 1.5 },
+        encoding: { x: { field: "year", type: "quantitative" }, y: { field: "total_passengers", type: "quantitative" } },
+      },
+      {
+        data: { values: [{ year: 1989, total_passengers: 33042473, label: "1989 pilots' dispute: −20%" }] },
+        mark: { type: "text", align: "left", baseline: "bottom", dx: 9, dy: -9, fontSize: 12, fontWeight: 700, color: "#9d5529" },
+        encoding: { x: { field: "year", type: "quantitative" }, y: { field: "total_passengers", type: "quantitative" }, text: { field: "label" } },
+      },
+      {
         data: { values: [{ year: 2020, total_passengers: 47829062 }] },
         mark: { type: "point", filled: true, color: "#b94d57", size: 120, stroke: "#ffffff", strokeWidth: 1.5 },
         encoding: { x: { field: "year", type: "quantitative" }, y: { field: "total_passengers", type: "quantitative" } },
@@ -54,7 +69,7 @@ function nationalDemandLineChartSpec(demandType) {
         encoding: { x: { field: "year", type: "quantitative" }, y: { field: "total_passengers", type: "quantitative" } },
       },
       {
-        data: { values: [{ year: 2025, total_passengers: 164622881, label: "Slightly above 2019" }] },
+        data: { values: [{ year: 2025, total_passengers: 164622881, label: "2025: back to the 2019 level (+0.2%)" }] },
         mark: { type: "text", align: "right", baseline: "bottom", dx: -8, dy: -10, fontSize: 12, fontWeight: 700, color: "#1e4f75" },
         encoding: { x: { field: "year", type: "quantitative" }, y: { field: "total_passengers", type: "quantitative" }, text: { field: "label" } },
       },
