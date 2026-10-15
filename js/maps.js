@@ -19,7 +19,13 @@ const stateChoroplethMap = {
       type: "quantitative",
       title: "Change from 2019 (%)",
       scale: { domain: [-15, 0, 20], range: ["#c33f50", "#f2efe8", "#276f9e"], clamp: true },
-      legend: { orient: "bottom", direction: "horizontal", values: [-15, 0, 20], labelExpr: "datum.value > 0 ? '+' + datum.value + '%' : datum.value + '%'", title: "Change from 2019" },
+      legend: {
+        orient: "bottom",
+        direction: "horizontal",
+        values: [-15, -10, -5, 0, 5, 10, 15, 20],
+        labelExpr: "datum.value > 0 ? '+' + datum.value + '%' : datum.value + '%'",
+        title: "Change since 2019 (%)",
+      },
     },
     tooltip: [
       { field: "properties.state", type: "nominal", title: "State" },
@@ -47,13 +53,20 @@ const stateLabels = {
 stateChoroplethMap.layer = [
   {
     data: mapData,
+    params: [{
+      name: "stateHover",
+      select: { type: "point", fields: ["properties.state"], on: "mouseover", clear: "mouseout" },
+    }],
     transform: stateChoroplethMap.transform,
     mark: stateChoroplethMap.mark,
-    encoding: stateChoroplethMap.encoding,
+    encoding: {
+      ...stateChoroplethMap.encoding,
+      opacity: { condition: { param: "stateHover", value: 1 }, value: 0.18 },
+    },
   },
   {
     data: stateLabels,
-    mark: { type: "text", fontSize: 11, fontWeight: 700, color: "#17202f", opacity: 0.82 },
+    mark: { type: "text", fontSize: 11, fontWeight: 700, color: "#17202f", opacity: 0.82, interactive: false },
     encoding: {
       longitude: { field: "longitude", type: "quantitative" },
       latitude: { field: "latitude", type: "quantitative" },
@@ -104,6 +117,38 @@ const proportionalSymbolMap = {
         ],
       },
     },
+    {
+      data: stateLabels,
+      mark: {
+        type: "text",
+        fontSize: 15,
+        fontWeight: 800,
+        color: "#fffdf8",
+        stroke: "#fffdf8",
+        strokeWidth: 4,
+        interactive: false,
+      },
+      encoding: {
+        longitude: { field: "longitude", type: "quantitative" },
+        latitude: { field: "latitude", type: "quantitative" },
+        text: { field: "label", type: "nominal" },
+      },
+    },
+    {
+      data: stateLabels,
+      mark: {
+        type: "text",
+        fontSize: 15,
+        fontWeight: 800,
+        color: "#17202f",
+        interactive: false,
+      },
+      encoding: {
+        longitude: { field: "longitude", type: "quantitative" },
+        latitude: { field: "latitude", type: "quantitative" },
+        text: { field: "label", type: "nominal" },
+      },
+    },
   ],
   config,
 };
@@ -120,10 +165,6 @@ const domesticRouteFlowMap = {
     },
     {
       data: { url: `${dataPath}route_flow_points_top10_2025.csv` },
-      params: [{
-        name: "routeHover",
-        select: { type: "point", fields: ["route"], on: "pointerover", clear: "pointerout" },
-      }],
       mark: { type: "line", interpolate: "basis", color: "#d86f34" },
       encoding: {
         longitude: { field: "longitude", type: "quantitative" },
@@ -133,8 +174,26 @@ const domesticRouteFlowMap = {
         size: { field: "passengers_2025", type: "quantitative", legend: null, scale: { range: [1.5, 10] } },
         opacity: { condition: { param: "routeHover", value: 0.95 }, value: 0.16 },
         tooltip: [
-          { field: "route", type: "nominal", title: "City-pair route" },
-          { field: "passengers_2025", type: "quantitative", title: "2025 passenger movements", format: "," },
+          { field: "route", type: "nominal", title: "Route" },
+          { field: "passengers_2025", type: "quantitative", title: "2025 movements", format: "," },
+        ],
+      },
+    },
+    {
+      data: { url: `${dataPath}route_flow_points_top10_2025.csv` },
+      params: [{
+        name: "routeHover",
+        select: { type: "point", fields: ["route"], on: "mouseover", clear: "mouseout" },
+      }],
+      mark: { type: "line", interpolate: "basis", strokeWidth: 18, opacity: 0.01 },
+      encoding: {
+        longitude: { field: "longitude", type: "quantitative" },
+        latitude: { field: "latitude", type: "quantitative" },
+        detail: { field: "route", type: "nominal" },
+        order: { field: "point_order", type: "ordinal" },
+        tooltip: [
+          { field: "route", type: "nominal", title: "Route" },
+          { field: "passengers_2025", type: "quantitative", title: "2025 movements", format: "," },
         ],
       },
     },

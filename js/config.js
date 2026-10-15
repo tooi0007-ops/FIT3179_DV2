@@ -12,19 +12,21 @@ const config = {
     titleColor: "#526071",
     labelFont: "Arial",
     titleFont: "Arial",
-    labelFontSize: 11,
-    titleFontSize: 12,
+    labelFontSize: 13,
+    titleFontSize: 14,
   },
   legend: { 
     labelColor: "#526071",
     titleColor: "#526071",
     labelFont: "Arial",
-    titleFont: "Arial"
+    titleFont: "Arial",
+    labelFontSize: 13,
+    titleFontSize: 13,
   },
   title: { 
     color: "#17202f",
     font: "Arial",
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: 600,
     anchor: "start" 
   },

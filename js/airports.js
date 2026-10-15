@@ -29,6 +29,46 @@ const airportRankBumpChart = {
         color: { condition: { test: "datum.airport_name === 'SUNSHINE COAST'", value: "#0d7c86" }, value: "#4e5968", legend: null },
       },
     },
+    {
+      data: {
+        values: [
+          { year: 2020, rank: 16, label: "2020: rank fell to 16" },
+          { year: 2021, rank: 2, label: "2021: Brisbane briefly ranked second" },
+        ],
+      },
+      mark: {
+        type: "text",
+        align: "left",
+        baseline: "bottom",
+        dx: 10,
+        dy: -10,
+        fontSize: 11,
+        fontWeight: 700,
+        color: "#fffdf8",
+        stroke: "#fffdf8",
+        strokeWidth: 4,
+      },
+      encoding: {
+        x: { field: "year", type: "quantitative", scale: { domain: [2015, 2026.8] } },
+        y: { field: "rank", type: "quantitative", scale: { domain: [16.5, 0.5] } },
+        text: { field: "label", type: "nominal" },
+      },
+    },
+    {
+      data: {
+        values: [
+          { year: 2020, rank: 16, label: "2020: rank fell to 16", colour: "#0d7c86" },
+          { year: 2021, rank: 2, label: "2021: Brisbane briefly ranked second", colour: "#4e5968" },
+        ],
+      },
+      mark: { type: "text", align: "left", baseline: "bottom", dx: 10, dy: -10, fontSize: 11, fontWeight: 700 },
+      encoding: {
+        x: { field: "year", type: "quantitative", scale: { domain: [2015, 2026.8] } },
+        y: { field: "rank", type: "quantitative", scale: { domain: [16.5, 0.5] } },
+        text: { field: "label", type: "nominal" },
+        color: { field: "colour", type: "nominal", scale: null, legend: null },
+      },
+    },
   ], config,
 };
 
@@ -37,7 +77,7 @@ const airportConnectedDotPlot = {
   width: "container", height: 365,
   data: { url: `${dataPath}airport_compare_top15_2019_2025.csv` },
   transform: [{ calculate: "0", as: "baseline_percent" }],
-  title: "Percentage change in passenger movements, 2019–2025",
+  title: ["Passenger change at major airports", "2019–2025 (%)"],
   layer: [
     { mark: { type: "rule", color: "#9ca7a4", strokeWidth: 2 }, encoding: {
       y: { field: "airport_name", type: "nominal", sort: { field: "change_percent", order: "descending" }, title: null },
@@ -45,15 +85,15 @@ const airportConnectedDotPlot = {
       x2: { field: "change_percent" },
       tooltip: [{ field: "airport_name", title: "Airport" }, { field: "passengers_2019", title: "2019", format: "," }, { field: "passengers_2025", title: "2025", format: "," }, { field: "change_percent", title: "Change (%)", format: ".1f" }],
     }},
-    { mark: { type: "point", filled: true, size: 76, stroke: "#ffffff", strokeWidth: 1 }, encoding: {
+    { mark: { type: "point", filled: true, size: 58, color: "#8d98a5", stroke: "#ffffff", strokeWidth: 1 }, encoding: {
       y: { field: "airport_name", type: "nominal", sort: { field: "change_percent", order: "descending" }, title: null },
       x: { field: "baseline_percent", type: "quantitative", scale: { domain: [-20, 40] } },
-      color: { datum: "2019 baseline", type: "nominal", title: "Reference", scale: { domain: ["2019 baseline", "2025 change"], range: ["#2563a6", "#e4572e"] }, legend: { orient: "top", direction: "horizontal" } },
     }},
     { mark: { type: "point", filled: true, size: 76, stroke: "#ffffff", strokeWidth: 1 }, encoding: {
       y: { field: "airport_name", type: "nominal", sort: { field: "change_percent", order: "descending" }, title: null },
       x: { field: "change_percent", type: "quantitative", scale: { domain: [-20, 40] } },
-      color: { datum: "2025 change", type: "nominal", title: "Reference", scale: { domain: ["2019 baseline", "2025 change"], range: ["#2563a6", "#e4572e"] }, legend: { orient: "top", direction: "horizontal" } },
+      color: { condition: { test: "datum.change_percent >= 0", value: "#276f9e" }, value: "#c33f50", legend: null },
+      tooltip: [{ field: "airport_name", title: "Airport" }, { field: "passengers_2019", title: "2019 movements", format: "," }, { field: "passengers_2025", title: "2025 movements", format: "," }, { field: "change_percent", title: "Change (%)", format: ".1f" }],
     }},
   ], config,
 };
@@ -82,28 +122,71 @@ const airportButterflyChart = {
   }, config,
 };
 
-const airportTravelMixChart = {
+const stateAirportIntensityChart = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-  width: "container", height: 350,
-  data: { url: `${dataPath}airport_2025_top10.csv` },
-  transform: [
-    { calculate: "1 - datum.international_share", as: "domestic_share" },
-    { fold: ["domestic_share", "international_share"], as: ["share_type", "share"] },
-    { calculate: "datum.share_type === 'domestic_share' ? 'Domestic' : 'International'", as: "travel_label" },
-  ],
-  title: "Passenger mix at the ten largest airports, 2025",
-  mark: { type: "bar" },
-  encoding: {
-    y: { field: "airport_name", type: "nominal", sort: { field: "international_share", order: "descending" }, title: null },
-    x: { field: "share", type: "quantitative", stack: "zero", title: "Share of passenger movements", axis: { format: ".0%" }, scale: { domain: [0, 1] } },
-    color: { field: "travel_label", type: "nominal", title: null, scale: { domain: ["Domestic", "International"], range: ["#0d7c86", "#E08B32"] }, legend: { orient: "top", direction: "horizontal" } },
-    order: { field: "travel_label", sort: "ascending" },
-    tooltip: [
-      { field: "airport_name", type: "nominal", title: "Airport" },
-      { field: "travel_label", type: "nominal", title: "Type" },
-      { field: "share", type: "quantitative", title: "Share", format: ".1%" },
-    ],
-  }, config,
+  width: "container", height: 390,
+  data: { url: `${dataPath}state_airport_intensity_2025.csv` },
+  title: ["Airport traffic compared with", "state population, 2025"],
+  layer: [
+    {
+      data: { values: [{ population_2025: 0, passengers_2025: 0 }, { population_2025: 9000000, passengers_2025: 53053800 }] },
+      mark: { type: "line", color: "#a9b2ad", strokeDash: [6, 5], strokeWidth: 1.5 },
+      encoding: {
+        x: { field: "population_2025", type: "quantitative", scale: { domain: [0, 9000000] } },
+        y: { field: "passengers_2025", type: "quantitative", scale: { domain: [0, 55000000] } },
+      },
+    },
+    {
+      mark: { type: "circle", filled: true, color: "#0d7c86", opacity: 0.82, stroke: "#07545b", strokeWidth: 1 },
+      encoding: {
+        x: { field: "population_2025", type: "quantitative", title: "Estimated residents", axis: { format: "~s" }, scale: { domain: [0, 9000000] } },
+        y: { field: "passengers_2025", type: "quantitative", title: "Airport passenger movements", axis: { format: "~s" }, scale: { domain: [0, 55000000] } },
+        size: { field: "passenger_movements_per_resident", type: "quantitative", title: "Movements per resident", scale: { range: [90, 620] } },
+        tooltip: [
+          { field: "state", type: "nominal", title: "State or territory" },
+          { field: "population_2025", type: "quantitative", title: "Estimated residents", format: "," },
+          { field: "passengers_2025", type: "quantitative", title: "Passenger movements", format: "," },
+          { field: "passenger_movements_per_resident", type: "quantitative", title: "Movements per resident", format: ".2f" },
+        ],
+      },
+    },
+    {
+      transform: [{ filter: "datum.state_short !== 'NT' && datum.state_short !== 'ACT' && datum.state_short !== 'TAS'" }],
+      mark: { type: "text", align: "left", baseline: "middle", dx: 9, fontWeight: 700 },
+      encoding: {
+        x: { field: "population_2025", type: "quantitative", scale: { domain: [0, 9000000] } },
+        y: { field: "passengers_2025", type: "quantitative", scale: { domain: [0, 55000000] } },
+        text: { field: "state_short", type: "nominal" },
+      },
+    },
+    {
+      transform: [{ filter: "datum.state_short === 'NT'" }],
+      mark: { type: "text", align: "right", baseline: "top", dx: -14, dy: 18, fontWeight: 700 },
+      encoding: {
+        x: { field: "population_2025", type: "quantitative", scale: { domain: [0, 9000000] } },
+        y: { field: "passengers_2025", type: "quantitative", scale: { domain: [0, 55000000] } },
+        text: { field: "state_short", type: "nominal" },
+      },
+    },
+    {
+      transform: [{ filter: "datum.state_short === 'ACT'" }],
+      mark: { type: "text", align: "left", baseline: "bottom", dx: 14, dy: -14, fontWeight: 700 },
+      encoding: {
+        x: { field: "population_2025", type: "quantitative", scale: { domain: [0, 9000000] } },
+        y: { field: "passengers_2025", type: "quantitative", scale: { domain: [0, 55000000] } },
+        text: { field: "state_short", type: "nominal" },
+      },
+    },
+    {
+      transform: [{ filter: "datum.state_short === 'TAS'" }],
+      mark: { type: "text", align: "left", baseline: "bottom", dx: 14, dy: -14, fontWeight: 700 },
+      encoding: {
+        x: { field: "population_2025", type: "quantitative", scale: { domain: [0, 9000000] } },
+        y: { field: "passengers_2025", type: "quantitative", scale: { domain: [0, 55000000] } },
+        text: { field: "state_short", type: "nominal" },
+      },
+    },
+  ], config,
 };
 
 const airportHierarchyTreemap = {
@@ -132,5 +215,5 @@ const airportHierarchyTreemap = {
 vegaEmbed("#airport-connected-dot-plot", airportConnectedDotPlot, embedOptions);
 vegaEmbed("#airport-rank-bump-chart", airportRankBumpChart, embedOptions);
 vegaEmbed("#airport-butterfly-chart", airportButterflyChart, embedOptions);
-vegaEmbed("#airport-travel-mix-chart", airportTravelMixChart, embedOptions);
+vegaEmbed("#state-airport-intensity-chart", stateAirportIntensityChart, embedOptions);
 vegaEmbed("#airport-hierarchy-treemap", airportHierarchyTreemap, embedOptions);

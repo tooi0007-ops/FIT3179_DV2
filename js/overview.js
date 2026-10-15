@@ -2,17 +2,17 @@ const demandMeasures = {
   total: {
     field: "total_passengers",
     label: "total passenger movements",
-    description: "Showing total passenger movements. The annotations identify the 2020 disruption and the return to the 2019 level.",
+    description: "Showing total passenger movements. Key events are labelled below.",
   },
   domestic: {
     field: "domestic_passengers",
     label: "domestic passenger movements",
-    description: "Showing domestic passenger movements. Use the tooltip to compare individual years.",
+    description: "Showing domestic movements. Hover to compare individual years.",
   },
   international: {
     field: "international_passengers",
     label: "international passenger movements",
-    description: "Showing international passenger movements. Use the tooltip to compare individual years.",
+    description: "Showing international movements. Hover to compare individual years.",
   },
 };
 
@@ -50,7 +50,7 @@ function nationalDemandLineChartSpec(demandType) {
       },
       {
         data: { values: [{ year: 1989, total_passengers: 33042473, label: "1989 pilots' dispute: −20%" }] },
-        mark: { type: "text", align: "left", baseline: "bottom", dx: 9, dy: -9, fontSize: 12, fontWeight: 700, color: "#9d5529" },
+        mark: { type: "text", align: "left", baseline: "top", dx: 9, dy: 14, fontSize: 13, fontWeight: 700, color: "#9d5529" },
         encoding: { x: { field: "year", type: "quantitative" }, y: { field: "total_passengers", type: "quantitative" }, text: { field: "label" } },
       },
       {
@@ -60,7 +60,7 @@ function nationalDemandLineChartSpec(demandType) {
       },
       {
         data: { values: [{ year: 2020, total_passengers: 47829062, label: "COVID-19 disruption" }] },
-        mark: { type: "text", align: "left", baseline: "top", dx: 9, dy: 10, fontSize: 12, fontWeight: 700, color: "#9e3d48" },
+        mark: { type: "text", align: "left", baseline: "top", dx: 9, dy: 12, fontSize: 13, fontWeight: 700, color: "#9e3d48" },
         encoding: { x: { field: "year", type: "quantitative" }, y: { field: "total_passengers", type: "quantitative" }, text: { field: "label" } },
       },
       {
@@ -70,7 +70,7 @@ function nationalDemandLineChartSpec(demandType) {
       },
       {
         data: { values: [{ year: 2025, total_passengers: 164622881, label: "2025: back to the 2019 level (+0.2%)" }] },
-        mark: { type: "text", align: "right", baseline: "bottom", dx: -8, dy: -10, fontSize: 12, fontWeight: 700, color: "#1e4f75" },
+        mark: { type: "text", align: "right", baseline: "bottom", dx: -8, dy: -12, fontSize: 13, fontWeight: 700, color: "#1e4f75" },
         encoding: { x: { field: "year", type: "quantitative" }, y: { field: "total_passengers", type: "quantitative" }, text: { field: "label" } },
       },
     );
@@ -80,7 +80,7 @@ function nationalDemandLineChartSpec(demandType) {
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
     width: "container",
     height: 390,
-    title: `Australian ${measure.label}, 1985–2025`,
+    title: [`Australian ${measure.label}`, "1985–2025"],
     layer: layers,
     config,
   };
