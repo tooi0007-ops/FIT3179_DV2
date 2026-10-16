@@ -10,7 +10,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
   </head>
-  <!-- Trigger fresh GitHub Pages deployment -->
   <body>
     <header class="site-header">
       <div class="header-inner">
@@ -117,10 +116,10 @@
             <p class="chart-insight"><strong>Domestic dependence:</strong><br>Hobart recorded 2.87 million domestic movements.<br>International movements were only 19,580.</p>
           </article>
           <article class="visual-panel full-panel">
-            <h3>Does airport traffic match each state's population?</h3>
-            <p class="chart-note">This chart combines BITRE traffic with ABS population.<br>The dashed line shows the national rate.<br>Larger circles mean more movements per resident.</p>
-            <div id="state-airport-intensity-chart" class="visual" aria-label="Scatter plot comparing state populations and airport passenger movements"></div>
-            <p class="chart-insight"><strong>Population alone does not explain airport activity:</strong><br>NT and Tasmania exceed the national reference.<br>Tourism and distance also influence airport activity.</p>
+            <h3>Does each state's passenger share match its population?</h3>
+            <p class="chart-note">Each line represents one state or territory.<br>Upward lines indicate a larger passenger share.<br>Hover for exact values.</p>
+            <div id="state-airport-share-slope-chart" class="visual" aria-label="Slope chart comparing state population and airport passenger shares"></div>
+            <p class="chart-insight"><strong>Queensland shows the largest difference:</strong><br>Its passenger share exceeds its population share.<br>New South Wales and Victoria show the reverse.</p>
           </article>
         </div>
         <div class="visual-grid">
@@ -186,8 +185,8 @@
     </script>
     <script src="js/config.js?v=20261016a"></script>
     <script src="js/overview.js?v=20261016a"></script>
-    <script src="js/maps.js?v=20261016b"></script>
-    <script src="js/airports.js?v=20261016c"></script>
+    <script src="js/maps.js?v=20261016c"></script>
+    <script src="js/airports.js?v=20261016d"></script>
     <script src="js/routes.js?v=20261016a"></script>
   </body>
 </html>

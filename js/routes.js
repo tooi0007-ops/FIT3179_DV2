@@ -15,17 +15,18 @@ const routeRecoveryHeatmap = {
 const airportLollipopChart = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
   width: "container", height: 365,
-  data: { url: `${dataPath}airport_2025_top20.csv?v=20260922`, format: { type: "csv" } },
+  data: { url: `${dataPath}airport_2025_top20.csv` },
   transform: [{ calculate: "0", as: "baseline" }],
   title: "Average passenger movements per aircraft movement, 2025",
+  encoding: {
+    y: { field: "airport_name", type: "nominal", sort: { field: "passengers_per_aircraft_movement", order: "descending" }, title: null },
+  },
   layer: [
     { mark: { type: "rule", color: "#a9b2ad", strokeWidth: 2 }, encoding: {
-      y: { field: "airport_name", type: "nominal", sort: ["GOLD COAST", "SUNSHINE COAST", "MELBOURNE", "SYDNEY", "HOBART", "PROSERPINE", "PERTH", "BALLINA", "HAMILTON ISLAND", "BRISBANE", "ADELAIDE", "KARRATHA", "LAUNCESTON", "CAIRNS", "NEWCASTLE", "MACKAY", "CANBERRA", "DARWIN", "TOWNSVILLE", "ROCKHAMPTON"], title: null },
       x: { field: "baseline", type: "quantitative", title: "Passenger movements per aircraft movement" },
       x2: { field: "passengers_per_aircraft_movement" },
     }},
     { mark: { type: "point", filled: true, color: "#0d7c86", size: 80 }, encoding: {
-      y: { field: "airport_name", type: "nominal", sort: ["GOLD COAST", "SUNSHINE COAST", "MELBOURNE", "SYDNEY", "HOBART", "PROSERPINE", "PERTH", "BALLINA", "HAMILTON ISLAND", "BRISBANE", "ADELAIDE", "KARRATHA", "LAUNCESTON", "CAIRNS", "NEWCASTLE", "MACKAY", "CANBERRA", "DARWIN", "TOWNSVILLE", "ROCKHAMPTON"], title: null },
       x: { field: "passengers_per_aircraft_movement", type: "quantitative" },
       tooltip: [{ field: "airport_name", title: "Airport" }, { field: "total_passengers", title: "Passenger movements", format: "," }, { field: "total_aircraft_movements", title: "Aircraft movements", format: "," }, { field: "passengers_per_aircraft_movement", title: "Ratio", format: ".1f" }],
     }},

@@ -21,6 +21,29 @@ PROJECT = Path(__file__).resolve().parents[1]
 RAW = PROJECT.parents[0] / "Data Source"
 OUTPUT = PROJECT / "data" / "processed"
 
+# ABS estimated resident population, June 2025.
+STATE_POPULATION_2025 = {
+    "New South Wales": 8_593_900,
+    "Victoria": 7_074_500,
+    "Queensland": 5_669_800,
+    "South Australia": 1_902_300,
+    "Western Australia": 3_043_700,
+    "Tasmania": 576_000,
+    "Northern Territory": 264_400,
+    "Australian Capital Territory": 484_800,
+}
+
+STATE_SHORT = {
+    "New South Wales": "NSW",
+    "Victoria": "VIC",
+    "Queensland": "QLD",
+    "South Australia": "SA",
+    "Western Australia": "WA",
+    "Tasmania": "TAS",
+    "Northern Territory": "NT",
+    "Australian Capital Territory": "ACT",
+}
+
 
 def number(value):
     return isinstance(value, (int, float)) and not isinstance(value, bool)
@@ -378,6 +401,32 @@ def main() -> None:
                 }
             )
     write_csv(OUTPUT / "state_recovery_2019_2025.csv", recovery_rows, ["state", "passengers_2019", "passengers_2025", "recovery_percent"])
+
+    # Compare each state's share of population with its passenger share.
+    state_2025 = {
+        row["state"]: row["total_passengers"]
+        for row in state_rows
+        if row["year"] == 2025 and row["state"] in STATE_POPULATION_2025
+    }
+    total_population = sum(STATE_POPULATION_2025.values())
+    total_passengers = sum(state_2025.values())
+    share_rows = []
+    for state, population in STATE_POPULATION_2025.items():
+        passengers = state_2025[state]
+        share_rows.append(
+            {
+                "state": state,
+                "state_short": STATE_SHORT[state],
+                "population_share": round(population / total_population * 100, 2),
+                "passenger_share": round(passengers / total_passengers * 100, 2),
+                "passenger_movements_per_resident": round(passengers / population, 2),
+            }
+        )
+    write_csv(
+        OUTPUT / "state_airport_shares_2025.csv",
+        share_rows,
+        ["state", "state_short", "population_share", "passenger_share", "passenger_movements_per_resident"],
+    )
 
     airport_2025 = [row for row in activities if row["year"] == 2025 and row["airport_name"] != "TOTAL AUSTRALIA"]
     write_csv(OUTPUT / "airport_2025.csv", airport_2025, activity_fields)

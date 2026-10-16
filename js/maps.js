@@ -1,42 +1,3 @@
-const stateChoroplethMap = {
-  $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-  width: "container",
-  height: 460,
-  projection: { type: "mercator" },
-  data: mapData,
-  transform: [{
-    lookup: "properties.state",
-    from: {
-      data: { url: `${dataPath}state_recovery_2019_2025.csv` },
-      key: "state",
-      fields: ["recovery_percent", "passengers_2019", "passengers_2025"],
-    },
-  }],
-  mark: { type: "geoshape", stroke: "#ffffff", strokeWidth: 1.5 },
-  encoding: {
-    color: {
-      field: "recovery_percent",
-      type: "quantitative",
-      title: "Change from 2019 (%)",
-      scale: { domain: [-15, 0, 20], range: ["#c33f50", "#f2efe8", "#276f9e"], clamp: true },
-      legend: {
-        orient: "bottom",
-        direction: "horizontal",
-        values: [-15, -10, -5, 0, 5, 10, 15, 20],
-        labelExpr: "datum.value > 0 ? '+' + datum.value + '%' : datum.value + '%'",
-        title: "Change since 2019 (%)",
-      },
-    },
-    tooltip: [
-      { field: "properties.state", type: "nominal", title: "State" },
-      { field: "passengers_2019", type: "quantitative", title: "2019 movements", format: "," },
-      { field: "passengers_2025", type: "quantitative", title: "2025 movements", format: "," },
-      { field: "recovery_percent", type: "quantitative", title: "Change (%)", format: ".1f" },
-    ],
-  },
-  config,
-};
-
 const stateLabels = {
   values: [
     { state: "Western Australia", longitude: 121.5, latitude: -26.5, label: "WA" },
@@ -50,34 +11,62 @@ const stateLabels = {
   ],
 };
 
-stateChoroplethMap.layer = [
-  {
-    data: mapData,
-    params: [{
-      name: "stateHover",
-      select: { type: "point", fields: ["properties.state"], on: "mouseover", clear: "mouseout" },
-    }],
-    transform: stateChoroplethMap.transform,
-    mark: stateChoroplethMap.mark,
-    encoding: {
-      ...stateChoroplethMap.encoding,
-      opacity: { condition: { param: "stateHover", value: 1 }, value: 0.18 },
+const stateChoroplethMap = {
+  $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+  width: "container",
+  height: 460,
+  projection: { type: "mercator" },
+  layer: [
+    {
+      data: mapData,
+      params: [{
+        name: "stateHover",
+        select: { type: "point", fields: ["properties.state"], on: "mouseover", clear: "mouseout" },
+      }],
+      transform: [{
+        lookup: "properties.state",
+        from: {
+          data: { url: `${dataPath}state_recovery_2019_2025.csv` },
+          key: "state",
+          fields: ["recovery_percent", "passengers_2019", "passengers_2025"],
+        },
+      }],
+      mark: { type: "geoshape", stroke: "#ffffff", strokeWidth: 1.5 },
+      encoding: {
+        color: {
+          field: "recovery_percent",
+          type: "quantitative",
+          title: "Change from 2019 (%)",
+          scale: { domain: [-15, 0, 20], range: ["#c33f50", "#f2efe8", "#276f9e"], clamp: true },
+          legend: {
+            orient: "bottom",
+            direction: "horizontal",
+            values: [-15, -10, -5, 0, 5, 10, 15, 20],
+            labelExpr: "datum.value > 0 ? '+' + datum.value + '%' : datum.value + '%'",
+            title: "Change since 2019 (%)",
+          },
+        },
+        opacity: { condition: { param: "stateHover", value: 1 }, value: 0.18 },
+        tooltip: [
+          { field: "properties.state", type: "nominal", title: "State" },
+          { field: "passengers_2019", type: "quantitative", title: "2019 movements", format: "," },
+          { field: "passengers_2025", type: "quantitative", title: "2025 movements", format: "," },
+          { field: "recovery_percent", type: "quantitative", title: "Change (%)", format: ".1f" },
+        ],
+      },
     },
-  },
-  {
-    data: stateLabels,
-    mark: { type: "text", fontSize: 11, fontWeight: 700, color: "#17202f", opacity: 0.82, interactive: false },
-    encoding: {
-      longitude: { field: "longitude", type: "quantitative" },
-      latitude: { field: "latitude", type: "quantitative" },
-      text: { field: "label", type: "nominal" },
+    {
+      data: stateLabels,
+      mark: { type: "text", fontSize: 11, fontWeight: 700, color: "#17202f", opacity: 0.82, interactive: false },
+      encoding: {
+        longitude: { field: "longitude", type: "quantitative" },
+        latitude: { field: "latitude", type: "quantitative" },
+        text: { field: "label", type: "nominal" },
+      },
     },
-  },
-];
-delete stateChoroplethMap.data;
-delete stateChoroplethMap.transform;
-delete stateChoroplethMap.mark;
-delete stateChoroplethMap.encoding;
+  ],
+  config,
+};
 
 const proportionalSymbolMap = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
@@ -121,26 +110,10 @@ const proportionalSymbolMap = {
       data: stateLabels,
       mark: {
         type: "text",
-        fontSize: 15,
-        fontWeight: 800,
-        color: "#fffdf8",
-        stroke: "#fffdf8",
-        strokeWidth: 4,
-        interactive: false,
-      },
-      encoding: {
-        longitude: { field: "longitude", type: "quantitative" },
-        latitude: { field: "latitude", type: "quantitative" },
-        text: { field: "label", type: "nominal" },
-      },
-    },
-    {
-      data: stateLabels,
-      mark: {
-        type: "text",
-        fontSize: 15,
-        fontWeight: 800,
+        fontSize: 11,
+        fontWeight: 700,
         color: "#17202f",
+        opacity: 0.82,
         interactive: false,
       },
       encoding: {
