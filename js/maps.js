@@ -138,6 +138,10 @@ const domesticRouteFlowMap = {
     },
     {
       data: { url: `${dataPath}route_flow_points_top10_2025.csv` },
+      params: [{
+        name: "routeHover",
+        select: { type: "point", fields: ["route"], on: "mouseover", clear: "mouseout" },
+      }],
       mark: { type: "line", interpolate: "basis", color: "#d86f34" },
       encoding: {
         longitude: { field: "longitude", type: "quantitative" },
@@ -148,25 +152,7 @@ const domesticRouteFlowMap = {
         opacity: { condition: { param: "routeHover", value: 0.95 }, value: 0.16 },
         tooltip: [
           { field: "route", type: "nominal", title: "Route" },
-          { field: "passengers_2025", type: "quantitative", title: "2025 movements", format: "," },
-        ],
-      },
-    },
-    {
-      data: { url: `${dataPath}route_flow_points_top10_2025.csv` },
-      params: [{
-        name: "routeHover",
-        select: { type: "point", fields: ["route"], on: "mouseover", clear: "mouseout" },
-      }],
-      mark: { type: "line", interpolate: "basis", strokeWidth: 18, opacity: 0.01 },
-      encoding: {
-        longitude: { field: "longitude", type: "quantitative" },
-        latitude: { field: "latitude", type: "quantitative" },
-        detail: { field: "route", type: "nominal" },
-        order: { field: "point_order", type: "ordinal" },
-        tooltip: [
-          { field: "route", type: "nominal", title: "Route" },
-          { field: "passengers_2025", type: "quantitative", title: "2025 movements", format: "," },
+          { field: "passengers_2025", type: "quantitative", title: "2025 passenger movements", format: "," },
         ],
       },
     },
@@ -177,10 +163,6 @@ const domesticRouteFlowMap = {
       encoding: {
         longitude: { field: "longitude", type: "quantitative" },
         latitude: { field: "latitude", type: "quantitative" },
-        tooltip: [
-          { field: "route", type: "nominal", title: "Route serving this airport" },
-          { field: "passengers_2025", type: "quantitative", title: "2025 passenger movements", format: "," },
-        ],
       },
     },
     {
