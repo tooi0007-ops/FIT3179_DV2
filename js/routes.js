@@ -1,11 +1,15 @@
 const routeRecoveryHeatmap = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-  width: "container", height: 365,
+  width: "container", 
+  height: 365,
   data: { url: `${dataPath}route_monthly_recovery_top10.csv` },
   title: "Monthly change on major domestic routes: 2023–25 vs 2015–19",
   mark: { type: "rect", stroke: "#f6f3ec", strokeWidth: 1 },
   encoding: {
-    x: { field: "month", type: "ordinal", title: "Month", sort: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], axis: { labelExpr: "['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][datum.value - 1]", labelAngle: 0 } },
+    x: { 
+      field: "month", type: "ordinal", title: "Month", sort: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 
+      axis: { labelExpr: "['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][datum.value - 1]", labelAngle: 0 } 
+    },
     y: { field: "route", type: "nominal", title: null, sort: { field: "passengers_2025", order: "descending" } },
     color: { field: "recovery_percent", type: "quantitative", title: "Change vs 2015–19 (%)", scale: { domain: [-20, 0, 20], range: ["#c33f50", "#f2efe8", "#276f9e"], clamp: true }, legend: { orient: "bottom", direction: "horizontal", values: [-20, 0, 20], labelExpr: "datum.value > 0 ? '+' + datum.value + '%' : datum.value + '%'" } },
     tooltip: [{ field: "route", title: "Route" }, { field: "month", title: "Month" }, { field: "pre_covid_average", title: "2015–19 average", format: "," }, { field: "recovery_average", title: "2023–25 average", format: "," }, { field: "recovery_percent", title: "Change (%)", format: ".1f" }],
@@ -14,7 +18,8 @@ const routeRecoveryHeatmap = {
 
 const airportLollipopChart = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-  width: "container", height: 365,
+  width: "container", 
+  height: 365,
   data: { url: `${dataPath}airport_2025_top20.csv` },
   transform: [{ calculate: "0", as: "baseline" }],
   title: "Average passenger movements per aircraft movement, 2025",
