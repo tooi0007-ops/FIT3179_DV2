@@ -32,4 +32,4 @@ const config = {
   },
 };
 
-const embedOptions = { actions: false, renderer: "svg" };
+const embedOptions = { actions: true, renderer: "svg" };

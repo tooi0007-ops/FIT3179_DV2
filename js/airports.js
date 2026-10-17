@@ -1,6 +1,7 @@
 const airportRankBumpChart = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-  width: "container", height: 455,
+  width: "container", 
+  height: 455,
   data: { url: `${dataPath}airport_bump_2015_2025.csv` },
   title: "Passenger-movement rank among Australia's largest airports, 2015–2025",
   layer: [
@@ -33,7 +34,7 @@ const airportRankBumpChart = {
       data: {
         values: [{ year: 2020, rank: 16, label: "2020: rank fell to 16" }],
       },
-      mark: { type: "text", align: "left", baseline: "bottom", dx: 10, dy: -10, fontSize: 11, fontWeight: 700, color: "#0d7c86" },
+      mark: { type: "text", align: "left", baseline: "bottom", dx: 10, dy: 10, fontSize: 11, fontWeight: 700, color: "#0d7c86" },
       encoding: {
         x: { field: "year", type: "quantitative", scale: { domain: [2015, 2026.8] } },
         y: { field: "rank", type: "quantitative", scale: { domain: [16.5, 0.5] } },
@@ -45,7 +46,8 @@ const airportRankBumpChart = {
 
 const airportConnectedDotPlot = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-  width: "container", height: 365,
+  width: "container", 
+  height: 365,
   data: { url: `${dataPath}airport_compare_top15_2019_2025.csv` },
   transform: [{ calculate: "0", as: "baseline_percent" }],
   title: ["Passenger change at major airports", "2019–2025 (%)"],
@@ -71,7 +73,8 @@ const airportConnectedDotPlot = {
 
 const airportButterflyChart = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-  width: "container", height: 440,
+  width: "container", 
+  height: 440,
   data: { url: `${dataPath}airport_2025_top10.csv` },
   transform: [
     { fold: ["domestic_passengers", "international_passengers"], as: ["travel_type", "passengers"] },
@@ -93,7 +96,6 @@ const airportButterflyChart = {
   }, config,
 };
 
-// The fold transform reshapes two share columns for a slope chart.
 const stateAirportShareSlopeChart = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
   width: "container",
@@ -127,8 +129,12 @@ const stateAirportShareSlopeChart = {
 
 const airportHierarchyTreemap = {
   $schema: "https://vega.github.io/schema/vega/v5.json",
-  width: 1180, height: 460, padding: 2, background: null,
-  data: [{ name: "tree", url: `${dataPath}airport_treemap_2025.json?v=20260923`, transform: [
+  width: 1180, 
+  height: 460, 
+  padding: 2, 
+  background: null,
+  data: [{ name: "tree", url: `${dataPath}airport_treemap_2025.json?v=20260923`, 
+    transform: [
     { type: "stratify", key: "id", parentKey: "parent" },
     { type: "treemap", field: "value", sort: { field: "value", order: "descending" }, size: [{ signal: "width" }, { signal: "height" }], round: true, method: "squarify", paddingInner: 2, paddingOuter: 2, paddingTop: 24, as: ["x0", "y0", "x1", "y1", "depth", "children"] },
   ]}, {
@@ -141,9 +147,57 @@ const airportHierarchyTreemap = {
     range: ["#9f8e72", "#3f7891", "#6b7c4c", "#0d7c86", "#b56a3b", "#8d6f98", "#b94d57", "#486d9b"],
   }],
   marks: [
-    { type: "rect", from: { data: "tree" }, encode: { enter: { x: { field: "x0" }, y: { field: "y0" }, x2: { field: "x1" }, y2: { field: "y1" }, stroke: { value: "#f6f3ec" }, strokeWidth: { value: 1 } }, update: { fill: { signal: "datum.depth === 1 ? '#e8e5dc' : datum.depth === 2 ? scale('stateColour', datum.state) : 'transparent'" } } } },
-    { type: "text", from: { data: "stateLabels" }, encode: { enter: { x: { signal: "datum.x0 + 7" }, y: { signal: "datum.y0 + 5" }, text: { signal: "datum.label === 'Australian Capital Territory' ? 'ACT' : datum.label" }, fill: { value: "#17202f" }, fontSize: { value: 12 }, fontWeight: { value: 700 }, baseline: { value: "top" } } } },
-    { type: "text", from: { data: "airportLabels" }, encode: { enter: { x: { signal: "datum.x0 + 6" }, y: { signal: "datum.y0 + 19" }, text: { field: "label" }, fill: { value: "white" }, fontSize: { value: 11 }, fontWeight: { value: 600 }, baseline: { value: "top" } } } },
+    {
+      type: "rect",
+      from: { data: "tree" },
+      encode: {
+        enter: {
+          x: { field: "x0" },
+          y: { field: "y0" },
+          x2: { field: "x1" },
+          y2: { field: "y1" },
+          stroke: { value: "#f6f3ec" },
+          strokeWidth: { value: 1 }
+        },
+        update: {
+          fill: {
+            signal: "datum.depth === 1 ? '#e8e5dc' : datum.depth === 2 ? scale('stateColour', datum.state) : 'transparent'"
+          }
+        }
+      }
+    },
+    {
+      type: "text",
+      from: { data: "stateLabels" },
+      encode: {
+        enter: {
+          x: { signal: "datum.x0 + 7" },
+          y: { signal: "datum.y0 + 5" },
+          text: {
+            signal: "datum.label === 'Australian Capital Territory' ? 'ACT' : datum.label"
+          },
+          fill: { value: "#17202f" },
+          fontSize: { value: 12 },
+          fontWeight: { value: 700 },
+          baseline: { value: "top" }
+        }
+      }
+    },
+    {
+      type: "text",
+      from: { data: "airportLabels" },
+      encode: {
+        enter: {
+          x: { signal: "datum.x0 + 6" },
+          y: { signal: "datum.y0 + 19" },
+          text: { field: "label" },
+          fill: { value: "white" },
+          fontSize: { value: 11 },
+          fontWeight: { value: 600 },
+          baseline: { value: "top" }
+        }
+      }
+    }
   ],
   config: { text: { font: "Arial" } },
 };
