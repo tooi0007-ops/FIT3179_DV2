@@ -39,11 +39,7 @@ const nationalDemandLineChart = {
       encoding: trendEncoding,
     },
     {
-      data: {
-        values: [
-          { year: 1989, total_passengers: 33042473, label: "1989 pilots' dispute" },
-        ],
-      },
+      data: {values: [{ year: 1989, total_passengers: 33042473, label: "1989 pilots' dispute" },],},
       mark: { type: "text", align: "left", baseline: "bottom", dx: 8, dy: -18, fontSize: 11, fontWeight: 700, color: "#526071" },
       encoding: {
         x: { field: "year", type: "quantitative" },
