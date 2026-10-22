@@ -1,0 +1,247 @@
+year_end,financial_year,measure,category,value,index_2019
+1986,1985-86,Flights,Major cities,98218,37.29
+1986,1985-86,Flights,Regional,190244,80.37
+1986,1985-86,Flights,Remote,131761,113.54
+1987,1986-87,Flights,Major cities,104221,39.57
+1987,1986-87,Flights,Regional,187957,79.4
+1987,1986-87,Flights,Remote,128971,111.14
+1988,1987-88,Flights,Major cities,115587,43.88
+1988,1987-88,Flights,Regional,192317,81.24
+1988,1987-88,Flights,Remote,122278,105.37
+1989,1988-89,Flights,Major cities,120835,45.87
+1989,1988-89,Flights,Regional,198923,84.03
+1989,1988-89,Flights,Remote,125098,107.8
+1990,1989-90,Flights,Major cities,89729,34.06
+1990,1989-90,Flights,Regional,181268,76.57
+1990,1989-90,Flights,Remote,88777,76.5
+1991,1990-91,Flights,Major cities,125309,47.57
+1991,1990-91,Flights,Regional,205285,86.72
+1991,1990-91,Flights,Remote,108053,93.11
+1992,1991-92,Flights,Major cities,145051,55.07
+1992,1991-92,Flights,Regional,215245,90.93
+1992,1991-92,Flights,Remote,126853,109.31
+1993,1992-93,Flights,Major cities,157376,59.75
+1993,1992-93,Flights,Regional,228056,96.34
+1993,1992-93,Flights,Remote,134675,116.06
+1994,1993-94,Flights,Major cities,163742,62.16
+1994,1993-94,Flights,Regional,247665,104.62
+1994,1993-94,Flights,Remote,130246,112.24
+1995,1994-95,Flights,Major cities,178078,67.61
+1995,1994-95,Flights,Regional,254921,107.69
+1995,1994-95,Flights,Remote,138947,119.74
+1996,1995-96,Flights,Major cities,190038,72.15
+1996,1995-96,Flights,Regional,255816,108.07
+1996,1995-96,Flights,Remote,143555,123.71
+1997,1996-97,Flights,Major cities,195515,74.23
+1997,1996-97,Flights,Regional,252528,106.68
+1997,1996-97,Flights,Remote,144343,124.39
+1998,1997-98,Flights,Major cities,191438,72.68
+1998,1997-98,Flights,Regional,253705,107.17
+1998,1997-98,Flights,Remote,143936,124.04
+1999,1998-99,Flights,Major cities,196104,74.45
+1999,1998-99,Flights,Regional,255859,108.08
+1999,1998-99,Flights,Remote,144260,124.31
+2000,1999-00,Flights,Major cities,204677,77.7
+2000,1999-00,Flights,Regional,259258,109.52
+2000,1999-00,Flights,Remote,131057,112.94
+2001,2000-01,Flights,Major cities,239204,90.81
+2001,2000-01,Flights,Regional,261853,110.62
+2001,2000-01,Flights,Remote,124464,107.26
+2002,2001-02,Flights,Major cities,189764,72.04
+2002,2001-02,Flights,Regional,198900,84.02
+2002,2001-02,Flights,Remote,104942,90.43
+2003,2002-03,Flights,Major cities,189490,71.94
+2003,2002-03,Flights,Regional,190564,80.5
+2003,2002-03,Flights,Remote,104653,90.18
+2004,2003-04,Flights,Major cities,195016,74.04
+2004,2003-04,Flights,Regional,197216,83.31
+2004,2003-04,Flights,Remote,103164,88.9
+2005,2004-05,Flights,Major cities,206000,78.21
+2005,2004-05,Flights,Regional,222990,94.2
+2005,2004-05,Flights,Remote,103358,89.07
+2006,2005-06,Flights,Major cities,203539,77.27
+2006,2005-06,Flights,Regional,231561,97.82
+2006,2005-06,Flights,Remote,98271,84.68
+2007,2006-07,Flights,Major cities,209466,79.52
+2007,2006-07,Flights,Regional,224709,94.93
+2007,2006-07,Flights,Remote,94634,81.55
+2008,2007-08,Flights,Major cities,223817,84.97
+2008,2007-08,Flights,Regional,228858,96.68
+2008,2007-08,Flights,Remote,96797,83.41
+2009,2008-09,Flights,Major cities,231668,87.95
+2009,2008-09,Flights,Regional,223671,94.49
+2009,2008-09,Flights,Remote,96490,83.15
+2010,2009-10,Flights,Major cities,233463,88.63
+2010,2009-10,Flights,Regional,224689,94.92
+2010,2009-10,Flights,Remote,106297,91.6
+2011,2010-11,Flights,Major cities,243439,92.42
+2011,2010-11,Flights,Regional,234610,99.11
+2011,2010-11,Flights,Remote,114936,99.05
+2012,2011-12,Flights,Major cities,239242,90.83
+2012,2011-12,Flights,Regional,240364,101.54
+2012,2011-12,Flights,Remote,121306,104.53
+2013,2012-13,Flights,Major cities,252212,95.75
+2013,2012-13,Flights,Regional,255296,107.85
+2013,2012-13,Flights,Remote,121955,105.09
+2014,2013-14,Flights,Major cities,254702,96.7
+2014,2013-14,Flights,Regional,257136,108.62
+2014,2013-14,Flights,Remote,117549,101.3
+2015,2014-15,Flights,Major cities,258094,97.98
+2015,2014-15,Flights,Regional,250726,105.92
+2015,2014-15,Flights,Remote,113329,97.66
+2016,2015-16,Flights,Major cities,263127,99.89
+2016,2015-16,Flights,Regional,249524,105.41
+2016,2015-16,Flights,Remote,115874,99.85
+2017,2016-17,Flights,Major cities,261449,99.26
+2017,2016-17,Flights,Regional,249825,105.54
+2017,2016-17,Flights,Remote,116414,100.32
+2018,2017-18,Flights,Major cities,263131,99.9
+2018,2017-18,Flights,Regional,241518,102.03
+2018,2017-18,Flights,Remote,115741,99.74
+2019,2018-19,Flights,Major cities,263407,100.0
+2019,2018-19,Flights,Regional,236721,100.0
+2019,2018-19,Flights,Remote,116044,100.0
+2020,2019-20,Flights,Major cities,196759,74.7
+2020,2019-20,Flights,Regional,181218,76.55
+2020,2019-20,Flights,Remote,92687,79.87
+2021,2020-21,Flights,Major cities,87755,33.32
+2021,2020-21,Flights,Regional,123279,52.08
+2021,2020-21,Flights,Remote,89356,77.0
+2022,2021-22,Flights,Major cities,128964,48.96
+2022,2021-22,Flights,Regional,161793,68.35
+2022,2021-22,Flights,Remote,100617,86.71
+2023,2022-23,Flights,Major cities,240637,91.36
+2023,2022-23,Flights,Regional,224035,94.64
+2023,2022-23,Flights,Remote,104763,90.28
+2024,2023-24,Flights,Major cities,257025,97.58
+2024,2023-24,Flights,Regional,223119,94.25
+2024,2023-24,Flights,Remote,112001,96.52
+2025,2024-25,Flights,Major cities,248206,94.23
+2025,2024-25,Flights,Regional,213267,90.09
+2025,2024-25,Flights,Remote,116326,100.24
+2026,2025-26,Flights,Major cities,255570,97.02
+2026,2025-26,Flights,Regional,214620,90.66
+2026,2025-26,Flights,Remote,110443,95.17
+1986,1985-86,Passenger trips,Major cities,7657894,20.34
+1986,1985-86,Passenger trips,Regional,4907013,26.53
+1986,1985-86,Passenger trips,Remote,2233646,46.22
+1987,1986-87,Passenger trips,Major cities,8123333,21.57
+1987,1986-87,Passenger trips,Regional,4812913,26.02
+1987,1986-87,Passenger trips,Remote,2330571,48.23
+1988,1987-88,Passenger trips,Major cities,9109065,24.19
+1988,1987-88,Passenger trips,Regional,4926894,26.64
+1988,1987-88,Passenger trips,Remote,2434950,50.39
+1989,1988-89,Passenger trips,Major cities,9625693,25.56
+1989,1988-89,Passenger trips,Regional,4825035,26.08
+1989,1988-89,Passenger trips,Remote,2389534,49.45
+1990,1989-90,Passenger trips,Major cities,7185315,19.08
+1990,1989-90,Passenger trips,Regional,3480399,18.82
+1990,1989-90,Passenger trips,Remote,1599037,33.09
+1991,1990-91,Passenger trips,Major cities,10209001,27.11
+1991,1990-91,Passenger trips,Regional,4508688,24.37
+1991,1990-91,Passenger trips,Remote,2210614,45.75
+1992,1991-92,Passenger trips,Major cities,13398169,35.58
+1992,1991-92,Passenger trips,Regional,5224512,28.24
+1992,1991-92,Passenger trips,Remote,2367564,48.99
+1993,1992-93,Passenger trips,Major cities,13438929,35.69
+1993,1992-93,Passenger trips,Regional,5471854,29.58
+1993,1992-93,Passenger trips,Remote,2559310,52.96
+1994,1993-94,Passenger trips,Major cities,15296728,40.63
+1994,1993-94,Passenger trips,Regional,6660080,36.01
+1994,1993-94,Passenger trips,Remote,2828872,58.54
+1995,1994-95,Passenger trips,Major cities,16653218,44.23
+1995,1994-95,Passenger trips,Regional,7276614,39.34
+1995,1994-95,Passenger trips,Remote,3067536,63.48
+1996,1995-96,Passenger trips,Major cities,17876319,47.48
+1996,1995-96,Passenger trips,Regional,7591488,41.04
+1996,1995-96,Passenger trips,Remote,3143518,65.05
+1997,1996-97,Passenger trips,Major cities,18089692,48.04
+1997,1996-97,Passenger trips,Regional,7730995,41.79
+1997,1996-97,Passenger trips,Remote,3219059,66.61
+1998,1997-98,Passenger trips,Major cities,18358985,48.76
+1998,1997-98,Passenger trips,Regional,7747297,41.88
+1998,1997-98,Passenger trips,Remote,3251939,67.3
+1999,1998-99,Passenger trips,Major cities,18648636,49.53
+1999,1998-99,Passenger trips,Regional,7747091,41.88
+1999,1998-99,Passenger trips,Remote,3337783,69.07
+2000,1999-00,Passenger trips,Major cities,19874264,52.78
+2000,1999-00,Passenger trips,Regional,8151381,44.07
+2000,1999-00,Passenger trips,Remote,3339367,69.1
+2001,2000-01,Passenger trips,Major cities,22483490,59.71
+2001,2000-01,Passenger trips,Regional,8415593,45.5
+2001,2000-01,Passenger trips,Remote,3206478,66.35
+2002,2001-02,Passenger trips,Major cities,20423664,54.24
+2002,2001-02,Passenger trips,Regional,7529648,40.71
+2002,2001-02,Passenger trips,Remote,2557597,52.93
+2003,2002-03,Passenger trips,Major cities,21128268,56.11
+2003,2002-03,Passenger trips,Regional,8257894,44.64
+2003,2002-03,Passenger trips,Remote,2718155,56.25
+2004,2003-04,Passenger trips,Major cities,23899590,63.48
+2004,2003-04,Passenger trips,Regional,9639929,52.11
+2004,2003-04,Passenger trips,Remote,2868997,59.37
+2005,2004-05,Passenger trips,Major cities,25485992,67.69
+2005,2004-05,Passenger trips,Regional,11800168,63.79
+2005,2004-05,Passenger trips,Remote,3149344,65.17
+2006,2005-06,Passenger trips,Major cities,26242466,69.7
+2006,2005-06,Passenger trips,Regional,12887216,69.67
+2006,2005-06,Passenger trips,Remote,3401743,70.4
+2007,2006-07,Passenger trips,Major cities,28197257,74.89
+2007,2006-07,Passenger trips,Regional,13848955,74.87
+2007,2006-07,Passenger trips,Remote,3781024,78.24
+2008,2007-08,Passenger trips,Major cities,30253079,80.35
+2008,2007-08,Passenger trips,Regional,14916005,80.64
+2008,2007-08,Passenger trips,Remote,4109618,85.04
+2009,2008-09,Passenger trips,Major cities,30578205,81.21
+2009,2008-09,Passenger trips,Regional,15419923,83.36
+2009,2008-09,Passenger trips,Remote,4237829,87.7
+2010,2009-10,Passenger trips,Major cities,31983597,84.95
+2010,2009-10,Passenger trips,Regional,15294061,82.68
+2010,2009-10,Passenger trips,Remote,4478094,92.67
+2011,2010-11,Passenger trips,Major cities,33563117,89.14
+2011,2010-11,Passenger trips,Regional,16223281,87.71
+2011,2010-11,Passenger trips,Remote,4968514,102.82
+2012,2011-12,Passenger trips,Major cities,33008470,87.67
+2012,2011-12,Passenger trips,Regional,16584013,89.66
+2012,2011-12,Passenger trips,Remote,5409485,111.94
+2013,2012-13,Passenger trips,Major cities,34344176,91.21
+2013,2012-13,Passenger trips,Regional,17272337,93.38
+2013,2012-13,Passenger trips,Remote,5523764,114.31
+2014,2013-14,Passenger trips,Major cities,34758401,92.32
+2014,2013-14,Passenger trips,Regional,17674180,95.55
+2014,2013-14,Passenger trips,Remote,5328353,110.26
+2015,2014-15,Passenger trips,Major cities,34823820,92.49
+2015,2014-15,Passenger trips,Regional,17452340,94.35
+2015,2014-15,Passenger trips,Remote,4991258,103.29
+2016,2015-16,Passenger trips,Major cities,36044623,95.73
+2016,2015-16,Passenger trips,Regional,17675751,95.56
+2016,2015-16,Passenger trips,Remote,4745821,98.21
+2017,2016-17,Passenger trips,Major cities,36645497,97.33
+2017,2016-17,Passenger trips,Regional,18045204,97.55
+2017,2016-17,Passenger trips,Remote,4635036,95.92
+2018,2017-18,Passenger trips,Major cities,37562283,99.76
+2018,2017-18,Passenger trips,Regional,18547745,100.27
+2018,2017-18,Passenger trips,Remote,4669472,96.63
+2019,2018-19,Passenger trips,Major cities,37651933,100.0
+2019,2018-19,Passenger trips,Regional,18497524,100.0
+2019,2018-19,Passenger trips,Remote,4832341,100.0
+2020,2019-20,Passenger trips,Major cities,27771384,73.76
+2020,2019-20,Passenger trips,Regional,13734388,74.25
+2020,2019-20,Passenger trips,Remote,3732019,77.23
+2021,2020-21,Passenger trips,Major cities,9632118,25.58
+2021,2020-21,Passenger trips,Regional,8632646,46.67
+2021,2020-21,Passenger trips,Remote,3276417,67.8
+2022,2021-22,Passenger trips,Major cities,15105724,40.12
+2022,2021-22,Passenger trips,Regional,11157733,60.32
+2022,2021-22,Passenger trips,Remote,4046751,83.74
+2023,2022-23,Passenger trips,Major cities,33092631,87.89
+2023,2022-23,Passenger trips,Regional,17228512,93.14
+2023,2022-23,Passenger trips,Remote,4929987,102.02
+2024,2023-24,Passenger trips,Major cities,35396055,94.01
+2024,2023-24,Passenger trips,Regional,18076291,97.72
+2024,2023-24,Passenger trips,Remote,5106442,105.67
+2025,2024-25,Passenger trips,Major cities,35848272,95.21
+2025,2024-25,Passenger trips,Regional,18228173,98.54
+2025,2024-25,Passenger trips,Remote,5379860,111.33
+2026,2025-26,Passenger trips,Major cities,36629620,97.28
+2026,2025-26,Passenger trips,Regional,18694955,101.07
+2026,2025-26,Passenger trips,Remote,5428589,112.34

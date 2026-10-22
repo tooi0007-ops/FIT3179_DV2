@@ -227,8 +227,7 @@ nav a:focus-visible {
 ========================================================= */
 
 .story-section {
-  /* Large gaps make each chapter read as one clear step in the story. */
-  padding: 7rem 0;
+  padding: 5.5rem 0;
 
   border-bottom: 1px solid var(--line);
 
@@ -240,7 +239,7 @@ nav a:focus-visible {
 .section-copy {
   max-width: 900px;
 
-  margin-bottom: 4rem;
+  margin-bottom: 2.75rem;
 }
 
 
@@ -273,7 +272,7 @@ h2 {
 
 
 .section-copy p:last-child {
-  max-width: 800px;
+  max-width: 60ch;
 
   margin-bottom: 0;
 
@@ -293,8 +292,8 @@ h2 {
 
   grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  column-gap: 4.5rem;
-  row-gap: 5.5rem;
+  column-gap: 3.5rem;
+  row-gap: 3.5rem;
   align-items: start;
 }
 
@@ -304,16 +303,16 @@ h2 {
 }
 
 .state-recovery-panel {
-  max-width: 1040px;
-  margin: 0 auto 5.5rem;
+  max-width: 1160px;
+  margin: 0 auto 3.5rem;
 }
 
 .route-hero {
-  margin-bottom: 5.5rem;
+  margin-bottom: 3.5rem;
 }
 
 .route-hero .visual {
-  min-height: 580px;
+  min-height: 630px;
 }
 
 .context-note {
@@ -342,7 +341,8 @@ h2 {
 }
 
 /* A quiet divider groups a chart's title, note and graphic without boxing it in. */
-.visual-panel h3::before {
+.visual-panel h3::before,
+.chart-heading::before {
   content: "";
   display: block;
   width: 2.5rem;
@@ -356,7 +356,8 @@ h2 {
 }
 
 
-.visual-panel h3 {
+.visual-panel h3,
+.chart-heading {
   margin-bottom: 0.3rem;
 
   color: var(--ink);
@@ -367,7 +368,7 @@ h2 {
 
 
 .chart-note {
-  max-width: 700px;
+  max-width: 60ch;
 
   margin-bottom: 1.4rem;
 
@@ -403,7 +404,7 @@ h2 {
 }
 
 .chart-insight {
-  max-width: 700px;
+  max-width: 60ch;
   margin: 0.5rem 0 0;
   padding-left: 0.85rem;
   border-left: 3px solid var(--accent);
@@ -415,18 +416,54 @@ h2 {
 
 /* The proportional-symbol map is the main geographic overview. */
 .map-hero {
-  max-width: 1120px;
+  max-width: 1160px;
   margin: 0 auto;
 }
 
 .map-hero .visual {
-  min-height: 500px;
+  min-height: 550px;
+}
+
+.state-zoom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0 0 0.65rem;
+}
+
+.state-zoom button {
+  border: 1px solid #b6c3c0;
+  border-radius: 5px;
+  padding: 0.34rem 0.7rem;
+  background: #fffdf8;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.83rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.state-zoom button:hover,
+.state-zoom button[aria-pressed="true"] {
+  border-color: var(--accent-dark);
+  background: var(--accent-dark);
+  color: white;
+}
+
+.state-zoom button:focus-visible {
+  outline: 3px solid #e69f00;
+  outline-offset: 2px;
+}
+
+.ai-declaration {
+  margin-top: 2rem;
+  font-size: 0.92rem;
 }
 
 /* Separate the airport comparisons into three easy-to-scan groups. */
 #airport-change .visual-grid + .visual-grid,
 #airport-change .visual-grid + .visual-panel {
-  margin-top: 6rem;
+  margin-top: 3.5rem;
 }
 
 #routes .visual-grid {
@@ -452,7 +489,13 @@ h2 {
 .full-width {
   width: 100%;
 
-  min-height: 500px;
+  min-height: 440px;
+}
+
+#airport-hierarchy-treemap svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* Allow Vega to occupy available space */
@@ -759,7 +802,7 @@ footer {
 }
 
 .story-section {
-  padding: 7rem 0 7.5rem;
+  padding: 5.5rem 0 6rem;
 }
 
 .visual-panel {

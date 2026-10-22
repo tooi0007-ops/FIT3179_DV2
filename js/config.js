@@ -1,5 +1,5 @@
 const dataPath = "data/processed/";
-const mapData = { url: `${dataPath}australia_states_simplified.geojson`, format: { type: "json", property: "features" } };
+const mapData = { url: `${dataPath}australia_states_simplified.geojson?v=20261022`, format: { type: "json", property: "features" } };
 
 const config = {
   background: null,
@@ -32,4 +32,4 @@ const config = {
   },
 };
 
-const embedOptions = { actions: true, renderer: "svg" };
+const embedOptions = { actions: false, renderer: "svg" };

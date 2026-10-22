@@ -174,14 +174,38 @@ def read_dbf(path: Path) -> list[dict]:
     return rows
 
 
-def simplify(points: list[list[float]], step: int = 5) -> list[list[float]]:
-    """Thin closed rings gently so neighbouring state borders still align."""
-    if len(points) <= step:
+def simplify(points: list[list[float]], tolerance: float = 0.025) -> list[list[float]]:
+    """Generalise a closed ring for the national-scale interactive maps."""
+    ring = points[:-1] if points[0] == points[-1] else points
+    if len(ring) < 5:
         return points
-    compact = points[::step]
-    if compact[-1] != points[-1]:
-        compact.append(points[-1])
-    return compact
+
+    def open_line(line):
+        keep = {0, len(line) - 1}
+        stack = [(0, len(line) - 1)]
+        while stack:
+            start, end = stack.pop()
+            ax, ay = line[start]
+            bx, by = line[end]
+            dx, dy = bx - ax, by - ay
+            denominator = dx * dx + dy * dy
+            best_index, best_distance = None, 0
+            for index in range(start + 1, end):
+                px, py = line[index]
+                fraction = max(0, min(1, ((px - ax) * dx + (py - ay) * dy) / denominator)) if denominator else 0
+                distance = math.hypot(px - ax - fraction * dx, py - ay - fraction * dy)
+                if distance > best_distance:
+                    best_index, best_distance = index, distance
+            if best_index is not None and best_distance > tolerance:
+                keep.add(best_index)
+                stack.extend([(start, best_index), (best_index, end)])
+        return [line[index] for index in sorted(keep)]
+
+    # Split the loop at a distant vertex so neither half degenerates to a
+    # segment whose start and end are the same point.
+    midpoint = max(range(1, len(ring)), key=lambda i: (ring[i][0] - ring[0][0]) ** 2 + (ring[i][1] - ring[0][1]) ** 2)
+    compact = open_line(ring[: midpoint + 1])[:-1] + open_line(ring[midpoint:] + [ring[0]])[:-1]
+    return compact + [compact[0]] if len(compact) >= 3 else points
 
 
 def read_state_boundaries(shp_path: Path, dbf_rows: list[dict]) -> dict:
@@ -278,14 +302,38 @@ def read_routes(path: Path, airport_points: dict[str, dict]) -> list[dict]:
     return routes
 
 
+def read_route_remoteness(path: Path) -> list[dict]:
+    """Index BITRE financial-year RPT route sectors to the 2018–19 baseline."""
+    workbook = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    worksheet = workbook["Data"]
+    selected = []
+    measures = {"Passenger Trips": "Passenger trips", "Flights": "Flights"}
+    categories = [(3, "Major cities"), (4, "Regional"), (5, "Remote")]
+    for row in worksheet.iter_rows(min_row=9, values_only=True):
+        if row[1] not in measures or not number(row[9]):
+            continue
+        for column, category in categories:
+            if number(row[column]):
+                selected.append({"year_end": int(row[9]), "financial_year": str(row[8]),
+                                 "measure": measures[row[1]], "category": category, "value": row[column]})
+    workbook.close()
+    baseline = {(row["measure"], row["category"]): row["value"] for row in selected if row["year_end"] == 2019}
+    for row in selected:
+        row["index_2019"] = round(row["value"] / baseline[(row["measure"], row["category"])] * 100, 2)
+    return selected
+
+
 def main() -> None:
     OUTPUT.mkdir(parents=True, exist_ok=True)
     airport_book = RAW / "WebAirport_CY_1985-2025.xlsx"
     route_book = RAW / "TopRoutesJuly2014June2026_0.xlsx"
+    remoteness_book = RAW / "DomesticAviation_CitiesRegions_1985-2026.xlsx"
     geojson_path = RAW / "ga_airport_terminals.geojson"
     state_root = RAW / "STE_2021_AUST_SHP_GDA2020"
 
     passenger_rows = read_airport_sheet(airport_book, "Airport Passengers")
+    write_csv(OUTPUT / "route_remoteness_index_1986_2026.csv", read_route_remoteness(remoteness_book),
+              ["year_end", "financial_year", "measure", "category", "value", "index_2019"])
     movement_rows = read_movement_sheet(airport_book)
     airport_points = read_geojson(geojson_path)
 
@@ -353,6 +401,26 @@ def main() -> None:
         "passengers_per_aircraft_movement", "international_share",
     ]
     write_csv(OUTPUT / "airport_activity.csv", activities, activity_fields)
+    activity_by_airport_year = {(row["airport_name"], row["year"]): row for row in activities}
+    major_2025 = sorted(
+        (row for row in activities if row["year"] == 2025 and row["airport_name"] != "TOTAL AUSTRALIA" and number(row["total_passengers"])),
+        key=lambda row: row["total_passengers"], reverse=True,
+    )[:20]
+    flight_comparison = []
+    for after in major_2025:
+        before = activity_by_airport_year.get((after["airport_name"], 2019))
+        if not before or not before.get("total_aircraft_movements") or not after.get("total_aircraft_movements") or not before.get("total_passengers"):
+            continue
+        flight_comparison.append({
+            "airport_name": after["airport_name"], "state": after["state"],
+            "passengers_2025": after["total_passengers"],
+            "passenger_change_percent": round((after["total_passengers"] / before["total_passengers"] - 1) * 100, 2),
+            "flight_change_percent": round((after["total_aircraft_movements"] / before["total_aircraft_movements"] - 1) * 100, 2),
+            "passengers_per_flight_2019": before["passengers_per_aircraft_movement"],
+            "passengers_per_flight_2025": after["passengers_per_aircraft_movement"],
+        })
+    write_csv(OUTPUT / "airport_flights_vs_passengers_2019_2025.csv", flight_comparison,
+              ["airport_name", "state", "passengers_2025", "passenger_change_percent", "flight_change_percent", "passengers_per_flight_2019", "passengers_per_flight_2025"])
     write_csv(
         OUTPUT / "airport_crosswalk.csv",
         sorted(crosswalk.values(), key=lambda item: item["airport_name"]),
@@ -384,6 +452,21 @@ def main() -> None:
         OUTPUT / "state_activity.csv",
         state_rows,
         ["year", "state", "total_passengers", "domestic_passengers", "international_passengers", "airport_count", "coverage_note"],
+    )
+
+    state_international_share = [
+        {
+            "state": row["state"],
+            "total_passengers": row["total_passengers"],
+            "international_passengers": row["international_passengers"],
+            "international_share_percent": round(100 * row["international_passengers"] / row["total_passengers"], 2),
+        }
+        for row in state_rows if row["year"] == 2025 and row["total_passengers"]
+    ]
+    write_csv(
+        OUTPUT / "state_international_share_2025.csv",
+        state_international_share,
+        ["state", "total_passengers", "international_passengers", "international_share_percent"],
     )
 
     state_by_year = {(row["state"], row["year"]): row for row in state_rows}
@@ -531,6 +614,30 @@ def main() -> None:
         [row for row in flow_points if row["route"] in top_flow_routes],
         ["route", "point_order", "passengers_2025", "longitude", "latitude"],
     )
+    # One GeoJSON feature per route gives the whole curve a single hover target.
+    # The curves separate overlapping corridors; they are not flight paths.
+    flow_lines = []
+    for route in route_summary[:10]:
+        origin = (route["origin_longitude"], route["origin_latitude"])
+        destination = (route["destination_longitude"], route["destination_latitude"])
+        longitude_gap = abs(destination[0] - origin[0])
+        control = (
+            (origin[0] + destination[0]) / 2,
+            (origin[1] + destination[1]) / 2 + 2 * max(1.1, longitude_gap * 0.09),
+        )
+        coordinates = []
+        for step in range(25):
+            t = step / 24
+            longitude = (1-t)**2 * origin[0] + 2*(1-t)*t * control[0] + t**2 * destination[0]
+            latitude = (1-t)**2 * origin[1] + 2*(1-t)*t * control[1] + t**2 * destination[1]
+            coordinates.append([round(longitude, 6), round(latitude, 6)])
+        flow_lines.append({
+            "type": "Feature",
+            "properties": {"route": route["route"], "passengers_2025": route["passengers_2025"]},
+            "geometry": {"type": "LineString", "coordinates": coordinates},
+        })
+    with (OUTPUT / "route_flow_lines_top10_2025.geojson").open("w", encoding="utf-8") as target:
+        json.dump({"type": "FeatureCollection", "features": flow_lines}, target, separators=(",", ":"))
 
     monthly = defaultdict(lambda: {"pre": [], "post": []})
     for row in routes:
