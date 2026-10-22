@@ -34,16 +34,49 @@ const nationalDemandLineChart = {
       transform: [
         { filter: "datum.year === 1989 && passengerType !== 'International'" },
       ],
-      mark: { type: "text", align: "left", baseline: "top", dx: 7, dy: 12, fontSize: 11, fontWeight: 700, color: "#526071", interactive: false },
+      mark: { type: "text", align: "left", baseline: "top", dx: 7, dy: 12, fontSize: 12, fontWeight: 700, color: "#526071", interactive: false },
       encoding: { text: { value: "1989 pilots’ dispute" } },
     },
     {
       transform: [{ filter: "datum.year === 2020" }],
-      mark: { type: "text", align: "right", baseline: "bottom", dx: -7, dy: -13, fontSize: 11, fontWeight: 700, color: "#9e3d48", interactive: false },
+      mark: { type: "text", align: "right", baseline: "bottom", dx: -7, dy: -13, fontSize: 12, fontWeight: 700, color: "#9e3d48", interactive: false },
       encoding: { text: { value: "2020 travel restrictions" } },
     },
   ],
   config,
 };
 
-vegaEmbed("#national-demand-line-chart", nationalDemandLineChart, embedOptions);
+vegaEmbed("#national-demand-line-chart", nationalDemandLineChart, embedOptions).then(() => {
+  const passengerTypeSelect = document.querySelector("#national-demand-line-chart .vega-bindings select");
+  const insightLabel = document.getElementById("national-insight-label");
+  const insightNumber = document.getElementById("national-insight-number");
+  const insightText = document.getElementById("national-insight-text");
+  const contextNote = document.getElementById("national-context");
+  const insights = {
+    Total: {
+      label: "From collapse to recovery",
+      number: "+0.2% vs 2019",
+      text: "Movements fell 71% in 2020, then climbed back to slightly above 2019 by 2025.",
+      showContext: true,
+    },
+    Domestic: {
+      label: "Domestic recovery",
+      number: "−1.7% vs 2019",
+      text: "Domestic traffic fell sharply in 2020 and was still 1.7% below 2019 in 2025.",
+      showContext: true,
+    },
+    International: {
+      label: "International recovery",
+      number: "+5.5% vs 2019",
+      text: "International traffic reached its low in 2021, then exceeded 2019 by 5.5% in 2025.",
+      showContext: false,
+    },
+  };
+  passengerTypeSelect.addEventListener("change", () => {
+    const current = insights[passengerTypeSelect.value];
+    insightLabel.textContent = current.label;
+    insightNumber.textContent = current.number;
+    insightText.textContent = current.text;
+    contextNote.hidden = !current.showContext;
+  });
+});

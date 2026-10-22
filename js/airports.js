@@ -12,7 +12,7 @@ const airportRankBumpChart = {
         y: { field: "rank", type: "quantitative", title: "National rank (1 = largest)", scale: { domain: [16.5, 0.5] }, axis: { values: [1, 3, 5, 7, 9, 11, 13, 15] } },
         detail: { field: "airport_name", type: "nominal" },
         color: { condition: { test: "datum.airport_name === 'SUNSHINE COAST'", value: "#0072B2" }, value: "#8b9799", legend: null },
-        strokeWidth: { condition: { test: "datum.airport_name === 'SUNSHINE COAST'", value: 5 }, value: 2 },
+        strokeWidth: { condition: { test: "datum.airport_name === 'SUNSHINE COAST'", value: 4 }, value: 2 },
         opacity: { condition: { param: "rankHover", empty: true, value: 0.85 }, value: 0.12 },
         tooltip: [
           { field: "airport_name", type: "nominal", title: "Airport" },
@@ -51,7 +51,10 @@ const airportConnectedDotPlot = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
   width: "container", 
   height: 365,
-  data: { url: `${dataPath}airport_compare_top15_2019_2025.csv` },
+  data: {
+    url: `${dataPath}airport_compare_top15_2019_2025.csv`,
+    format: { type: "csv", parse: { change_percent: "number", passengers_2019: "number", passengers_2025: "number" } },
+  },
   transform: [
     { calculate: "100", as: "index_2019" },
     { calculate: "100 + toNumber(datum.change_percent)", as: "index_2025" },
@@ -60,15 +63,15 @@ const airportConnectedDotPlot = {
     y: { field: "airport_name", type: "nominal", sort: { field: "change_percent", order: "descending" }, title: null },
   },
   layer: [
-    { mark: { type: "rule", color: "#899694", strokeWidth: 3.5 }, encoding: {
+    { mark: { type: "rule", color: "#667987", strokeWidth: 2, opacity: 0.95 }, encoding: {
       x: { field: "index_2019", type: "quantitative", title: "Passenger movements (2019 = 100)", scale: { domain: [80, 140] } },
       x2: { field: "index_2025" },
       tooltip: [{ field: "airport_name", title: "Airport" }, { field: "passengers_2019", title: "2019", format: "," }, { field: "passengers_2025", title: "2025", format: "," }, { field: "change_percent", title: "Change (%)", format: ".1f" }],
     }},
-    { mark: { type: "point", filled: true, size: 105, color: "#7b8793", stroke: "#ffffff", strokeWidth: 1.5 }, encoding: {
+    { mark: { type: "point", filled: true, size: 90, opacity: 1, color: "#536473", stroke: "#ffffff", strokeWidth: 1.8 }, encoding: {
       x: { field: "index_2019", type: "quantitative", scale: { domain: [80, 140] } },
     }},
-    { mark: { type: "point", filled: true, size: 135, stroke: "#ffffff", strokeWidth: 1.5 }, encoding: {
+    { mark: { type: "point", filled: true, size: 110, opacity: 1, stroke: "#ffffff", strokeWidth: 1.8 }, encoding: {
       x: { field: "index_2025", type: "quantitative", scale: { domain: [80, 140] } },
       color: { condition: { test: "datum.change_percent >= 0", value: "#276f9e" }, value: "#c33f50", legend: null },
       tooltip: [{ field: "airport_name", title: "Airport" }, { field: "passengers_2019", title: "2019 movements", format: "," }, { field: "passengers_2025", title: "2025 movements", format: "," }, { field: "change_percent", title: "Change (%)", format: ".1f" }],
@@ -106,7 +109,7 @@ const airportHierarchyTreemap = {
   height: 460, 
   padding: 2, 
   background: null,
-  data: [{ name: "tree", url: `${dataPath}airport_treemap_2025.json?v=20260923`, 
+  data: [{ name: "tree", url: `${dataPath}airport_treemap_2025.json?v=20261023b`,
     transform: [
     { type: "stratify", key: "id", parentKey: "parent" },
     { type: "treemap", field: "value", sort: { field: "value", order: "descending" }, size: [{ signal: "width" }, { signal: "height" }], round: true, method: "squarify", paddingInner: 2, paddingOuter: 2, paddingTop: 24, as: ["x0", "y0", "x1", "y1", "depth", "children"] },
@@ -117,7 +120,7 @@ const airportHierarchyTreemap = {
   }],
   scales: [{
     name: "stateColour", type: "ordinal", domain: ["Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"],
-    range: ["#9f8e72", "#3f7891", "#6b7c4c", "#0d7c86", "#b56a3b", "#8d6f98", "#b94d57", "#486d9b"],
+    range: ["#5E7180", "#286F8E", "#5E7180", "#0A726E", "#5E7180", "#5E7180", "#A6532F", "#5E7180"],
   }],
   marks: [
     {

@@ -2,7 +2,10 @@ const routeRecoveryHeatmap = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
   width: "container", 
   height: 365,
-  data: { url: `${dataPath}route_monthly_recovery_top10.csv` },
+  data: {
+    url: `${dataPath}route_monthly_recovery_top10.csv`,
+    format: { type: "csv", parse: { month: "number", recovery_percent: "number", passengers_2025: "number" } },
+  },
   layer: [
     { params: [{ name: "heatmapRouteHover", select: { type: "point", fields: ["route"], on: "pointerover", clear: "pointerout" } }],
       mark: { type: "rect", stroke: "#f6f3ec", strokeWidth: 1 }, encoding: {
@@ -74,6 +77,14 @@ const routeRemotenessChart = {
   config,
 };
 
+// Explicit order keeps the layered rule and point marks in the same ranking.
+const lollipopAirportOrder = [
+  "GOLD COAST", "SUNSHINE COAST", "MELBOURNE", "SYDNEY", "HOBART",
+  "PROSERPINE", "PERTH", "BALLINA", "HAMILTON ISLAND", "BRISBANE",
+  "ADELAIDE", "KARRATHA", "LAUNCESTON", "CAIRNS", "NEWCASTLE",
+  "MACKAY", "CANBERRA", "DARWIN", "TOWNSVILLE", "ROCKHAMPTON",
+];
+
 const airportLollipopChart = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
   width: "container", 
@@ -81,20 +92,58 @@ const airportLollipopChart = {
   data: { url: `${dataPath}airport_2025_top20.csv` },
   transform: [{ calculate: "0", as: "baseline" }],
   encoding: {
-    y: { field: "airport_name", type: "nominal", sort: { field: "passengers_per_aircraft_movement", order: "descending" }, title: null },
+    y: { field: "airport_name", type: "nominal", sort: lollipopAirportOrder, title: null },
   },
   layer: [
-    { mark: { type: "rule", color: "#a9b2ad", strokeWidth: 2 }, encoding: {
+    { mark: { type: "rule", color: "#a9b2ad", strokeWidth: 3 }, encoding: {
       x: { field: "baseline", type: "quantitative", title: "Passenger movements per aircraft movement" },
       x2: { field: "passengers_per_aircraft_movement" },
     }},
-    { mark: { type: "point", filled: true, color: "#0d7c86", size: 80 }, encoding: {
+    { mark: { type: "point", filled: true, color: "#0d7c86", size: 100 }, encoding: {
       x: { field: "passengers_per_aircraft_movement", type: "quantitative" },
       tooltip: [{ field: "airport_name", title: "Airport" }, { field: "total_passengers", title: "Passenger movements", format: "," }, { field: "total_aircraft_movements", title: "Aircraft movements", format: "," }, { field: "passengers_per_aircraft_movement", title: "Ratio", format: ".1f" }],
     }},
   ], config,
 };
 
-vegaEmbed("#route-recovery-heatmap", routeRecoveryHeatmap, embedOptions);
+let routeHeatmapRender = Promise.resolve();
+function showRouteRecoveryHeatmap(route = "") {
+  const spec = JSON.parse(JSON.stringify(routeRecoveryHeatmap));
+  if (route) {
+    spec.encoding.opacity = {
+      condition: { test: `datum.route === ${JSON.stringify(route)}`, value: 1 },
+      value: 0.18,
+    };
+  }
+  routeHeatmapRender = routeHeatmapRender.catch(() => {}).then(() =>
+    vegaEmbed("#route-recovery-heatmap", spec, embedOptions)
+  );
+  return routeHeatmapRender;
+}
+
+const routeFocusControl = document.getElementById("route-focus");
+const clearRouteControl = document.getElementById("clear-route");
+const routeSelectionSummary = document.getElementById("route-selection-summary");
+let selectedDashboardRoute = "";
+window.setDashboardRoute = function setDashboardRoute(route = "") {
+  if (route === selectedDashboardRoute) return;
+  selectedDashboardRoute = route;
+  routeFocusControl.value = route;
+  clearRouteControl.disabled = !route;
+  routeSelectionSummary.textContent = route
+    ? `${route.replace(" - ", "–")}: monthly change in 2023–25 versus 2015–19.`
+    : "Showing all ten routes. Select a route above to compare it here.";
+  showDomesticRouteFlowMap(route);
+  showRouteRecoveryHeatmap(route).then(() => {
+    if (route !== selectedDashboardRoute || !route) return;
+    document.querySelector(".route-heatmap-panel").scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: "start",
+    });
+  });
+};
+routeFocusControl.addEventListener("change", () => window.setDashboardRoute(routeFocusControl.value));
+clearRouteControl.addEventListener("click", () => window.setDashboardRoute(""));
+showRouteRecoveryHeatmap();
 vegaEmbed("#route-remoteness-chart", routeRemotenessChart, embedOptions);
 vegaEmbed("#airport-lollipop-chart", airportLollipopChart, embedOptions);

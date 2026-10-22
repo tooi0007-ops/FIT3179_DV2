@@ -12,4 +12,4 @@ The dashboard uses public Australian aviation data. Its measures are counts of p
 
 The cities-and-regions series is for **financial years ending June** and regular public transport route sectors. The airport series is for **calendar years** and counts movements at airports. They are shown in separate charts to avoid treating their totals as interchangeable.
 
-The state choropleth uses a derived 2025 international share: international passenger movements divided by all passenger movements at airports with verified state locations. This is an airport activity measure, not a measure of the state's residents' travel.
+The state choropleth uses a derived 2025 international share: international passenger movements divided by all passenger movements at the 69 verified airports shown on the main map. The treemap uses the same airports. Four offshore airports outside the map extent and Bathurst Island, which lacks a verified terminal match, are excluded from these state comparisons. These are airport activity measures, not measures of residents' travel.

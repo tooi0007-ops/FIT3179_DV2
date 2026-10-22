@@ -49,6 +49,16 @@ def number(value):
     return isinstance(value, (int, float)) and not isinstance(value, bool)
 
 
+def in_main_map(row):
+    """Use the same verified airport extent for maps and state comparisons."""
+    longitude, latitude = row.get("longitude"), row.get("latitude")
+    return (
+        row.get("match_status") != "unmatched"
+        and number(longitude) and number(latitude)
+        and 110 <= longitude <= 155 and -45 <= latitude <= -10
+    )
+
+
 def clean_number(value):
     return value if number(value) else None
 
@@ -347,7 +357,6 @@ def main() -> None:
         "KALGOORLIE": "KGI",
         "MOORABBIN": "MBW",
         "ESSENDON FIELDS": "MEB",
-        "BATHURST ISLAND": "BHS",
     }
     crosswalk = {}
     for row in passenger_rows:
@@ -430,7 +439,7 @@ def main() -> None:
     state_totals = defaultdict(lambda: {"total_passengers": 0, "domestic_passengers": 0, "international_passengers": 0, "airport_count": 0})
     seen = defaultdict(set)
     for row in activities:
-        if row["airport_name"] == "TOTAL AUSTRALIA" or not row.get("state") or row["total_passengers"] is None:
+        if row["airport_name"] == "TOTAL AUSTRALIA" or not row.get("state") or row["total_passengers"] is None or not in_main_map(row):
             continue
         key = (row["year"], row["state"])
         state_totals[key]["total_passengers"] += row["total_passengers"]
@@ -678,7 +687,7 @@ def main() -> None:
     # A compact hierarchy for the Vega treemap. Only verified terminal matches
     # are used so the state parent and airport leaf agree spatially.
     treemap_rows = [{"id": "australia", "parent": "", "label": "Australia", "state": "Australia", "value": 0, "kind": "root"}]
-    mapped_airports = [row for row in airport_2025 if row["match_status"] != "unmatched" and row["state"]]
+    mapped_airports = [row for row in airport_2025 if row["state"] and in_main_map(row)]
     for state in sorted({row["state"] for row in mapped_airports}):
         state_id = f"state::{state}"
         treemap_rows.append({"id": state_id, "parent": "australia", "label": state, "state": state, "value": 0, "kind": "state"})

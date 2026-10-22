@@ -26,7 +26,7 @@ const stateChoroplethMap = {
       transform: [{ calculate: "datum.properties.state", as: "state" }, {
         lookup: "state",
         from: {
-          data: { url: `${dataPath}state_international_share_2025.csv` },
+          data: { url: `${dataPath}state_international_share_2025.csv?v=20261023b`, format: { type: "csv" } },
           key: "state",
           fields: ["international_share_percent", "international_passengers", "total_passengers"],
         },
@@ -58,11 +58,21 @@ const stateChoroplethMap = {
     },
     {
       data: { values: stateLabels.values.filter((datum) => datum.label !== "ACT") },
-      mark: { type: "text", fontSize: 11, fontWeight: 700, color: "#17202f", opacity: 0.82, interactive: false },
+      transform: [{
+        lookup: "state",
+        from: {
+          data: { url: `${dataPath}state_international_share_2025.csv?v=20261023b`, format: { type: "csv" } },
+          key: "state",
+          fields: ["international_share_percent"],
+        },
+      }],
+      mark: { type: "text", fontSize: 12, fontWeight: 700, interactive: false },
       encoding: {
         longitude: { field: "longitude", type: "quantitative" },
         latitude: { field: "latitude", type: "quantitative" },
         text: { field: "label", type: "nominal" },
+        color: { condition: { test: "datum.international_share_percent >= 30", value: "#ffffff" }, value: "#17202f", legend: null },
+        opacity: { condition: { param: "stateHover", empty: true, value: 1 }, value: 0.18 },
       },
     },
     {
@@ -117,7 +127,7 @@ function makeProportionalSymbolMap(selectedState = null) {
       mark: { type: "geoshape", fill: "#e8e5dc", stroke: "#c6c0b5", strokeWidth: 0.8 },
     },
     {
-      data: { url: `${dataPath}airport_2025.csv` },
+      data: { url: `${dataPath}airport_2025.csv?v=20261023b`, format: { type: "csv" } },
       transform: [
         { filter: "datum.match_status !== 'unmatched' && datum.longitude >= 110 && datum.longitude <= 155 && datum.latitude >= -45 && datum.latitude <= -10" },
         ...(selectedState ? [{ filter: { field: "state", equal: selectedState } }] : []),
@@ -182,9 +192,10 @@ const domesticRouteFlowMap = {
         name: "routeHover",
         select: { type: "point", fields: ["properties.route"], on: "pointerover", clear: "pointerout" },
       }],
-      // Keep hover close to the visible route while covering its full path.
-      mark: { type: "geoshape", filled: false, stroke: "#d86f34", strokeWidth: 12, opacity: 0.005 },
+      // A narrow, nearly transparent copy makes the full route clickable.
+      mark: { type: "geoshape", filled: false, stroke: "#d86f34", opacity: 0.005, cursor: "pointer" },
       encoding: {
+        strokeWidth: { field: "properties.passengers_2025", type: "quantitative", legend: null, scale: { range: [5, 11] } },
         tooltip: [
           { field: "properties.route", type: "nominal", title: "Route" },
           { field: "properties.passengers_2025", type: "quantitative", title: "2025 passenger movements", format: "," },
@@ -244,4 +255,25 @@ window.addEventListener("resize", () => {
   mapResizeTimer = setTimeout(() => showProportionalSymbolMap(selectedProportionalState), 180);
 });
 showProportionalSymbolMap();
-vegaEmbed("#domestic-route-flow-map", domesticRouteFlowMap, embedOptions);
+
+let routeMapRender = Promise.resolve();
+function showDomesticRouteFlowMap(route = "") {
+  const spec = JSON.parse(JSON.stringify(domesticRouteFlowMap));
+  if (route) {
+    spec.layer[1].encoding.opacity = {
+      condition: { test: `datum.properties.route === ${JSON.stringify(route)}`, value: 0.98 },
+      value: 0.12,
+    };
+  }
+  routeMapRender = routeMapRender.catch(() => {}).then(() =>
+    vegaEmbed("#domestic-route-flow-map", spec, embedOptions).then((result) => {
+      result.view.addEventListener("click", (_event, item) => {
+        const clickedRoute = item?.datum?.properties?.route;
+        if (clickedRoute && window.setDashboardRoute) window.setDashboardRoute(clickedRoute);
+      });
+      return result;
+    })
+  );
+  return routeMapRender;
+}
+showDomesticRouteFlowMap();
