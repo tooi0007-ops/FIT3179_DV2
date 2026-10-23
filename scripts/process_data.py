@@ -151,9 +151,9 @@ def read_geojson(path: Path) -> dict[str, dict]:
     return airports
 
 
-def write_csv(path: Path, rows: list[dict], fields: list[str]) -> None:
+def write_csv(path: Path, rows: list[dict], fields: list[str], line_ending: str = "\r\n") -> None:
     with path.open("w", newline="", encoding="utf-8") as target:
-        writer = csv.DictWriter(target, fieldnames=fields)
+        writer = csv.DictWriter(target, fieldnames=fields, lineterminator=line_ending)
         writer.writeheader()
         writer.writerows(rows)
 
@@ -468,7 +468,8 @@ def main() -> None:
             "state": row["state"],
             "total_passengers": row["total_passengers"],
             "international_passengers": row["international_passengers"],
-            "international_share_percent": round(100 * row["international_passengers"] / row["total_passengers"], 2),
+            # Keep an extra decimal so chart tooltips do not round twice.
+            "international_share_percent": round(100 * row["international_passengers"] / row["total_passengers"], 3),
         }
         for row in state_rows if row["year"] == 2025 and row["total_passengers"]
     ]
@@ -594,34 +595,24 @@ def main() -> None:
         ["route", "origin_code", "destination_code", "passengers_2025", "origin_longitude", "origin_latitude", "destination_longitude", "destination_latitude"],
     )
 
+    # The flow map needs endpoint markers only; its curved paths are GeoJSON below.
     flow_points = []
-    for route in route_summary:
+    for route in route_summary[:10]:
         origin = (route["origin_longitude"], route["origin_latitude"])
         destination = (route["destination_longitude"], route["destination_latitude"])
-        # A midpoint makes the displayed link a curved, bidirectional corridor.
-        # The published route totals combine both directions, so this is visual
-        # separation only; it does not imply an origin or destination.
-        longitude_gap = abs(destination[0] - origin[0])
-        midpoint = (
-            (origin[0] + destination[0]) / 2,
-            (origin[1] + destination[1]) / 2 + max(1.1, longitude_gap * 0.09),
-        )
-        for order, (longitude, latitude) in enumerate([origin, midpoint, destination]):
+        for longitude, latitude in (origin, destination):
             flow_points.append(
                 {
                     "route": route["route"],
-                    "point_order": order,
                     "passengers_2025": route["passengers_2025"],
                     "longitude": longitude,
                     "latitude": latitude,
                 }
             )
-    write_csv(OUTPUT / "route_flow_points_2025.csv", flow_points, ["route", "point_order", "passengers_2025", "longitude", "latitude"])
-    top_flow_routes = {row["route"] for row in route_summary[:10]}
     write_csv(
         OUTPUT / "route_flow_points_top10_2025.csv",
-        [row for row in flow_points if row["route"] in top_flow_routes],
-        ["route", "point_order", "passengers_2025", "longitude", "latitude"],
+        flow_points,
+        ["route", "passengers_2025", "longitude", "latitude"], line_ending="\n",
     )
     # One GeoJSON feature per route gives the whole curve a single hover target.
     # The curves separate overlapping corridors; they are not flight paths.

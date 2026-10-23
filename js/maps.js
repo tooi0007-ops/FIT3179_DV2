@@ -11,6 +11,15 @@ const stateLabels = {
   ],
 };
 
+const stateShareData = {
+  url: `${dataPath}state_international_share_2025.csv?v=20261023c`,
+  format: { type: "csv" },
+};
+const topRouteLines = {
+  url: `${dataPath}route_flow_lines_top10_2025.geojson`,
+  format: { type: "json", property: "features" },
+};
+
 const stateChoroplethMap = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
   width: "container",
@@ -26,7 +35,7 @@ const stateChoroplethMap = {
       transform: [{ calculate: "datum.properties.state", as: "state" }, {
         lookup: "state",
         from: {
-          data: { url: `${dataPath}state_international_share_2025.csv?v=20261023b`, format: { type: "csv" } },
+          data: stateShareData,
           key: "state",
           fields: ["international_share_percent", "international_passengers", "total_passengers"],
         },
@@ -61,7 +70,7 @@ const stateChoroplethMap = {
       transform: [{
         lookup: "state",
         from: {
-          data: { url: `${dataPath}state_international_share_2025.csv?v=20261023b`, format: { type: "csv" } },
+          data: stateShareData,
           key: "state",
           fields: ["international_share_percent"],
         },
@@ -117,54 +126,47 @@ function stateProjection(state) {
 
 function makeProportionalSymbolMap(selectedState = null) {
   return {
-  $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-  width: "container",
-  height: 530,
-  projection: stateProjection(selectedState),
-  layer: [
-    {
-      data: mapData,
-      mark: { type: "geoshape", fill: "#e8e5dc", stroke: "#c6c0b5", strokeWidth: 0.8 },
-    },
-    {
-      data: { url: `${dataPath}airport_2025.csv?v=20261023b`, format: { type: "csv" } },
-      transform: [
-        { filter: "datum.match_status !== 'unmatched' && datum.longitude >= 110 && datum.longitude <= 155 && datum.latitude >= -45 && datum.latitude <= -10" },
-        ...(selectedState ? [{ filter: { field: "state", equal: selectedState } }] : []),
-      ],
-      mark: { type: "circle", stroke: "#07545b", strokeWidth: 0.7 },
-      encoding: {
-        longitude: { field: "longitude", type: "quantitative" },
-        latitude: { field: "latitude", type: "quantitative" },
-        size: { field: "total_passengers", type: "quantitative", title: "Passenger movements", scale: { range: [12, 2600] }, legend: { format: "~s" } },
-        color: { value: "#0d7c86" },
-        opacity: { value: 0.78 },
-        tooltip: [
-          { field: "airport_name", type: "nominal", title: "Airport" },
-          { field: "state", type: "nominal", title: "State" },
-          { field: "total_passengers", type: "quantitative", title: "Passenger movements", format: "," },
-          { field: "total_aircraft_movements", type: "quantitative", title: "Aircraft movements", format: "," },
+    $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+    width: "container",
+    height: 530,
+    projection: stateProjection(selectedState),
+    layer: [
+      {
+        data: mapData,
+        mark: { type: "geoshape", fill: "#e8e5dc", stroke: "#c6c0b5", strokeWidth: 0.8 },
+      },
+      {
+        data: { url: `${dataPath}airport_2025.csv?v=20261023b`, format: { type: "csv" } },
+        transform: [
+          { filter: "datum.match_status !== 'unmatched' && datum.longitude >= 110 && datum.longitude <= 155 && datum.latitude >= -45 && datum.latitude <= -10" },
+          ...(selectedState ? [{ filter: { field: "state", equal: selectedState } }] : []),
         ],
+        mark: { type: "circle", stroke: "#07545b", strokeWidth: 0.7 },
+        encoding: {
+          longitude: { field: "longitude", type: "quantitative" },
+          latitude: { field: "latitude", type: "quantitative" },
+          size: { field: "total_passengers", type: "quantitative", title: "Passenger movements", scale: { range: [12, 2600] }, legend: { format: "~s" } },
+          color: { value: "#0d7c86" },
+          opacity: { value: 0.78 },
+          tooltip: [
+            { field: "airport_name", type: "nominal", title: "Airport" },
+            { field: "state", type: "nominal", title: "State" },
+            { field: "total_passengers", type: "quantitative", title: "Passenger movements", format: "," },
+            { field: "total_aircraft_movements", type: "quantitative", title: "Aircraft movements", format: "," },
+          ],
+        },
       },
-    },
-    {
-      data: selectedState ? { values: stateLabels.values.filter((datum) => datum.state === selectedState) } : stateLabels,
-      mark: {
-        type: "text",
-        fontSize: 11,
-        fontWeight: 700,
-        color: "#17202f",
-        opacity: 0.82,
-        interactive: false,
+      {
+        data: selectedState ? { values: stateLabels.values.filter((datum) => datum.state === selectedState) } : stateLabels,
+        mark: { type: "text", fontSize: 11, fontWeight: 700, color: "#17202f", opacity: 0.82, interactive: false },
+        encoding: {
+          longitude: { field: "longitude", type: "quantitative" },
+          latitude: { field: "latitude", type: "quantitative" },
+          text: { field: "label", type: "nominal" },
+        },
       },
-      encoding: {
-        longitude: { field: "longitude", type: "quantitative" },
-        latitude: { field: "latitude", type: "quantitative" },
-        text: { field: "label", type: "nominal" },
-      },
-    },
-  ],
-  config,
+    ],
+    config,
   };
 }
 
@@ -179,7 +181,7 @@ const domesticRouteFlowMap = {
       mark: { type: "geoshape", fill: "#e8e5dc", stroke: "#c6c0b5", strokeWidth: 0.8 },
     },
     {
-      data: { url: `${dataPath}route_flow_lines_top10_2025.geojson`, format: { type: "json", property: "features" } },
+      data: topRouteLines,
       mark: { type: "geoshape", filled: false, stroke: "#d86f34", interactive: false },
       encoding: {
         strokeWidth: { field: "properties.passengers_2025", type: "quantitative", legend: null, scale: { range: [2.5, 10] } },
@@ -187,7 +189,7 @@ const domesticRouteFlowMap = {
       },
     },
     {
-      data: { url: `${dataPath}route_flow_lines_top10_2025.geojson`, format: { type: "json", property: "features" } },
+      data: topRouteLines,
       params: [{
         name: "routeHover",
         select: { type: "point", fields: ["properties.route"], on: "pointerover", clear: "pointerout" },
@@ -203,8 +205,7 @@ const domesticRouteFlowMap = {
       },
     },
     {
-      data: { url: `${dataPath}route_flow_points_top10_2025.csv` },
-      transform: [{ filter: "datum.point_order != 1" }],
+      data: { url: `${dataPath}route_flow_points_top10_2025.csv?v=20261023-endpoints`, format: { type: "csv" } },
       mark: { type: "circle", filled: true, color: "#f8f5ed", size: 95, stroke: "#07545b", strokeWidth: 1.8, interactive: false },
       encoding: {
         longitude: { field: "longitude", type: "quantitative" },

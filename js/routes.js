@@ -1,34 +1,50 @@
 const routeRecoveryHeatmap = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-  width: "container", 
+  width: "container",
   height: 365,
   data: {
     url: `${dataPath}route_monthly_recovery_top10.csv`,
     format: { type: "csv", parse: { month: "number", recovery_percent: "number", passengers_2025: "number" } },
   },
   layer: [
-    { params: [{ name: "heatmapRouteHover", select: { type: "point", fields: ["route"], on: "pointerover", clear: "pointerout" } }],
-      mark: { type: "rect", stroke: "#f6f3ec", strokeWidth: 1 }, encoding: {
-      color: { field: "recovery_percent", type: "quantitative", title: "2023–25 vs 2015–19 (%)", scale: { domain: [-20, 0, 20], range: ["#c33f50", "#f2efe8", "#276f9e"], clamp: true }, legend: { orient: "bottom", direction: "horizontal", values: [-20, 0, 20], labelExpr: "datum.value > 0 ? '+' + datum.value + '%' : datum.value + '%'" } },
-      tooltip: [{ field: "route", title: "Route" }, { field: "month", title: "Month" }, { field: "pre_covid_average", title: "2015–19 same-month average", format: "," }, { field: "recovery_average", title: "2023–25 same-month average", format: "," }, { field: "recovery_percent", title: "Relative change (%)", format: ".1f" }],
-    } },
-    { data: { values: [{ route: "Gold Coast - Melbourne", month: 11, note: "No complete published comparison" }] },
+    {
+      params: [{ name: "heatmapRouteHover", select: { type: "point", fields: ["route"], on: "pointerover", clear: "pointerout" } }],
+      mark: { type: "rect", stroke: "#f6f3ec", strokeWidth: 1 },
+      encoding: {
+        color: {
+          field: "recovery_percent", type: "quantitative", title: "2023–25 vs 2015–19 (%)",
+          scale: { domain: [-20, 0, 20], range: ["#c33f50", "#f2efe8", "#276f9e"], clamp: true },
+          legend: { orient: "bottom", direction: "horizontal", values: [-20, 0, 20], labelExpr: "datum.value > 0 ? '+' + datum.value + '%' : datum.value + '%'" },
+        },
+        tooltip: [
+          { field: "route", title: "Route" },
+          { field: "month", title: "Month" },
+          { field: "pre_covid_average", title: "2015–19 same-month average", format: "," },
+          { field: "recovery_average", title: "2023–25 same-month average", format: "," },
+          { field: "recovery_percent", title: "Relative change (%)", format: ".1f" },
+        ],
+      },
+    },
+    {
+      data: { values: [{ route: "Gold Coast - Melbourne", month: 11, note: "No complete published comparison" }] },
       mark: { type: "rect", color: "#d8dcd9", stroke: "#f6f3ec", strokeWidth: 1 },
       encoding: { tooltip: [{ field: "route", title: "Route" }, { field: "note", title: "November" }] },
     },
-    { data: { values: [{ route: "Gold Coast - Melbourne", month: 11, label: "N/A" }] },
+    {
+      data: { values: [{ route: "Gold Coast - Melbourne", month: 11, label: "N/A" }] },
       mark: { type: "text", color: "#4d5963", fontSize: 10, fontWeight: 700, interactive: false },
       encoding: { text: { field: "label" } },
     },
   ],
   encoding: {
-    x: { 
-      field: "month", type: "ordinal", title: "Month", sort: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 
-      axis: { labelExpr: "['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][datum.value - 1]", labelAngle: 0 } 
+    x: {
+      field: "month", type: "ordinal", title: "Month", sort: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      axis: { labelExpr: "['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][datum.value - 1]", labelAngle: 0 },
     },
     y: { field: "route", type: "nominal", title: null, sort: { field: "passengers_2025", order: "descending" } },
     opacity: { condition: { param: "heatmapRouteHover", empty: true, value: 1 }, value: 0.22 },
-  }, config,
+  },
+  config,
 };
 
 const routeRemotenessChart = {
@@ -77,7 +93,8 @@ const routeRemotenessChart = {
   config,
 };
 
-// Explicit order keeps the layered rule and point marks in the same ranking.
+// Vega-Lite's layered rule and point marks need one explicit shared order.
+// This order follows descending 2025 passengers per aircraft movement.
 const lollipopAirportOrder = [
   "GOLD COAST", "SUNSHINE COAST", "MELBOURNE", "SYDNEY", "HOBART",
   "PROSERPINE", "PERTH", "BALLINA", "HAMILTON ISLAND", "BRISBANE",
@@ -87,7 +104,7 @@ const lollipopAirportOrder = [
 
 const airportLollipopChart = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-  width: "container", 
+  width: "container",
   height: 365,
   data: { url: `${dataPath}airport_2025_top20.csv` },
   transform: [{ calculate: "0", as: "baseline" }],
@@ -95,15 +112,27 @@ const airportLollipopChart = {
     y: { field: "airport_name", type: "nominal", sort: lollipopAirportOrder, title: null },
   },
   layer: [
-    { mark: { type: "rule", color: "#a9b2ad", strokeWidth: 3 }, encoding: {
-      x: { field: "baseline", type: "quantitative", title: "Passenger movements per aircraft movement" },
-      x2: { field: "passengers_per_aircraft_movement" },
-    }},
-    { mark: { type: "point", filled: true, color: "#0d7c86", size: 100 }, encoding: {
-      x: { field: "passengers_per_aircraft_movement", type: "quantitative" },
-      tooltip: [{ field: "airport_name", title: "Airport" }, { field: "total_passengers", title: "Passenger movements", format: "," }, { field: "total_aircraft_movements", title: "Aircraft movements", format: "," }, { field: "passengers_per_aircraft_movement", title: "Ratio", format: ".1f" }],
-    }},
-  ], config,
+    {
+      mark: { type: "rule", color: "#a9b2ad", strokeWidth: 3 },
+      encoding: {
+        x: { field: "baseline", type: "quantitative", title: "Passenger movements per aircraft movement" },
+        x2: { field: "passengers_per_aircraft_movement" },
+      },
+    },
+    {
+      mark: { type: "point", filled: true, color: "#0d7c86", size: 100 },
+      encoding: {
+        x: { field: "passengers_per_aircraft_movement", type: "quantitative" },
+        tooltip: [
+          { field: "airport_name", title: "Airport" },
+          { field: "total_passengers", title: "Passenger movements", format: "," },
+          { field: "total_aircraft_movements", title: "Aircraft movements", format: "," },
+          { field: "passengers_per_aircraft_movement", title: "Ratio", format: ".1f" },
+        ],
+      },
+    },
+  ],
+  config,
 };
 
 let routeHeatmapRender = Promise.resolve();
