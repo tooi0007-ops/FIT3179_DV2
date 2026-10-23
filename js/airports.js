@@ -96,7 +96,11 @@ const airportButterflyChart = {
       field: "signed_passengers",
       type: "quantitative",
       title: "Passenger movements (domestic ← | → international)",
-      axis: { labelExpr: "format(abs(datum.value), '~s')" },
+      scale: { domain: [-30000000, 30000000], nice: false },
+      axis: {
+        values: [-30000000, -20000000, -10000000, 0, 10000000, 20000000, 30000000],
+        labelExpr: "format(abs(datum.value), '~s')",
+      },
     },
     color: { field: "travel_label", type: "nominal", title: null, scale: { domain: ["Domestic", "International"], range: ["#0d7c86", "#E08B32"] } },
     tooltip: [{ field: "airport_name", title: "Airport" }, { field: "travel_label", title: "Type" }, { field: "passengers", title: "Passenger movements", format: "," }],
