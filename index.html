@@ -23,6 +23,7 @@
           <a href="#airport-mix">03 · Travel mix</a>
           <a href="#airport-change">04 · Airports</a>
           <a href="#routes">05 · Routes</a>
+          <a href="#conclusion">Conclusion</a>
           <a href="#sources">Sources</a>
         </nav>
 
@@ -129,7 +130,7 @@
         <div class="visual-grid">
           <article class="visual-panel full-panel">
             <h3>Which airports exceeded their 2019 passenger totals?</h3>
-            <p class="chart-note">Compare 15 major airports. Each starts at 100 in 2019.<br>The 2025 endpoint shows each relative change.<br>Hover for actual passenger totals in both years.</p>
+            <p class="chart-note">Compare 15 major airports. The grey dot marks 0% change from 2019.<br>The coloured dot shows each airport's change by 2025.<br>Hover for passenger totals in both years.</p>
             <div class="feature-layout">
               <div id="airport-connected-dot-plot" class="visual" aria-label="Connected dot plot of airport percentage change from 2019 to 2025"></div>
               <aside class="feature-aside" aria-label="Key findings from airport change">
@@ -212,6 +213,41 @@
           <p class="chart-insight"><strong>More remote trips on fewer flights:</strong><br>Remote route passenger trips in 2025–26 were 12.3% above 2018–19, despite 4.8% fewer flights.</p>
           <p class="context-note">This series uses financial years ending in June.<br>Airport totals above use calendar years.</p>
         </article>
+      </section>
+
+      <section id="conclusion" class="story-section conclusion-section">
+        <div class="section-copy">
+          <p class="section-number">06 · Conclusion</p>
+          <h2>Recovery was national, but uneven</h2>
+          <p>Australia's passenger total returned to its 2019 level.<br>Where people flew and how quickly routes recovered still differed.</p>
+        </div>
+        <div class="conclusion-grid">
+          <a class="conclusion-card" href="#national-trend">
+            <span class="conclusion-step">01 · National total</span>
+            <strong>+0.2%</strong>
+            <span>Passenger movements in 2025 were just above 2019.</span>
+            <span class="conclusion-link">See the recovery chart ↗</span>
+          </a>
+          <a class="conclusion-card" href="#airport-map">
+            <span class="conclusion-step">02 · Concentration</span>
+            <strong>103.8M</strong>
+            <span>Sydney, Melbourne and Brisbane handled nearly two-thirds of mapped airport movements.</span>
+            <span class="conclusion-link">See the airport map ↗</span>
+          </a>
+          <a class="conclusion-card" href="#airport-change">
+            <span class="conclusion-step">03 · Airport recovery</span>
+            <strong>+34.7% to −13.7%</strong>
+            <span>Sunshine Coast grew while Canberra remained below 2019.</span>
+            <span class="conclusion-link">See the airport comparison ↗</span>
+          </a>
+          <a class="conclusion-card" href="#routes">
+            <span class="conclusion-step">04 · Route recovery</span>
+            <strong>Different paths</strong>
+            <span>Monthly changes varied between domestic routes after 2019.</span>
+            <span class="conclusion-link">See the route heatmap ↗</span>
+          </a>
+        </div>
+        <p class="conclusion-takeaway"><strong>The main finding:</strong> The national total tells us that air travel recovered. Airport and route comparisons show who shared in that recovery.</p>
         <div class="back-to-top"><a href="#top" aria-label="Back to top of dashboard">↑ Back to top</a></div>
       </section>
 
@@ -245,7 +281,7 @@
     <script src="js/config.js?v=20261022b"></script>
     <script src="js/overview.js?v=20261023b"></script>
     <script src="js/maps.js?v=20261023i"></script>
-    <script src="js/airports.js?v=20261023d"></script>
+    <script src="js/airports.js?v=20261024a"></script>
     <script src="js/routes.js?v=20261023f"></script>
   </body>
 </html>

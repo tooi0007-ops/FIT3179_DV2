@@ -56,23 +56,22 @@ const airportConnectedDotPlot = {
     format: { type: "csv", parse: { change_percent: "number", passengers_2019: "number", passengers_2025: "number" } },
   },
   transform: [
-    { calculate: "100", as: "index_2019" },
-    { calculate: "100 + toNumber(datum.change_percent)", as: "index_2025" },
+    { calculate: "0", as: "change_2019" },
   ],
   encoding: {
     y: { field: "airport_name", type: "nominal", sort: { field: "change_percent", order: "descending" }, title: null },
   },
   layer: [
     { mark: { type: "rule", color: "#667987", strokeWidth: 2, opacity: 0.95 }, encoding: {
-      x: { field: "index_2019", type: "quantitative", title: "Passenger movements (2019 = 100)", scale: { domain: [80, 140] } },
-      x2: { field: "index_2025" },
+      x: { field: "change_2019", type: "quantitative", title: "Change in passenger movements vs 2019 (%)", scale: { domain: [-20, 40], nice: false }, axis: { values: [-20, -10, 0, 10, 20, 30, 40], labelExpr: "datum.value === 0 ? '0%' : (datum.value > 0 ? '+' : '') + datum.value + '%'" } },
+      x2: { field: "change_percent" },
       tooltip: [{ field: "airport_name", title: "Airport" }, { field: "passengers_2019", title: "2019", format: "," }, { field: "passengers_2025", title: "2025", format: "," }, { field: "change_percent", title: "Change (%)", format: ".1f" }],
     }},
     { mark: { type: "point", filled: true, size: 90, opacity: 1, color: "#536473", stroke: "#ffffff", strokeWidth: 1.8 }, encoding: {
-      x: { field: "index_2019", type: "quantitative", scale: { domain: [80, 140] } },
+      x: { field: "change_2019", type: "quantitative", scale: { domain: [-20, 40], nice: false } },
     }},
     { mark: { type: "point", filled: true, size: 110, opacity: 1, stroke: "#ffffff", strokeWidth: 1.8 }, encoding: {
-      x: { field: "index_2025", type: "quantitative", scale: { domain: [80, 140] } },
+      x: { field: "change_percent", type: "quantitative", scale: { domain: [-20, 40], nice: false } },
       color: { condition: { test: "datum.change_percent >= 0", value: "#276f9e" }, value: "#c33f50", legend: null },
       tooltip: [{ field: "airport_name", title: "Airport" }, { field: "passengers_2019", title: "2019 movements", format: "," }, { field: "passengers_2025", title: "2025 movements", format: "," }, { field: "change_percent", title: "Change (%)", format: ".1f" }],
     }},

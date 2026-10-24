@@ -827,6 +827,86 @@ footer {
   --chart-wash: #fcf8f5;
 }
 
+#conclusion {
+  --chapter-bg: #dcebe7;
+  --chapter-accent: #075e65;
+}
+
+.conclusion-section .section-copy {
+  margin-bottom: 1.8rem;
+}
+
+.conclusion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.conclusion-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 12.5rem;
+  padding: 1.4rem 1.55rem;
+  border: 1px solid rgba(7, 94, 101, 0.2);
+  border-top: 4px solid var(--chapter-accent);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #f5fbf9, #fff 65%);
+  box-shadow: 0 9px 24px rgba(23, 32, 47, 0.07);
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.conclusion-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 13px 28px rgba(23, 32, 47, 0.12);
+}
+
+.conclusion-card:focus-visible {
+  outline: 3px solid #e69f00;
+  outline-offset: 3px;
+}
+
+.conclusion-step {
+  color: var(--chapter-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.conclusion-card strong {
+  margin: 0.55rem 0 0.35rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.conclusion-card > span:nth-of-type(2) {
+  max-width: 52ch;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.conclusion-link {
+  margin-top: auto;
+  padding-top: 0.9rem;
+  color: var(--chapter-accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.conclusion-takeaway {
+  max-width: 75ch;
+  margin: 1.6rem 0 0;
+  padding-left: 1rem;
+  border-left: 4px solid var(--chapter-accent);
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+
 .section-copy {
   margin-bottom: 1.6rem;
 }
@@ -1078,9 +1158,21 @@ footer {
   .back-to-top a {
     transition: none;
   }
+
+  .conclusion-card {
+    transition: none;
+  }
 }
 
 @media (max-width: 760px) {
+  .conclusion-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .conclusion-card {
+    min-height: 0;
+  }
+
   .site-header {
     width: 100%;
     padding: 0;
